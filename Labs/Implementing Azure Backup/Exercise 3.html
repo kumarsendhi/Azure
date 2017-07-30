@@ -1,0 +1,1505 @@
+
+<!-- saved from url=(0098)https://opsgilityweb.blob.core.windows.net/online-labs/implementing-azure-backup/Exercise%203.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI Semilight";
+	panose-1:2 11 4 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:24.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+p.MsoRMPane, li.MsoRMPane, div.MsoRMPane
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyText, li.ppBodyText, div.ppBodyText
+	{mso-style-name:"pp Body Text";
+	mso-style-link:"pp Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent, li.ppBodyTextIndent, div.ppBodyTextIndent
+	{mso-style-name:"pp Body Text Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent2, li.ppBodyTextIndent2, div.ppBodyTextIndent2
+	{mso-style-name:"pp Body Text Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.5in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent3, li.ppBodyTextIndent3, div.ppBodyTextIndent3
+	{mso-style-name:"pp Body Text Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBodyTextChar
+	{mso-style-name:"pp Body Text Char";
+	mso-style-link:"pp Body Text";
+	font-family:"Times New Roman",serif;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+p.TableNorm, li.TableNorm, div.TableNorm
+	{mso-style-name:"Table Norm";
+	mso-style-link:"Table Norm Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.TableNormBOLD, li.TableNormBOLD, div.TableNormBOLD
+	{mso-style-name:"Table Norm BOLD";
+	mso-style-link:"Table Norm BOLD Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+span.TableNormChar
+	{mso-style-name:"Table Norm Char";
+	mso-style-link:"Table Norm";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.TableNormBOLDChar
+	{mso-style-name:"Table Norm BOLD Char";
+	mso-style-link:"Table Norm BOLD";
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+p.ActionEmphasis, li.ActionEmphasis, div.ActionEmphasis
+	{mso-style-name:ActionEmphasis;
+	mso-style-link:"ActionEmphasis Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;
+	font-weight:bold;}
+span.ActionEmphasisChar
+	{mso-style-name:"ActionEmphasis Char";
+	mso-style-link:ActionEmphasis;
+	font-family:"Segoe UI",sans-serif;
+	color:black;
+	font-weight:bold;}
+p.TitleSubHeading, li.TitleSubHeading, div.TitleSubHeading
+	{mso-style-name:"Title Sub Heading";
+	mso-style-link:"Title Sub Heading Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleSubHeadingChar
+	{mso-style-name:"Title Sub Heading Char";
+	mso-style-link:"Title Sub Heading";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	mso-style-link:"Table Heading Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;
+	color:#F2F2F2;
+	font-weight:bold;}
+span.TableHeadingChar
+	{mso-style-name:"Table Heading Char";
+	mso-style-link:"Table Heading";
+	font-family:"Segoe UI Semilight",sans-serif;
+	color:#F2F2F2;
+	font-weight:bold;}
+p.NormalIndent1, li.NormalIndent1, div.NormalIndent1
+	{mso-style-name:"Normal Indent 1";
+	mso-style-link:"Normal Indent 1 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.CodeIndent, li.CodeIndent, div.CodeIndent
+	{mso-style-name:"Code Indent";
+	mso-style-link:"Code Indent Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+span.NormalIndent1Char
+	{mso-style-name:"Normal Indent 1 Char";
+	mso-style-link:"Normal Indent 1";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.CodeIndentChar
+	{mso-style-name:"Code Indent Char";
+	mso-style-link:"Code Indent";
+	font-family:"Lucida Console";
+	color:blue;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc479375327">Exercise 3: Deploying different Azure Backup
+Solutions</a></h1>
+
+<h2>Overview</h2>
+
+<p class="MsoNormal">In this exercise, you will configure the following
+scenarios: </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Using an agent based backup solution to protect files and folders</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Deploying Azure Backup Server that can backup specific workloads</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Backing up an Azure Virtual Machine</p>
+
+<p class="MsoNormal">In the next exercise, you will use them for actual backup
+and recovery scenarios. </p>
+
+<h2>Time Estimate</h2>
+
+<p class="MsoNormal">45 minutes</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc479375328">Task 1: Deploying Azure Backup Agent-based solution</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Within the Azure
+portal, click Virtual Machines, and open the virtual machine <b>AGENTBackupVM1</b>.
+Click <b>connect</b> and login using the following credentials:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>demouser</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Demo@pass123</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From within the
+virtual machine, disable IE Enhanced Security mode.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="214" height="126" id="Picture 7" src="./Exercise 3_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="301" height="25" id="Picture 8" src="./Exercise 3_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="231" height="115" id="Picture 9" src="./Exercise 3_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From the Azure
+Portal, browse to the Azure Recovery Vault you created earlier. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From the Vault
+Settings blade, select <b>Backup</b> in the Getting Started Section. This will
+launch the Backup configuration wizard in the detailed blade section. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Use the
+following parameters as configuration settings:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Backup Goal /
+Where is your workload running: <b>on-premises</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>What do you want
+to backup: <b>Files and Folders</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="629" height="361" id="Picture 76" src="./Exercise 3_files/image004.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>This will switch to the <b>Prepare Infrastructure </b>step, opening the
+blade where you can download the respective Azure Backup Agent.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="635" height="328" id="Picture 81" src="./Exercise 3_files/image005.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Choose <b>Download Agent for Windows Server or Windows Client</b>. Store
+the install file (MARSAgentInstaller.exe) to your local admin station.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="653" height="41" id="Picture 82" src="./Exercise 3_files/image006.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Choose <b>Download Vault credentials to register the server to the
+vault.</b> Store the vault credentials file to your local admin station.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="647" height="57" id="Picture 83" src="./Exercise 3_files/image007.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Complete the
+‘Configuration for Backup’ by pressing the OK button twice from the Azure
+Portal.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Browse to the folder where you
+downloaded both files. Start the Azure Backup Agent installation by executing
+the <b>MARSAgentInstaller.exe</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="501" height="165" id="Picture 84" src="./Exercise 3_files/image008.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>This launches the Microsoft Azure Recovery Services Agent Setup Wizard</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="495" height="395" id="Picture 85" src="./Exercise 3_files/image009.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Accept the default values for Installation Folder and Cache Location.
+Press <b>Next</b> to continue.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="502" height="405" id="Picture 86" src="./Exercise 3_files/image010.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Leave the Proxy Configuration as is, and press <b>Next</b> to continue.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="504" height="402" id="Picture 88" src="./Exercise 3_files/image011.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>We recommend to choose <b>Use Microsoft Update</b>; press <b>Next </b>to
+continue.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="519" height="416" id="Picture 91" src="./Exercise 3_files/image012.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Confirm the installation by pressing the <b>Install</b> button. Wait for
+the installation to complete.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="519" height="413" id="Picture 92" src="./Exercise 3_files/image013.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Press the <b>Proceed to Registration</b> button.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="540" height="401" id="Picture 93" src="./Exercise 3_files/image014.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Browse to the download location where you downloaded the Vault
+Credentials file. Select this file. Press <b>Next</b> to continue.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="536" height="399" id="Picture 94" src="./Exercise 3_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>To secure the backup data,
+encryption will be used. Therefore, you need to provide a <b>Passphrase</b>.
+This could be a self-chosen password of minimum 16 characters. You can also use
+the Generate Passphrase button to create a random password. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Press the <b>Browse</b> button to
+select the location where the passphrase file should be stored. (For the
+purpose and ease of this task, we recommend storing this file on the server’s
+desktop. In a production environment, this file would be stored in a safe®
+location.)</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">20.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Press <b>Finish</b> to continue
+the Registration Server Wizard.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="651" height="177" id="Picture 95" src="./Exercise 3_files/image016.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">21.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Wait for the Server Registration to complete successfully. </p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="610" height="238" id="Picture 96" src="./Exercise 3_files/image017.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">22.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Press <b>Close</b> to complete the
+installation of the Microsoft Azure Recovery Services Agent. Leave the <b>Launch
+Microsoft Azure Recovery Services Agent</b> option activated.<br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">23.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>The Microsoft Azure Backup
+application will open.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="653" height="323" id="Picture 98" src="./Exercise 3_files/image018.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note:&nbsp; The actual configuration of a backup
+job will be executed in a later exercise. </p>
+
+</div>
+
+<p class="MsoNormal"><a name="_Toc479375329">&nbsp;</a></p>
+
+<h2>Task 2: Deploying Azure Backup Server-based solution</h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Within the Azure
+portal, click Virtual Machines, and open the virtual machine <b>MABSServerVM1</b>.
+Click <b>connect</b> and login using the following credentials:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>opsaaddemo\demouser</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Demo@pass123</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From within the
+virtual machine, disable IE Enhanced Security mode.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="214" height="126" id="Picture 1" src="./Exercise 3_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="301" height="25" id="Picture 2" src="./Exercise 3_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="231" height="115" id="Picture 3" src="./Exercise 3_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Install the .NET
+3.5 Framework (Azure Backup Server has a dependency), by launching a console
+(enter CMD in the run menu) and executing the following command:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">DISM /Online
+/Enable-Feature /FeatureName:NetFx3 /All</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From within <b>Administrative
+Tools,</b> click <b>Computer Management</b>, and then click <b>Disk Management</b>.
+When prompted click <b>OK</b> to initialize the disk. <b>Close</b> Disk
+Management now and do not format the disk. This disk was attached to the
+virtual machine during the template deployment and will be used later by the
+Azure Backup Service for storage.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="643" height="453" id="Picture 172" src="./Exercise 3_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Launch IE and navigate
+to the Azure Portal, click <b>More Services</b>, browse to the Azure Recovery Vault
+you created earlier.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From the Vault
+Settings blade, select <b>Backup</b> in the Getting Started Section. This will
+launch the Backup configuration wizard in the detailed blade section. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Use the
+following parameters as configuration settings:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Backup Goal /
+Where is your workload running: <b>on-premises</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>What do you want
+to backup: <b>&lt;select any of the server workloads like Hyper-V, Exchange,
+SQL Server, SharePoint,…&gt;</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="670" height="391" id="Picture 101" src="./Exercise 3_files/image021.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>This will launch the <b>Prepare Infrastructure Instructions</b>, from
+where you must download the Azure Backup Server files and registration
+credentials.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="615" height="495" id="Picture 103" src="./Exercise 3_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click the
+Download button on Option 2 and download the vault credentials file to your <b>desktop</b>.
+This file will be used to authenticate the Azure Backup Server install to your
+recovery vault. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>In option 1, click the <b>Download</b>
+link next to “Install Microsoft Azure Backup Server”. This redirects you to the
+Microsoft website, from where you can download the Azure Backup files.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="615" height="156" id="Picture 104" src="./Exercise 3_files/image023.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="594" height="212" id="Picture 105" src="./Exercise 3_files/image024.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Launch the Azure Backup Server installation, by executing the <b>MicrosoftAzureBackupInstaller.exe</b></p>
+
+<p class="MsoNormalCxSpFirst" style="margin-left:.5in"><span style="line-height:
+107%"><img width="512" height="398" id="Picture 283" src="./Exercise 3_files/image025.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="12" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Select
+     Destination Location </b>page, accept the default location and click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="514" height="401" id="Picture 284" src="./Exercise 3_files/image026.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="13" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Ready
+     to Extract </b>page, click <b>Extract</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="514" height="399" id="Picture 285" src="./Exercise 3_files/image027.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="14" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Wait for the
+     extracting to complete</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="514" height="399" id="Picture 286" src="./Exercise 3_files/image028.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle"><span style="line-height:107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="15" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Completing
+     the Microsoft Azure Backup Setup Wizard </b>page, ensure that the <b>Execute
+     setup.exe </b>checkbox is selected and click <b>Finish</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="515" height="399" id="Picture 287" src="./Exercise 3_files/image029.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="16" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">In the <b>Microsoft
+     Azure Backup </b>window, click <b>Microsoft Azure Backup</b>. This will
+     start Microsoft Azure Backup Setup.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="517" height="374" id="Picture 288" src="./Exercise 3_files/image030.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="17" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Wait until the
+     copy of temporary files is completed.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="503" height="164" id="Picture 289" src="./Exercise 3_files/image031.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="18" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Welcome
+     </b>page of the <b>Microsoft Azure Backup Setup</b> wizard, click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="499" height="449" id="Picture 290" src="./Exercise 3_files/image032.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="19" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Prerequisite
+     Check </b>page, click <b>Check</b>. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="433" height="389" id="Picture 291" src="./Exercise 3_files/image033.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="20" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">As long as there
+     are no blocking errors, click <b>Next</b>. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="440" height="396" id="Picture 225" src="./Exercise 3_files/image034.png"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="21" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>SQL
+     Settings </b>page, ensure that the <b>Install new Instance of SQL Server
+     with this Setup</b> option is selected and click <b>Check and Install</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="490" height="440" id="Picture 293" src="./Exercise 3_files/image035.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="22" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">The setup will
+     install the SISFilter on the machine. At this point, you will need to
+     restart the virtual machine and run the setup again to continue. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpLast" style="margin-left:.5in"><img width="524" height="110" id="Picture 10" src="./Exercise 3_files/image036.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="NoteCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">Note: You can restart the virtual
+machine from the Azure Management portal or from inside the VM. </p>
+
+<p class="NoteCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">Ensure you login again using the
+domain credentials:</p>
+
+<p class="NoteCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">User: opsaaddemo\demouser</p>
+
+<p class="NoteCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">Password: Demo@pass123</p>
+
+</div>
+
+<p class="MsoNormalCxSpFirst" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="23" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Verify that the
+     checks completed successfully and click <b>Next</b></span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="471" height="425" id="Picture 181" src="./Exercise 3_files/image037.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="24" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Step through the
+     same pages of the <b>Microsoft Azure Backup Setup</b>. Once on the <b>SQL
+     Settings </b>page, click <b>Check </b>Again, ensure that the software and
+     hardware requirements are met, and click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="471" height="424" id="Picture 294" src="./Exercise 3_files/image038.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="25" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Installation
+     Settings </b>page, accept the defaults and click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="424" height="382" id="Picture 295" src="./Exercise 3_files/image039.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="26" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Security
+     Settings </b>page, type in <b>Demo@pass123 </b>in the <b>Password </b>and <b>Confirm
+     Password </b>textboxes and click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="440" height="394" id="Picture 182" src="./Exercise 3_files/image040.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="27" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Microsoft
+     Update Opt-In </b>page, select <b>I do not want to use Microsoft Update </b>and
+     click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="475" height="428" id="Picture 296" src="./Exercise 3_files/image041.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="28" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Summary
+     of Settings </b>page, click <b>Install</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="475" height="429" id="Picture 183" src="./Exercise 3_files/image042.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="29" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Proxy
+     Configuration </b>page of <b>Microsoft Azure Recovery Services Agent Setup
+     Wizard</b>, click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="481" height="386" id="Picture 297" src="./Exercise 3_files/image043.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="30" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Installation
+     </b>page, click <b>Install</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="478" height="385" id="Picture 185" src="./Exercise 3_files/image044.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="31" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Once the
+     installation completed successfully, click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="513" height="409" id="Picture 186" src="./Exercise 3_files/image045.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="32" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Register
+     Server Wizard, </b>click <b>Browse</b>. Navigate to the vault credentials
+     file you downloaded to your desktop earlier. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="521" height="386" id="Picture 187" src="./Exercise 3_files/image046.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle"><span style="line-height:107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="33" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Once the vault
+     credentials are validated, click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="34" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">On the <b>Encryption
+     Setting </b>page, click <b>Generate Passphrase</b>. In the <b>Enter a
+     location to save the passphrase</b> textbox, <b>Browse </b>to the desktop
+     for this setup. Click <b>Next</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="600" height="445" id="Picture 299" src="./Exercise 3_files/image047.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="35" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Wait until the
+     registration is successfully completed. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="409" height="367" id="Picture 300" src="./Exercise 3_files/image048.jpg"></span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="36" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Wait for the
+     setup to complete. This may take 15-20 minutes. Make a note of the
+     firewall exceptions created by the setup and click <b>Close</b>.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%"><img width="463" height="418" id="Picture 301" src="./Exercise 3_files/image049.jpg">&nbsp;</span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:107%"><span style="line-height:107%">37.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span style="line-height:107%">Go back to <b>OPSBackupVault </b>in the Azure Portal.
+Note that in the informaton blade, the number of <b>Backup management servers</b>
+is now listed as <b>1</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="line-height:106%"><img width="551" height="209" id="Picture 319" src="./Exercise 3_files/image050.png"></span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="line-height:106%">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:107%">38.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>click on <b>Backup Infrastructure
+&gt;</b> under the <b>MANAGE</b> heading on the <b>Settings</b> blade.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="286" height="173" id="Picture 111" src="./Exercise 3_files/image051.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in;line-height:107%"><span style="line-height:107%">39.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span>Click
+on <b>Backup Management Servers &gt;</b> and make sure that there is an entry<b>
+</b>for the Microsoft Azure Backup Server.<br>
+<br>
+</p>
+
+<h2><a name="_Toc479375330">Task 3: Deploying IaaS VM based solution</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Within the Azure
+portal, click Virtual Machines, and open the virtual machine <b>IAASBackupVM1</b>.
+Click <b>connect</b> and login using the following credentials:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>demouser</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Demo@pass123</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From within the
+virtual machine, disable IE Enhanced Security mode.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="214" height="126" id="Picture 4" src="./Exercise 3_files/image052.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="301" height="25" id="Picture 5" src="./Exercise 3_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="231" height="115" id="Picture 6" src="./Exercise 3_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From the Azure
+Portal, browse to the Azure Recovery Vault you created earlier.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From the Vault
+Settings blade, select <b>Backup</b> in the Getting Started Section. This will
+launch the Backup configuration wizard in the detailed blade section. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Make the
+following selections:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Backup Goal /
+Where is your workload running: <b>Azure</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>What do you want
+to backup: <b>Virtual Machine<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="623" height="213" id="Picture 113" src="./Exercise 3_files/image053.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the <b>Backup
+Policy</b> section, accept the <b>DefaultPolicy</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="610" height="290" id="Picture 114" src="./Exercise 3_files/image054.jpg"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>In the <b>Items to backup</b>, select <b>IAASBackupVM1</b> from the list
+of Azure VMs.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="673" height="319" id="Picture 115" src="./Exercise 3_files/image055.jpg"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>From the Azure Backup Vault settings in the Azure Portal, select <b>Backup
+Items </b>in the Protected Items section.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="231" height="133" id="Picture 117" src="./Exercise 3_files/image056.jpg"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Select the <b>Azure Virtual Machine</b> option in the details blade,
+which now has <b>Backup Item Count </b>set to <b>1.</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="658" height="241" id="Picture 119" src="./Exercise 3_files/image057.jpg"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Select <b>Azure Virtual Machine</b>, which will open up another blade,
+listing <b>IAASBackupVM1</b> as Backup Item.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="635" height="208" id="Picture 120" src="./Exercise 3_files/image058.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>Note:</b> you can safely ignore the
+Warning (initial backup) notification in the Last Backup Status column. This is
+by design for a new configured backup item.</p>
+
+</div>
+
+<h2>Summary</h2>
+
+<p class="MsoNormal">In this exercise, you configured the following scenarios: </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Using an agent based backup solution to protect files and folders</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Deploying Azure Backup Server that can backup specific workloads</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Backing up an Azure Virtual Machine</p>
+
+<p class="MsoNormal">In the next exercise, you will use them for actual backup
+and recovery scenarios. </p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

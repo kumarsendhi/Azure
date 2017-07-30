@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "CloudShopSS", "CloudShopSS\CloudShopSS.deployproj", "{015950B4-6CBD-4477-8666-C1C7F84FEFC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{015950B4-6CBD-4477-8666-C1C7F84FEFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015950B4-6CBD-4477-8666-C1C7F84FEFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015950B4-6CBD-4477-8666-C1C7F84FEFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015950B4-6CBD-4477-8666-C1C7F84FEFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

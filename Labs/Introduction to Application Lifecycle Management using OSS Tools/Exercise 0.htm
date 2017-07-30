@@ -1,0 +1,829 @@
+
+<!-- saved from url=(0157)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20Application%20Lifecycle%20Management%20using%20OSS%20Tools/export/Exercise%200.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Lucida Console";
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc480036962">Hands-On-Lab: Introduction to Application Lifecycle
+Management using OSS Tools</a></h1>
+
+<h2><a name="_Toc480036963"></a><a name="_Toc468015496">LAB GUIDE</a></h2>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="720" style="width:7.5in;border-collapse:collapse">
+ <tbody><tr>
+  <td width="720" valign="top" style="width:7.5in;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#00ABEB;padding:.75pt 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Conditions and Terms of Use</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="720" valign="top" style="width:7.5in;border:solid white 1.0pt;
+  border-top:none;background:#CBE2F7;padding:.75pt 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This training package is proprietary and confidential. Duplicating,
+  reselling and/or distribution of course materials in their entirety or in
+  part is not permitted without the expressed prior written consent of
+  Opsgility, LLC. The contents of this package are for informational and
+  training purposes only and are provided "as is" without warranty of
+  any kind, whether express or implied, including but not limited to the
+  implied warranties of merchantability, fitness for a particular purpose, and
+  non-infringement.</p>
+  <p class="MsoNormal"><span style="line-height:107%;font-family:&quot;Arial&quot;,sans-serif;
+  color:windowtext">&nbsp;</span></p>
+  <p class="MsoNormal">Training package content, including URLs and other
+  Internet Web site references, is subject to change without notice. Because
+  Opsgility must respond to changing market conditions, the content should not
+  be interpreted to be a commitment on the part of Opsgility, and Opsgility
+  does not guarantee the accuracy of any information presented after the date
+  of release, publication or delivery of training sessions.</p>
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h1><a name="_Toc449067884"></a><a name="_Toc468015497"></a><a name="_Toc456878987"></a><a name="_Toc480036964">LAB Overview</a></h1>
+
+<p class="MsoNormal">In this lab, you learn the basics of Application Lifecycle
+Management (ALM) and Configuration Management, using OSS tools in combination
+with Microsoft Azure. </p>
+
+<h2><a name="_Toc480036965"></a><a name="_Toc475274530">Learning Objectives</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Explore Configuration Management using Chef on Azure</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Set up a Chef Manage Node trial</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Configure an Azure VM as Apache web server </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Deploy a new Azure VM from an ARM Template out of Chef</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Configure Git, Chef and Jenkins for Continuous Integration,
+Delivery and Deployment</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Set up a GitHub repository for Chef Cookbooks</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Deploy a Jenkins Server in Azure and integrate with Chef Server</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span>Configure Continuous Deployment in Jenkins</p>
+
+<h2><a name="_Toc480036966"></a><a name="_Toc475274531">What you will Build</a></h2>
+
+<p class="MsoNormal"><img width="641" height="361" id="Picture 12" src="./Exercise 0_files/image001.jpg"></p>
+
+<h2><a name="_Toc480036967">Time Estimate</a></h2>
+
+<p class="MsoNormal">2 to 3 hours</p>
+
+
+<p class="MsoNormal"><span style="font-size:24.0pt;line-height:107%;color:#4472C4">&nbsp;</span></p>
+
+<h1><a name="_Toc480036969">Exercise 0: </a>Creating the Lab environment</h1>
+
+<h2><a name="_Toc468015501"></a><a name="_Toc456878991"></a><a name="_Toc449624555"></a><a name="_Toc449167816"></a><a name="_Toc480036970"></a><a name="_Toc475274535"></a><a name="_Toc468902743"></a><a name="_Toc458511649"></a><a name="_Toc449067878"></a><a name="_Toc444268420">Overview</a></h2>
+
+<p class="MsoNormal">In this exercise, you build the Chef, GitHub and Jenkins foundation
+of platform and tools, allowing you to execute the actual topic-specific exercises
+in this lab. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.25in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>Note: </b>You have the choice to run the
+lab exercises using new trial accounts for each tool, or using an already
+existing account if you have one. When deleting the resources at the end of the
+exercises, make sure you don’t delete any production-related resources if not
+using a lab-specific (and recommended) trial account.</p>
+
+</div>
+
+<h2><a name="_Toc480036971"></a><a name="_Toc475274536"></a><a name="_Toc468902744"></a><a name="_Toc458511650"></a><a name="_Toc449067879"></a><a name="_Toc444268421">Prerequisites</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Microsoft Azure Subscription: <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">http://azure.microsoft.com/en-us/pricing/free-trial/</a>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Azure CLI 2.0 installed (<a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">https://docs.microsoft.com/en-us/cli/azure/install-azure-cli</a>)
+</p>
+
+<h2><a name="_Toc480036972"></a><a name="_Toc475274537"></a><a name="_Toc468902745"></a><a name="_Toc458511651"></a><a name="_Toc449067880"></a><a name="_Toc444268422">Time Estimate</a></h2>
+
+<p class="MsoNormal">60 minutes</p>
+
+<h2><a name="_Toc480036973"></a><a name="_Toc468015506"></a><a name="_Toc456878997"></a><a name="_Toc437058409"></a><a name="_Toc430523502"></a>Task
+1: Create a Chef trial subscription</h2>
+
+<p class="MsoNormal">Chef provides an automation system for building, deploying,
+and managing your infrastructure. Chef code is authored and managed using a
+folder structure called cookbooks (Chef specific). Each component of a cookbook
+is called a resource. Chef code contains reusable definitions that provide
+instructions for tasks such as configuring a web server. A cookbook may contain
+more than one recipe (more than one task to do), each recipe may contain
+reusable resources like files, templates, libraries and attributes etc. </p>
+
+<p class="MsoNormal">Chef helps your write recipes (DSC code) and store them on
+Chef Servers (Either create your own Chef server by for example using an Azure
+Marketplace template or – like in this exercise – use a trial account for a
+hosted Chef Server environment). </p>
+
+<p class="MsoNormal">In this exercise, you will learn how to create a Free Chef
+Server subscription (allows you to deploy/manage 5 Nodes (=Azure VMs in this
+scenario). </p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Browse
+to <a href="https://manage.chef.io/signup">https://manage.chef.io/signup</a>,
+and complete the form. <b>Note you have to use an existing email address, as
+you need to verify the account.</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="403" height="338" id="Picture 1" src="./Exercise 0_files/image002.jpg"><span style="position:
+absolute;z-index:251659264;left:0px;margin-left:1042px;margin-top:3381px;
+width:10px;height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="position:absolute;z-index:251665408;left:0px;margin-left:676px;
+margin-top:3315px;width:10px;height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span><span style="position:absolute;
+z-index:251662336;left:0px;margin-left:771px;margin-top:3312px;width:10px;
+height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span>Wait
+for the Chef Account validation email to arrive in your inbox</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="position:absolute;
+z-index:251664384;left:0px;margin-left:375px;margin-top:3525px;width:10px;
+height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span><span style="position:absolute;z-index:251663360;left:0px;margin-left:505px;
+margin-top:3525px;width:10px;height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span><span style="position:absolute;
+z-index:251661312;left:0px;margin-left:251px;margin-top:3490px;width:10px;
+height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span><span style="position:absolute;z-index:251660288;left:0px;margin-left:438px;
+margin-top:3448px;width:10px;height:10px"><img width="6" height="6" src="./Exercise 0_files/image003.png"></span><img border="0" width="397" height="246" id="Picture 7" src="./Exercise 0_files/image004.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+on the verification URL in the email, and validate your account on the Chef
+portal.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="409" height="161" id="Picture 8" src="./Exercise 0_files/image005.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Create
+a new Chef Organization from the Chef Portal, using any name of your choice.
+The name must be unique to the Chef environment though.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="400" height="239" id="Picture 23" src="./Exercise 0_files/image006.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc480036974">Summary</a></h2>
+
+<p class="MsoNormal">This completes the creation and registration of a Chef trial
+account, in which you created a management organization. This environment will
+be used in the subsequent exercises. </p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc480036975"></a>Task 2: Create a GitHub account</h2>
+
+<p class="MsoNormal">&nbsp;In this exercise, you will setup a GitHub repository to
+store you Chef Cookbooks.&nbsp; You can use an existing GitHub account or create a
+new one at <a href="https://github.com/join">https://github.com/join</a>.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Logon
+to GitHub and click the “<b>Start a project</b>” button</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="614" height="265" id="Picture 33" src="./Exercise 0_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Give
+your repository a <b>name</b>, check the “<b>Initialize this repository with a
+README</b>” checkbox and leave the other settings as default.&nbsp; Click <b>Create
+Repository</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="557" height="445" id="Picture 40" src="./Exercise 0_files/image008.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Your
+newly created repository should look like the image below.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="560" height="271" id="Picture 47" src="./Exercise 0_files/image009.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc480036976">Summary</a></h2>
+
+<p class="MsoNormal">This completes the creation and registration of a GitHub
+account, in which you created a repository for storing Chef Cookbooks. This
+environment will be used in the subsequent exercises. </p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc480036977"></a><a name="_Toc479883709">Task 3: Deploy a
+Jenkins Server in Azure</a></h2>
+
+<p class="MsoNormal">Jenkins is an open source continuous integration tool
+written in Java. It provides continuous integration services for software
+development. It is a server-based system running in a servlet container such as
+Apache Tomcat.&nbsp; In this exercise, you will deploy a Jenkins Server in Azure
+leveraging a prebuilt virtual machine image from the Azure marketplace.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+deploy a Jenkins Server instance in Azure browse to <a href="https://portal.azure.com/">https://portal.azure.com</a>. &nbsp;Click +New and
+type Jenkins in the search box and hit enter</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="512" height="178" id="Picture 59" src="./Exercise 0_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+will notice that there are numerous preconfigured Jenkins server available in
+the marketplace, for the purposes of the labs, choose the one submitted by <b>Bitnami</b>
+and click <b>Create</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="720" height="219" id="Picture 2" src="./Exercise 0_files/image011.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify
+the following on the <b>Basics</b> blade and click <b>OK</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: <b>Jenkins</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>VM disk type: <b>SSD</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>User name: <b>demouser</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Authentication type: <b>password</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Password: <b>Demo@pass123</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource group: <b>JenkinsRG</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: <b>location nearest you</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in"><img border="0" width="315" height="630" id="Picture 200" src="./Exercise 0_files/image012.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Choose
+a size for your virtual machine (<b>DS2_V2 Standard</b> if available in your
+region) and click <b>Select</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="557" height="409" id="Picture 203" src="./Exercise 0_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Leave
+the default settings and click <b>OK </b>on the <b>Settings</b> blade.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+<b>OK</b> on the <b>Summary</b> blade and <b>Purchase</b> on the <b>Purchase</b>
+blade to start the provisioning of your Jenkins server</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="179" height="181" id="Picture 274" src="./Exercise 0_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Wait
+for the Jenkins Virtual Machine to be deployed successfully. Once deployed,
+change the configuration of the Azure Public-IP, to have a fully qualified
+domain name (FQDN) for your Jenkins server by clicking <b>Resource groups &gt;
+JenkinsRG &gt; jenkins</b> (Public IP address)</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="665" height="330" id="Picture 275" src="./Exercise 0_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+<b>Configuration</b> on the <b>Settings</b> tab of the Public IP address and
+specify a <b>unique DNS name</b> for your server and click <b>Save</b></p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="669" height="313" id="Picture 278" src="./Exercise 0_files/image016.png"></p>
+
+<p class="MsoNormal">Before logging into the Jenkins portal, we will update the
+version of Jenkins to the latest as well as install other tools needed for our
+scenario.</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Connect to Jenkins via SSH</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">ssh <a href="mailto:demouser@jenkins101.centralus.cloudapp.azure.com">demouser@jenkins101.centralus.cloudapp.azure.com</a></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="660" height="384" id="Picture 4" src="./Exercise 0_files/image017.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Run the following command to
+elevate your user and update the packages of the OS</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">sudo su</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">apt-get
+update</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="660" height="384" id="Picture 698" src="./Exercise 0_files/image018.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Run the following command to
+download the latest version of Jenkins</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">wget <a href="https://updates.jenkins-ci.org/latest/jenkins.war">https://updates.jenkins-ci.org/latest/jenkins.war</a></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="660" height="384" id="Picture 6" src="./Exercise 0_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The following commands will
+clean up a folder and file before copying the latest version of jenkins.war to
+the directory it needs to reside in.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">rm -r
+/opt/bitnami/apache-tomcat/webapps/jenkins</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">rm -r
+/opt/bitnami/apache-tomcat/webapps/jenkins.war</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">mv
+jenkins.war /opt/bitnami/apache-tomcat/webapps/ </p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Before installing the Azure Command Line tools, you need to install the
+node package manager by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">apt-get install
+npm</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="660" height="619" id="Picture 9" src="./Exercise 0_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Type <b>Y</b> when you are
+prompted and hit Enter</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="661" height="225" id="Picture 10" src="./Exercise 0_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">The update of the components should take a
+few minutes to complete.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>After npm is installed, run
+the following commands to install and configure the Azure CLI</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">npm
+install azure-cli -g</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">sudo ln
+-s /usr/bin/nodejs /usr/bin/node</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="657" height="172" id="Picture 11" src="./Exercise 0_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Type <b>azure</b> to confirm
+that the Azure CLI was properly installed and choose whether you want to
+participate in data collection</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="660" height="619" id="Picture 672" src="./Exercise 0_files/image023.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Download and Install the
+Chef DK by running the following commands (<i>the Chef DK install does take several
+minutes to complete</i>)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">wget
+https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.16.28-1_amd64.deb</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">sudo
+dpkg -i chefdk_0.16.28-1_amd64.deb</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">apt-get
+update</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="660" height="384" id="Picture 699" src="./Exercise 0_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="660" height="384" id="Picture 700" src="./Exercise 0_files/image025.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Change directory so that you
+are at the root by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">cd /</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>You will now create a Chef
+Repository by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">chef generate
+repo chef-repo</p>
+
+</div>
+
+<p class="MsoListParagraph"><img border="0" width="660" height="384" id="Picture 701" src="./Exercise 0_files/image026.jpg"></p>
+
+<h2><a name="_Toc480036978">Summary</a></h2>
+
+<p class="MsoNormal">This completes the creation and registration of a Jenkins
+Server VM in Azure, in which you created a repository for storing Chef
+Cookbooks. This environment will be used in the subsequent exercises. </p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

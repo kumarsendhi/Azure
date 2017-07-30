@@ -1,0 +1,998 @@
+
+<!-- saved from url=(0117)https://opsgilityweb.blob.core.windows.net/online-labs/introduction-to-virtual-network-connectivity/Exercise%202.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI Semilight";
+	panose-1:2 11 4 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:24.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoRMPane, li.MsoRMPane, div.MsoRMPane
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyText, li.ppBodyText, div.ppBodyText
+	{mso-style-name:"pp Body Text";
+	mso-style-link:"pp Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent, li.ppBodyTextIndent, div.ppBodyTextIndent
+	{mso-style-name:"pp Body Text Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent2, li.ppBodyTextIndent2, div.ppBodyTextIndent2
+	{mso-style-name:"pp Body Text Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.5in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent3, li.ppBodyTextIndent3, div.ppBodyTextIndent3
+	{mso-style-name:"pp Body Text Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBodyTextChar
+	{mso-style-name:"pp Body Text Char";
+	mso-style-link:"pp Body Text";
+	font-family:"Times New Roman",serif;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Lucida Console";
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	background:white;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+p.CodeCxSpFirst, li.CodeCxSpFirst, div.CodeCxSpFirst
+	{mso-style-name:CodeCxSpFirst;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	background:white;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+p.CodeCxSpMiddle, li.CodeCxSpMiddle, div.CodeCxSpMiddle
+	{mso-style-name:CodeCxSpMiddle;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	background:white;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+p.CodeCxSpLast, li.CodeCxSpLast, div.CodeCxSpLast
+	{mso-style-name:CodeCxSpLast;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	background:white;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeChar
+	{mso-style-name:"Code Char";
+	mso-style-link:Code;
+	font-family:"Lucida Console";
+	color:blue;
+	background:white;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+p.NormalIndent1, li.NormalIndent1, div.NormalIndent1
+	{mso-style-name:"Normal Indent 1";
+	mso-style-link:"Normal Indent 1 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.CodeIndent, li.CodeIndent, div.CodeIndent
+	{mso-style-name:"Code Indent";
+	mso-style-link:"Code Indent Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+span.NormalIndent1Char
+	{mso-style-name:"Normal Indent 1 Char";
+	mso-style-link:"Normal Indent 1";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.CodeIndentChar
+	{mso-style-name:"Code Indent Char";
+	mso-style-link:"Code Indent";
+	font-family:"Lucida Console";
+	color:blue;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-style:italic;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc475274837"></a><a name="_Toc475084688"></a><a name="_Toc458511655">Exercise 2: Create a VM in a Virtual Network</a> </h1>
+
+<h2><a name="_Toc475274838"></a><a name="_Toc475084689"></a><a name="_Toc458511656"></a><a name="_Toc449067885">Overview</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a virtual machine and a virtual
+network in a region. This virtual network and virtual machine will be used as
+the source to connect to a virtual machine and virtual network in a remote
+region.</p>
+
+<h2><a name="_Toc475274839"></a><a name="_Toc475084690"></a><a name="_Toc458511657"></a><a name="_Toc449067886">Time Estimate</a></h2>
+
+<p class="MsoNormal">30 minutes</p>
+
+<h2><a name="_Toc475274840"></a><a name="_Toc475084691"></a><a name="_Toc458511658"></a><a name="_Toc449067887"></a><a name="_Toc422630698">Task
+1: Login to the Azure Management Portal</a></h2>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color:black">From within the RDP session (<b>LABVM</b>),
+open Internet Explorer and navigate to </span><a href="https://portal.azure.com/">https://portal.azure.com</a>
+and authenticate with your Organization or Microsoft Account by selected the
+correct link.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="329" height="179" id="Picture 256" src="./Exercise 2_files/image001.png"></p>
+
+<p class="MsoListParagraph">&nbsp;</p>
+
+<h2><a name="_Toc475274841"></a><a name="_Toc475084692"></a><a name="_Toc458511659"></a><a name="_Toc449067888">Task 2: Create an Azure
+Virtual Network</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>New</b>,
+<b>Networking</b>, and then click <b>Virtual Network</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="642" height="249" id="Picture 1" src="./Exercise 2_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Create
+</b>button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify
+the following configuration:</p>
+
+<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="margin-left:.5in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="360" valign="top" style="width:269.75pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt">&nbsp;</p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Name:
+  <b>OpsVirtualNetwork1</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Address
+  space: <b>10.0.0.0/16</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Subnet
+  name: <b>Apps</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Subnet
+  address range: <b>10.0.0.0/24</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Resource
+  Group: <b>OpsVNETRmRG</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Location:
+  <b>Select a region different than the one you used for the lab virtual
+  machine.</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin:0in;margin-bottom:.0001pt">&nbsp;</p>
+  </td>
+  <td width="360" valign="top" style="width:269.75pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpLast" style="margin:0in;margin-bottom:.0001pt"><img border="0" width="309" height="586" id="Picture 15" src="./Exercise 2_files/image003.jpg"></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoListParagraph">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.25in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">You may see a warning like this when
+creating the virtual network. This is just letting you know that you cannot
+connect these two virtual networks later using a site-to-site or ExpressRoute
+connection because the address range overlaps. You can ignore this warning.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Check the
+box <b>Pin to dashboard</b> and click <b>Create</b> to create the virtual
+network.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="101" height="60" id="Picture 300" src="./Exercise 2_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc475274842"></a><a name="_Toc475084693"></a><a name="_Toc458511660"></a><a name="_Toc449067889">Task 3: </a>Add a New Subnet</h2>
+
+<p class="MsoNormal">In this task, you will learn how to add an additional subnet
+to the virtual network.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>After the
+virtual network is created, click the <b>Subnets</b> link under <b>SETTINGS</b>.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="247" height="330" id="Picture 17" src="./Exercise 2_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Subnet
++</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="234" height="39" id="Picture 18" src="./Exercise 2_files/image006.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify
+the following configuration on the new subnet and click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Name: <b>Data</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Address
+Space: <b>10.0.1.0/24</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img border="0" width="564" height="133" id="Picture 26" src="./Exercise 2_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">You should have two subnets with following
+address ranges:</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="498" height="185" id="Picture 51" src="./Exercise 2_files/image008.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc475274843"></a><a name="_Toc475084694"></a><a name="_Toc458511661"></a><a name="_Toc449067890">Task 4: Create a Virtual
+Machine</a> in the Virtual Network</h2>
+
+<p class="MsoNormal">In this task, you will create a virtual machine in the
+virtual network and specify the subnet it will be deployed to.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.25in;text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>New</b>,
+<b>Compute</b>, and then select the <b>Windows Server 2016 Datacenter</b> image
+from the FEATURED APPS list. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="675" height="274" id="Picture 28" src="./Exercise 2_files/image009.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.25in;text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Leave the
+deployment model set to <b>Resource Manager</b> and click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="229" height="93" id="Picture 42" src="./Exercise 2_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.25in;text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify
+the following configuration and click <b>OK</b>.</p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:.25in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="360" valign="top" style="width:269.75pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpMiddle" style="margin:0in;margin-bottom:.0001pt">&nbsp;</p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Name: <b>VNET1VM</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>VM disk type: <b>SDD</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>User name: <b>demouser</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Password: <b>demo@pass123</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Subscription: <b>Ensure the correct subscription is selected </b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Resource Group: <b>OpsVMRmRG&nbsp;&nbsp;&nbsp;&nbsp; </b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Location: <b>the same region selected for the Azure Virtual
+  Network </b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin:0in;margin-bottom:.0001pt">&nbsp;</p>
+  </td>
+  <td width="360" valign="top" style="width:269.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpLast" style="margin:0in;margin-bottom:.0001pt"><img border="0" width="292" height="509" id="Picture 31" src="./Exercise 2_files/image011.jpg"></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.25in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.25in;text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Choose <b>DS1_V2</b>
+and then click <b>Select</b> at the bottom of the page.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.25in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: You may have to click View All to see
+this option.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="558" height="270" id="Picture 928" src="./Exercise 2_files/image012.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:.25in;text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+Configure required settings to specify a storage account for your virtual
+machine. </p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="302" height="216" id="Picture 14" src="./Exercise 2_files/image013.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.25in;text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>+
+Create New.</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.25in;text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify a
+unique name for the storage account (all lower letters and alphanumeric
+characters) and ensure the green checkmark shows the name is valid.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="295" height="76" id="Picture 19" src="./Exercise 2_files/image014.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.25in;text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>OK</b>
+to continue.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="96" height="37" id="Picture 21" src="./Exercise 2_files/image015.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.25in;text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+Configure required settings for the Diagnostics storage account. Repeat the
+same steps to select a unique storage account name. This storage account will
+hold diagnostic logs about your virtual machine that you can use for
+troubleshooting purposes.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="272" height="63" id="Picture 22" src="./Exercise 2_files/image016.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.25in;text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Specify the following
+configuration options:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Virtual network: Click the Virtual Network tile to change it to <b>OPSVirtualNetwork1</b>
+(if it is not already selected).</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Subnet: Click the Subnet tile to change it to the <b>Apps</b>
+subnet (if it is not already selected) </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="280" height="287" id="Picture 929" src="./Exercise 2_files/image017.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.25in;text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>OK</b> until all
+blades are closed and the virtual machine starts to provision.</p>
+
+<h2><a name="_Toc475274844"></a><a name="_Toc475084695"></a><a name="_Toc458511662"></a><a name="_Toc449067891">Summary</a></h2>
+
+<p class="MsoNormal">In this exercise, you created a virtual network that will be
+used for several of the hands on labs in this course. You then created a
+virtual machine and specified the virtual network configuration and the
+availability set for the virtual machine. </p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal"><span style="font-size:24.0pt;line-height:107%;color:#5B9BD5">&nbsp;</span></p>
+
+</div>
+
+
+
+
+</body></html>

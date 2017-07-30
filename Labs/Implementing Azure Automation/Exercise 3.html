@@ -1,0 +1,1167 @@
+
+<!-- saved from url=(0102)https://opsgilityweb.blob.core.windows.net/online-labs/implementing-azure-automation/Exercise%203.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1>Exercise 3:&nbsp; Creating Automation Assets for Deployments</h1>
+
+<h2>Overview</h2>
+
+<p class="MsoNormal" style="margin-top:1.65pt;margin-right:33.75pt;margin-bottom:
+0in;margin-left:6.0pt;margin-bottom:.0001pt"><span style="line-height:107%;
+font-family:&quot;Gadugi&quot;,sans-serif;color:#252525">In this exercise, you will configure
+a variable asset to execute against a VM that you will create using Azure PowerShell
+ISE. You will then create a graphical runbook configuring the parameters to
+execute the shutdown of the newly created VM. The purpose of this Exercise is
+the detail the steps for higher automation of larger environments where the
+machines need to be systematically shutdown.</span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Time Estimate</h2>
+
+<p class="MsoNormal">60 Minutes</p>
+
+<h2>Task 1:&nbsp; Deploy VM in Azure to use for this Exercise</h2>
+
+<p class="MsoNormal">In this task, you will create a VM in Azure to use for the
+exercise. </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From the <b>LABVM</b>
+open the Azure Portal in Internet Explorer.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Resource
+Groups &gt; +Add</b> and Name the Resource Group: <b>OGDEMOTM,</b> choose your
+Subscription and then Select <b>East US</b> for the Region.&nbsp; Then click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="327" height="250" id="Picture 1" src="./Exercise 3_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+within the newly created <b>OGDEMOTM</b> RG, click <b>+Add</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="595" height="204" id="Picture 2" src="./Exercise 3_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the
+Filter box type: <b>Template Deployment</b> and press <b>enter</b>.&nbsp; Then click
+<b>Template Deployment</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="245" height="267" id="Picture 374" src="./Exercise 3_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Press <b>Create</b>
+and then on the Customer Deployment Blade click <b>Edit</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="436" height="105" id="Picture 375" src="./Exercise 3_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Load
+File </b>button.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="452" height="81" id="Picture 378" src="./Exercise 3_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Locate the
+<b>WebVMUS.json</b> file which is in the <b>C:\OpsgilityTraining\Opsgility
+Automation Resources</b> folder on your <b>LABVM</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="535" height="278" id="Picture 3" src="./Exercise 3_files/image006.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>This will
+load the ARM template, click <b>Save</b>.&nbsp; Complete the Settings with these
+values, click the <b>I Agree</b> and <b>Purchase</b> buttons.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Subscription:&nbsp;
+<b>Choose your subscription.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Resource
+Group: <b>OGDEMOTM</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Admin
+Username: <b>demouser</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Admin
+Password:&nbsp; <b>demo@pass123</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="616" height="404" id="Picture 5" src="./Exercise 3_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+deployment will be submitted to Azure to build the <b>WEBVMUS </b>along with
+their associated resources in the <b>OGDEMOTM</b> Resource Group.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="115" height="113" id="Picture 381" src="./Exercise 3_files/image008.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">NOTE:&nbsp; Wait for the Deployment to complete
+prior to moving on to the next steps.</p>
+
+</div>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 2:&nbsp; Create a Variable Asset</h2>
+
+<p class="MsoNormal">In this task, you will create an Azure Automation Asset that
+will automate the shutdown of a VM.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:0in;margin-bottom:.0001pt;
+text-indent:-.25in;line-height:normal">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the azure portal, <a href="https://portal.azure.com/">https://portal.azure.com</a>.
+Select your <b>Lab-Deployment</b> Account and then under the settings blade
+select Assets.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="478" height="176" id="Picture 197" src="./Exercise 3_files/image009.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From the
+Assets menu, click Variables.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="296" height="249" id="Picture 198" src="./Exercise 3_files/image010.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Click <b>+Add a variable</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;line-height:normal"><img border="0" width="202" height="81" id="Picture 199" src="./Exercise 3_files/image011.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;line-height:normal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The purpose of this is to provide the Automation account to the Runbook
+so it can authenticate to execute against your infrastructure. Update the Blade
+by Entering the following information and then click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Name:<b>&nbsp; AzureSubscriptionID</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Type:<b>&nbsp; String</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Value:&nbsp; <b>Enter you Subscription ID number</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Encrypted: <b>No</b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="NoteCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">NOTE: You can retrieve your
+Subscription ID by running the following commands in a PowerShell window on your
+<b>LABVM</b>:</p>
+
+<p class="NoteCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">LoginAzureRmAccount</p>
+
+<p class="NoteCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">Get-AzureRmSubscription</p>
+
+<p class="NoteCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp;</p>
+
+</div>
+
+<p class="MsoListParagraph" style="margin-left:1.0in"><img border="0" width="302" height="374" id="Picture 204" src="./Exercise 3_files/image012.jpg"><br clear="all">
+</p>
+
+<h2>Task 3:&nbsp; Create a Graphical Runbook</h2>
+
+<p class="MsoNormal">In this task, you will create a Graphical Runbook to shut
+down the virtual machine you just created.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:0in;margin-bottom:.0001pt;
+text-indent:-.25in;line-height:normal">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back to your Azure Automation Account <b>Lab-Deployment</b> select <b>Runbooks.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="186" height="91" id="Picture 205" src="./Exercise 3_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>+Add</b>
+<b>a runbook.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="344" height="81" id="Picture 206" src="./Exercise 3_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Next, <b>Quick
+Create, Create a new runbook.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="207" height="57" id="Picture 207" src="./Exercise 3_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Enter <b>Shutdown-VM</b> as the name and select <b>Graphical Runbook</b>
+for the type and then click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="295" height="255" id="Picture 208" src="./Exercise 3_files/image016.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">NOTE:&nbsp; Make sure there are no leading or
+trailing spaces in the name of the Runbook or it won’t save.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>In the library search for <b>Add-AzureRm</b>. You will find it under
+CMDLETS. Right click <b>Add-AzureRmAccount </b>and then select <b>Add to Canvas</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="359" height="414" id="Picture 209" src="./Exercise 3_files/image017.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Next in the library search for <b>AzureRunAs</b> and then locate <b>AzureRunAsConnecton</b>
+using Right-click again click <b>Add to canvas</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="338" height="280" id="Picture 210" src="./Exercise 3_files/image018.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">NOTE:&nbsp; Now, that these two Cmdlet’s have
+been added to the canvas they now need to be configured.&nbsp; </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN">Hover over <b>Get-AutomationConnection</b> until a circle appears on
+the bottom of the shape. Click the circle and drag the arrow to <b>Add-AzureRmAccount</b>.
+The arrow that you just created is a <b><i>link</i></b>. The runbook will start
+with <b>Get-AutomationConnection</b> and then run <b>Add-AzureRmAccount</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="185" height="232" id="Picture 311" src="./Exercise 3_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal"><span lang="EN">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN">On the canvas, select <b>Add-AzureRmAccount</b> and in the
+Configuration control pane type Update the <b>Label</b> to read <b>Sign In to Azure</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="275" height="122" id="Picture 214" src="./Exercise 3_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Parameters
+</b>and the Activity Parameter Configuration blade will appear.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="276" height="64" id="Picture 215" src="./Exercise 3_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>Parameters Set,
+choose a parameter set.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="278" height="125" id="Picture 216" src="./Exercise 3_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>From the list click <b>ServicePrincipalCertificate</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="479" height="146" id="Picture 249" src="./Exercise 3_files/image023.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span><span lang="EN">Once you
+select the <b>ServicePrincipal</b></span><b>Certificate</b><span lang="EN">
+parameter set, the parameters are displayed in the Activity Parameter
+Configuration blade.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click the<b> </b><b><span lang="EN">APPLICATIONID</span></b> parameter.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="302" height="66" id="Picture 250" src="./Exercise 3_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">In the
+Parameter Value blade, select <b>Activity output</b> for the <b>Data source</b>
+and select <b>Get-AutomationConnection</b> from the list, in the <b>Field path</b>
+textbox type <b>ApplicationId</b>, and then click <b>OK</b>. We are specifying
+the name of the property for the Field path because the activity outputs an
+object with multiple properties.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="207" height="567" id="Picture 256" src="./Exercise 3_files/image025.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Next click the <b>CERTIFICATETHUMBPRINT</b>
+parameter.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="238" height="54" id="Picture 251" src="./Exercise 3_files/image026.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select <b>Activity
+Output</b> for the <b>Data source</b>, select <b>Get-AutomationConnection</b>
+from the list, in the <b>Field path</b> textbox type <b>CertificateThumbprint</b>,
+and then click <b>OK</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="250" height="531" id="Picture 252" src="./Exercise 3_files/image027.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Click <b>SERVICEPRINCIPAL</b></span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="305" height="57" id="Picture 253" src="./Exercise 3_files/image028.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select <b>ConstantValue</b>
+for the <b>Data source</b>, click the option <b>True</b>, and then click <b>OK</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="264" height="222" id="Picture 255" src="./Exercise 3_files/image029.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Now, click <b>TENETID</b>
+Parameter.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="303" height="67" id="Picture 224" src="./Exercise 3_files/image030.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">20.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select <b>Activity
+output</b> for the <b>Data source</b>. Select <b>Get-AutomationConnection</b>
+from the list, in the <b>Field path</b> textbox type <b>TenantId</b>, and then
+click <b>OK</b> twice.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="231" height="517" id="Picture 248" src="./Exercise 3_files/image031.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">21.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">In the
+Library control, type <b>Set-AzureRmContext</b> in the search textbox and then <b>Add
+to canvas.</b></span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="274" height="164" id="Picture 314" src="./Exercise 3_files/image032.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">22.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Select <b><span lang="EN">Set-AzureRmContext</span></b><span lang="EN"> and in the Configuration control pane type <b>Specify Subscription Id</b>
+in the <b>Label</b> textbox.</span><span lang="EN"> </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="285" height="118" id="Picture 225" src="./Exercise 3_files/image033.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">23.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span><span lang="EN">Click <b>Parameters</b>
+and the Activity Parameter Configuration blade appears.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="255" height="67" id="Picture 226" src="./Exercise 3_files/image034.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">24.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click parameter set, choose
+a parameter set.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="300" height="60" id="Picture 227" src="./Exercise 3_files/image035.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">25.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>SubscriptionID.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="303" height="91" id="Picture 228" src="./Exercise 3_files/image036.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">26.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click SUBSCRIPTIONID.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="302" height="63" id="Picture 229" src="./Exercise 3_files/image037.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">27.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Under Data Source, select <b>Variable
+Asset</b>.&nbsp; Then the <b>AzureSubscriptionID</b> variable you created earlier
+will appear.&nbsp; Click <b>AzureSubscriptionID</b> and then <b>OK</b> <u>twice</u>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="264" height="168" id="Picture 230" src="./Exercise 3_files/image038.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">28.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Back on the Canvas, hover
+over <b>Sign in to Azure</b> <span lang="EN">until a circle appears on the bottom
+of the shape. Click the circle and drag the arrow to <b>Specify Subscription Id.</b></span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="237" height="305" id="Picture 231" src="./Exercise 3_files/image039.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">29.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Next you will add the <b>Stop-AzureRmVm</b>
+cmdlet to stop a VM.&nbsp; </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">30.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Library control, type
+<b>Stop-AzureRmVm</b> and then <b>Add to canvas.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="277" height="160" id="Picture 316" src="./Exercise 3_files/image040.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">31.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click and drag it under the <b>Specify
+Subscription Id</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">32.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Hover
+over <b>Specify Subscription Id</b> until a circle appears on the bottom of the
+shape. Click the circle and drag the arrow to <b>Stop-AzureRmVM</b>. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">33.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select <b>Stop-AzureRmVM
+</b>on the canvas. Click <b>Configure</b> <b>Parameters</b> and then <b>Parameter
+Set</b> to view the sets for <b>Stop-AzureRmVM</b>. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">34.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select
+the <b>ResourceGroupNameParameterSetName</b> parameter set.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="436" height="124" id="Picture 233" src="./Exercise 3_files/image041.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">35.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">&nbsp;Select
+<b>Name</b>. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="294" height="54" id="Picture 234" src="./Exercise 3_files/image042.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">36.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">For the
+<b>Data source</b> select <b>PowerShell expression</b> and type “<b>WEBVMUS” surrounded
+with double quotes</b> that will stopped by this runbook. Click <b>OK</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="188" height="203" id="Picture 235" src="./Exercise 3_files/image043.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">37.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">Select
+the <b>RESOURCEGROUPNAME</b> parameter.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="303" height="61" id="Picture 236" src="./Exercise 3_files/image044.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span lang="EN">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">38.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span><span lang="EN">Use <b>PowerShell
+expression</b> for the <b>Data source</b> and type in the name of the resource
+group <b>“OGDEMOTM”, </b>surrounded with double quotes. Click <b>OK twice</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="203" height="191" id="Picture 238" src="./Exercise 3_files/image045.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">39.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Next, click the <b>Optional
+additional parameters Configure parameters</b>.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="255" height="64" id="Picture 240" src="./Exercise 3_files/image046.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">40.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Type <b>-Force</b>, and
+Click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="245" height="115" id="Picture 241" src="./Exercise 3_files/image047.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note:&nbsp; This -Force command must be entered for
+this RunBook to Execute.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">41.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The Canvas should now
+resemble this screen capture.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="257" height="453" id="Picture 242" src="./Exercise 3_files/image048.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">42.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In another Browser Tab login
+to the Azure Portal and make sure that the VM you specified in this Run Book is
+currently Running.&nbsp; If not, start the VM and make sure it is up and running
+prior to moving to the next step.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="514" height="49" id="Picture 245" src="./Exercise 3_files/image049.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">43.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click Test pane so that we
+can test the runbook.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="634" height="81" id="Picture 243" src="./Exercise 3_files/image050.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">44.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>Start</b> to begin
+the Test.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="273" height="275" id="Picture 244" src="./Exercise 3_files/image051.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span lang="EN">45.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span><span lang="EN">After
+the runbook completes your output should be successfully completed as shown
+below.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="661" height="319" id="Picture 257" src="./Exercise 3_files/image052.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="663" height="40" id="Picture 258" src="./Exercise 3_files/image053.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">46.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Now, that the Runbook has
+been verified to run properly it should be published.&nbsp; To do, simply press <b>Publish</b>
+and click <b>Yes</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="530" height="75" id="Picture 259" src="./Exercise 3_files/image054.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2>Task 4:&nbsp; Adding Input Parameters to the Shutdown-VM Runbook</h2>
+
+<p class="MsoNormal">In this task, the Runbook will be updated to allow for the
+user to input the name of the VM to be shut-down rather than the hard coded VM
+name as it currently stands. To solve this, you will add an input parameter
+allowing the user of the runbook to enter the values of the VM without changing
+the runbook configuration itself. </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select <b>Runbooks</b>
+from your Automation Account <b>Lab-Deployment</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Shutdown-VM</b>
+runbook and then<b> Edit</b> on the menu screen to bring the canvas back up.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="609" height="58" id="Picture 260" src="./Exercise 3_files/image055.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Next
+select Input and Output at the top of the menu.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="606" height="82" id="Picture 12" src="./Exercise 3_files/image056.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>+Add
+input</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="321" height="85" id="Picture 14" src="./Exercise 3_files/image057.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>Name</b>
+field enter <b>VMNAME</b>. For the <b>Type</b> enter <b>String</b> and select <b>Yes</b>
+for <b>Mandatory</b>. Then click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="314" height="452" id="Picture 23" src="./Exercise 3_files/image058.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select <b>+Add
+Input</b> again this time Adding <b>ResourceGroupName</b> for the <b>Name</b>
+field, <b>Type</b> as <b>String</b> and <b>Mandatory</b> as <b>Yes</b>. Select <b>Ok</b>
+and your screen should be the same as below. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="314" height="301" id="Picture 28" src="./Exercise 3_files/image059.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select <b>OK</b>
+once more and then click <b>Save</b> in the upper left hand corner of the menu.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="525" height="85" id="Picture 261" src="./Exercise 3_files/image060.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Next
+select <b>Stop-AzureRmVm</b> from the canvas.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select
+Parameters and then select <b>Name</b> under Parameter Sets.&nbsp; Change the <b>Data
+Source</b> from PowerShell expression to <b>Runbook input</b> and then Select <b>VMNAME</b>
+and Click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="199" height="156" id="Picture 262" src="./Exercise 3_files/image061.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Select <b>ResourceGroupName</b>
+and then change the <b>Data source</b> from PowerShell expression to the <b>Runbook
+input</b>. This time select <b>ResourceGroupName</b> then select <b>OK</b>
+twice bringing you back to the canvas. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Again, click <b>Save</b> on
+the Runbook.&nbsp; Then click <b>Publish</b> and <b>Yes</b> to overwrite the
+previous version.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Using the Azure Portal make
+sure that the <b>WebVMUS</b> VM is running to test the newly updated Runbook.&nbsp;
+Once the VM is verified to be Running move on to the next step.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Azure Portal locate
+the Shutdown-VM in the <b>OPSEXERCISERG</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="147" height="41" id="Picture 264" src="./Exercise 3_files/image062.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="306" height="156" id="Picture 265" src="./Exercise 3_files/image063.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open the <b>Shutdown-VM</b> Runbook
+and then click <b>Start</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="353" height="82" id="Picture 266" src="./Exercise 3_files/image064.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>This time when the Runbook
+is started now, the user will be prompted to enter in the name of the VM and
+the Resource Group in which it resides.&nbsp; Enter <b>WebVMUS</b> and <b>OPSDEMOTM</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="275" height="285" id="Picture 7" src="./Exercise 3_files/image065.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>After entering in the
+Parameters, the job will be submitted by clicking <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The Job Window will appear
+in the Portal.&nbsp; Click the Output window to see the results of the Runbook.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="328" height="309" id="Picture 268" src="./Exercise 3_files/image066.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the job is completed
+the VM will be deallocated.&nbsp; This can be confirmed using the Azure Portal.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="389" height="148" id="Picture 271" src="./Exercise 3_files/image067.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="674" height="46" id="Picture 8" src="./Exercise 3_files/image068.jpg"></p>
+
+<h2>Summary </h2>
+
+<p class="MsoNormal">In this exercise, you configured a variable asset to execute
+against a VM that you created using Azure Automation Service Account. You then
+created a graphical runbook configuring the parameters to execute the shutdown a
+VM.</p>
+
+</div>
+
+
+
+
+</body></html>

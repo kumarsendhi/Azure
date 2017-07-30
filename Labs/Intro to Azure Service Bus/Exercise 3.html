@@ -1,0 +1,621 @@
+
+<!-- saved from url=(0103)https://opsgilityweb.blob.core.windows.net/online-labs/introduction-azure-service-bus/Exercise%203.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;line-height:17.1pt"><a name="_Toc479267229"><b><span style="font-size:16.0pt;color:#5B9BD5">Exercise 3:
+Temporal Decoupling with Service Bus Queues</span></b></a></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc479264633">Overview</a></h2>
+
+<p class="MsoNormal"><a name="_Toc479264634">In this exercise, you will build and
+run a .NET example application that demonstrates the fundamental messaging
+concept of temporal decoupling.</a></p>
+
+<p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;page-break-after:avoid"><a name="_Toc479264635"></a><a name="_Toc479257113"><b><span style="font-size:
+14.0pt;line-height:107%;color:#2E74B5">Time Estimate</span></b></a></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>30 minutes</p>
+
+<p class="MsoNormal"><span style="color:black">&nbsp;</span></p>
+
+<h2><a name="_Toc479264637"></a><a name="_Toc479090846">Learning Objectives</a></h2>
+
+<p class="MsoNormal"><span style="font-size:13.5pt;color:#262626">Understand how
+the <b>Sender</b> program places batches of messages onto the queue and
+the&nbsp;<b>Receiver</b>&nbsp;program is reads those messages off of the queue
+to process them. </span></p>
+
+<p class="MsoNormal"><span style="font-size:13.5pt;color:#262626">Understand how
+the two tiers of this solution, the two programs, can communicate with the
+queue at vastly different speeds. You will see in this case, the&nbsp;<b>Sender</b>&nbsp;is
+running at a much faster rate than the&nbsp;<b>Receiver</b>&nbsp;can handle but
+the queue provides a load-levelling benefit so that the application is
+unaffected by this rate difference.</span></p>
+
+<p class="MsoNormal"><span style="font-size:13.5pt;color:#262626">Learn the notion
+of temporal decoupling which is sending a message at one point in time and does
+not require the message to be received at the same time. The&nbsp;<i>temporal</i>&nbsp;link
+is broken through this decoupling pattern. Even if one of the applications was
+offline, the other would operate normally.</span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;line-height:15.0pt"><a name="_Toc479267234"></a><a name="_Toc458676179"><b><span style="font-size:
+14.0pt;color:#2E74B5">Task 1: Configure the sample app with your shared access
+keys</span></b></a></p>
+
+<p class="MsoNormal"><span style="font-size:13.5pt;color:#262626">In this task,
+you will open the sample app “<b>TemporalDecoupling</b>” and configure it with
+your shared access keys.</span></p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:0in;margin-bottom:.0001pt;
+text-indent:-.25in"><span style="font-size:13.5pt;color:black">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:13.5pt;color:black">Click on ‘Resource Groups’. Select the
+service bus resource group created in previous exercise. Click on ‘Service Bus
+namespace’ object. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:13.5pt;line-height:
+12.85pt"><img width="626" height="293" id="Picture 86" src="./Exercise 3_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:13.5pt"><span style="font-size:13.5pt;color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:13.5pt;text-indent:
+-.25in"><span style="font-size:13.5pt;color:black">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">The Service Bus
+namespace blade should list the objects as below. Select queue<b> orders</b>.</span><img width="626" height="304" id="Picture 66" src="./Exercise 3_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:13.5pt"><span style="font-size:13.5pt;color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-size:13.5pt;color:black">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">In the Settings pane
+of queue ‘orders’ click on ‘Shared access policies’. Select the access policy
+‘read’.</span></p>
+
+<p class="MsoNormal" style="margin-left:.75in;text-indent:-.25in;line-height:
+12.85pt"><img width="626" height="304" id="Picture 67" src="./Exercise 3_files/image003.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.75in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-size:
+13.5pt;color:black">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">Click on copy and note
+the Primary key associated with Shared access policies ‘read’ and ‘write’. </span></p>
+
+<p class="MsoNormal" style="margin-left:.75in;text-indent:-.25in;line-height:
+12.85pt"><img width="510" height="435" id="Picture 68" src="./Exercise 3_files/image004.png"></p>
+
+<p class="MsoNormal" style="margin-left:.75in;text-indent:-.25in;line-height:
+12.85pt"><img width="509" height="430" id="Picture 69" src="./Exercise 3_files/image005.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:13.5pt;text-indent:
+-.25in"><span style="font-size:13.5pt;color:black">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">If you are prompted
+for permission, click&nbsp;<b>Allow Access</b>.</span></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-bottom:13.5pt;line-height:12.85pt"><img width="389" height="183" id="Picture 17" src="./Exercise 3_files/image006.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image046.png"></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">6.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">Leave the portal page open right where it
+is! You will come right back here in a few steps.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">7.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">Open the&nbsp;<b>C:\OpsgilityTraining\service-bus-labs-master</b>&nbsp;folder
+and then double-click the&nbsp;<b>TemporalDecoupling</b>&nbsp;folder. <br>
+<img width="597" height="172" id="Picture 12" src="./Exercise 3_files/image007.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image047.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">8.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">Double-click the TemporalDecoupling.sln
+file to open this solution in Visual Studio 2017. If you get a One-Way Upgrade
+message to VS 2017. Click <b>OK</b>. <br>
+<img width="595" height="197" id="Picture 11" src="./Exercise 3_files/image008.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image048.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">9.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">If you get the welcome screen for Visual
+Studio that prompts you to sign in with a Microsoft account, go ahead and sign
+in with your Microsoft Account.<br>
+<img width="468" height="574" id="Picture 10" src="./Exercise 3_files/image009.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image049.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">11.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;</span><span style="font-size:13.5pt;color:black">If you are prompted about opening the
+solution, simply click OK. Repeat this every time it asks.<br>
+<img width="652" height="229" id="Picture 8" src="./Exercise 3_files/image010.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image051.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">12.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;</span><span style="font-size:13.5pt;color:black">Then open the&nbsp;<b>app.config</b>&nbsp;file
+inside of the&nbsp;<b>Receiver</b>&nbsp;project.<br>
+<img width="357" height="467" id="Picture 7" src="./Exercise 3_files/image011.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image052.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">13.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;</span><span style="font-size:13.5pt;color:black">Then paste your connection information into
+the value elements, completely replace the [your …] text with the correct
+values. There should not be any square brackets after you fill in the details.<br>
+<img width="643" height="153" id="Picture 18" src="./Exercise 3_files/image012.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image053.png"><br>
+<br>
+</span><span class="NoteChar"><span style="font-size:10.0pt">[your namespace] =
+the service bus namespace you chose<br>
+[your access key] = paste in the key that you copied from the Azure management
+site</span></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">14.</span><span style="font-size:7.0pt;
+font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;</span><span style="font-size:13.5pt;color:black">Perform the same steps for the&nbsp;<b>Sender</b>&nbsp;project’s&nbsp;<b>app.config</b>&nbsp;file,
+but this time copy the “<b>Write</b>” shared access signature from the Azure
+management page.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;line-height:15.0pt"><a name="_Toc479267235"><b><span style="font-size:14.0pt;color:#2E74B5">Task 2:
+Run the TemporalDecoupling solution in Visual Studio</span></b></a></p>
+
+<p class="MsoNormal"><span style="font-size:13.5pt;color:#262626">In this task,
+you will run the newly configured&nbsp;<b>TemporalDecoupling</b>&nbsp;solution
+in Visual Studio to see how the Service Bus queue system can work.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">1.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span style="font-size:13.5pt;color:red">IMPORANT!</span></b><span style="font-size:
+13.5pt;color:red">&nbsp;</span><span style="font-size:13.5pt;color:black">Click
+the&nbsp;<b>Build</b>&nbsp;menu and choose&nbsp;<b>Rebuild Solution</b>. If you
+forget this step, your changes to the&nbsp;<b>app.config</b>&nbsp;file might
+not be recognized!<br>
+<img width="324" height="117" id="Picture 13" src="./Exercise 3_files/image013.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image054.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">2.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">In the Solution Explorer window,
+right-click the solution and choose Properties.<br>
+<img width="384" height="396" id="Picture 14" src="./Exercise 3_files/image014.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image055.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">3.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">In the property page that comes up, click
+on&nbsp;<b>Startup Project</b>&nbsp;and then choose&nbsp;<b>Multiple startup
+projects:</b>&nbsp;and change the&nbsp;<b>Action</b>&nbsp;for both projects to
+“<b>Start</b>”. Then click&nbsp;<b>OK</b>.<br>
+<img width="702" height="477" id="Picture 3" src="./Exercise 3_files/image015.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image056.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">4.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">In Visual Studio, click the&nbsp;<b>Start&nbsp;</b>button
+on the menu bar.&nbsp;<br>
+<img width="241" height="97" id="Picture 2" src="./Exercise 3_files/image016.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image057.png"></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:13.5pt;
+margin-left:.5in;text-indent:-.25in"><span style="font-size:13.5pt;color:black">5.</span><span style="font-size:7.0pt;font-family:&quot;Times New Roman&quot;,serif;color:black">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:13.5pt;color:black">Now you can see two running console
+windows that should be showing some output.<br>
+<img width="689" height="303" id="Picture 1" src="./Exercise 3_files/image017.png" alt="https://opsgilityweb.blob.core.windows.net/20160729-introduction-to-microsoft-azure-service-bus/Lab%202%20-%20Queues_files/image058.png"></span></p>
+
+<p class="MsoNormal" style="margin-left:.25in"><span style="font-size:13.5pt;
+color:#262626">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="NoteCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2"><span style="font-size:14.0pt;
+color:black">Note:<b> </b></span>If you review the code inside of the&nbsp;<b>Program.cs</b>&nbsp;files
+in both of the projects in this solution, <a name="_Hlk479267345">you can see
+that the&nbsp;<b>Sender</b>&nbsp;program is placing batches of messages onto
+the queue and the&nbsp;<b>Receiver</b>&nbsp;program is reading those messages
+off of the queue to process them. The key example here is that the two tiers of
+this solution, the two programs, can communicate with the queue at vastly
+different speeds. In this case, the&nbsp;<b>Sender</b>&nbsp;is running at a
+much faster rate than the&nbsp;<b>Receiver</b>&nbsp;can handle but the queue
+provides a load-levelling benefit so that the application is unaffected by this
+rate difference.</a></p>
+
+<p class="NoteCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">The notion of temporal decoupling
+here is that sending a message at one point in time does not require the
+message to be received at the same time, that&nbsp;<i>temporal</i>&nbsp;link is
+broken through this decoupling pattern. Even if one of the applications was
+offline, the other would operate normally.</p>
+
+</div>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

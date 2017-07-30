@@ -1,0 +1,1179 @@
+
+<!-- saved from url=(0112)https://opsgilityweb.blob.core.windows.net/online-labs/deploying-azure-scale-sets-arm-template/Exercise%202.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI Semilight";
+	panose-1:2 11 4 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#4472C4;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2F5496;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#4472C4;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Segoe UI",sans-serif;
+	color:black;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	mso-style-link:"Code Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.CodeCxSpFirst, li.CodeCxSpFirst, div.CodeCxSpFirst
+	{mso-style-name:CodeCxSpFirst;
+	mso-style-link:"Code Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.CodeCxSpMiddle, li.CodeCxSpMiddle, div.CodeCxSpMiddle
+	{mso-style-name:CodeCxSpMiddle;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.CodeCxSpLast, li.CodeCxSpLast, div.CodeCxSpLast
+	{mso-style-name:CodeCxSpLast;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeChar
+	{mso-style-name:"Code Char";
+	mso-style-link:Code;
+	font-family:Consolas;
+	color:#2E75B6;
+	background:#F2F2F2;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+p.NormalIndent1, li.NormalIndent1, div.NormalIndent1
+	{mso-style-name:"Normal Indent 1";
+	mso-style-link:"Normal Indent 1 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.CodeIndent, li.CodeIndent, div.CodeIndent
+	{mso-style-name:"Code Indent";
+	mso-style-link:"Code Indent Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+span.NormalIndent1Char
+	{mso-style-name:"Normal Indent 1 Char";
+	mso-style-link:"Normal Indent 1";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.CodeIndentChar
+	{mso-style-name:"Code Indent Char";
+	mso-style-link:"Code Indent";
+	font-family:"Lucida Console";
+	color:blue;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1>Exercise 2: Create and Author the Template</h1>
+
+<h2>Overview</h2>
+
+<p class="MsoNormal">In this exercise, you will use your LAB VM and Visual Studio
+2017 Community edition to create a new Azure Resource Group project that is
+used for deploying an Azure Resource Manager template. You will then extend the
+virtual network, and add a virtual machine scale set, and a virtual machine for
+SQL server as well as using PowerShell DSC extensions to configure both tiers.<br>
+<br>
+</p>
+
+<h2>Time Estimate</h2>
+
+<p class="MsoNormal">1 hour and 25 minutes</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc479277527">Task 1: Create an Azure Storage Account</a> </h2>
+
+<h3>Overview</h3>
+
+<p class="MsoNormal">In this exercise, you will create a new storage account that
+will be used for deploying artifacts (PowerShell DSC Scripts) in future labs.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:106%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From within the <b>LABVM</b>
+virtual machine, open your browser and navigate to <a href="https://portal.azure.com/">https://portal.azure.com</a>.&nbsp; <a href="http://manage.windowsazure.com/"></a></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Enter the user
+name and password associated with your Microsoft Azure subscription.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">If your account is associated with an
+organization account and a Microsoft account, you may be prompted to choose
+which one to authenticate with for your Microsoft Azure account. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click + <b>New</b>
+-&gt; <b>Storage</b>, and then <b>Storage Account</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%"><img border="0" width="219" height="37" id="Picture 12" src="./Exercise 2_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="629" height="255" id="Picture 24" src="./Exercise 2_files/image002.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Specify the
+following configuration and then click <b>Create</b>.</p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:.5in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="360" valign="top" style="width:269.75pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">a)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Name: <b>unique name for your storage account</b> </p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">b)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Deployment model: <b>Resource Manager</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">c)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Account Kind: <b>General Purpose</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">d)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Performance: <b>Standard</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">e)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Replication: <b>Locally-redundant storage (LRS)</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">f)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>Storage service encryption: <b>Disabled</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">g)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Subscription:&nbsp; <b>Select your subscription</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">h)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+  </span>Resource Group: <b>Create New</b> / <b>ARMTraining</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+  line-height:106%">i)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>Location: <b>The region closest to you</b></p>
+  <p class="MsoListParagraphCxSpMiddle" style="margin:0in;margin-bottom:.0001pt;
+  line-height:normal">&nbsp;</p>
+  </td>
+  <td width="360" valign="top" style="width:269.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoListParagraphCxSpLast" style="margin:0in;margin-bottom:.0001pt;
+  line-height:normal"><img border="0" width="213" height="451" id="Picture 25" src="./Exercise 2_files/image003.jpg"></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc445119935">Task 2: </a>Launch Visual Studio and Create the
+Project</h2>
+
+<h3>Overview</h3>
+
+<p class="MsoNormal">In this task, you will create a new Azure Resource Manager
+project and add a Virtual Machine Scale Set resource to it. </p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Within your LAB VM, double click the Visual Studio icon on the desktop.
+Login with a Microsoft account when prompted. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">If you do not have a Microsoft account,
+navigate to <a href="https://account.microsoft.com/">https://account.microsoft.com</a>
+and create one.</p>
+
+</div>
+
+<p class="MsoNormal"><a name="_Toc445119939">&nbsp;</a></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Within Visual Studio, click<b> File -&gt; New -&gt; Project.</b></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="873" height="110" id="Picture 1" src="./Exercise 2_files/image004.png"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the New
+Project Dialog, navigate to <b>Templates -&gt; Visual C# -&gt; Cloud </b>and
+select the <b>Azure Resource Group</b> project type. Specify the following
+configuration and click <b>OK</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: CloudShopSS</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: C:\OpsgilityTraining</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Solution Name: CloudShopSS</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="686" height="472" id="Picture 2" src="./Exercise 2_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Select the <b>Windows
+Visual Machine Scale Set</b> starter template, and click <b>OK</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="787" height="590" id="Picture 3" src="./Exercise 2_files/image006.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the Solution
+Explorer window, double click the <b>WindowsVisualMachineScaleSet.json</b> file
+to open it in the editor.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="296" height="192" src="./Exercise 2_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the JSON
+Outline window, expand parameters and resources and explore the resources that
+were created automatically by clicking each of them under the resources
+section.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="244" height="318" id="Picture 5" src="./Exercise 2_files/image008.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: Parameters are the values that can be
+specified by the user at deployment time. Resources are the actual resources
+that will be created in Azure by the template. </p>
+
+</div>
+
+<p class="MsoListParagraph" style="margin-left:.75in">&nbsp;</p>
+
+<h2>Task 3: Extend the Virtual Network with a Second Subnet</h2>
+
+<h3>Overview</h3>
+
+<p class="MsoNormal">In this task, you will customize the default virtual network
+by adding a second subnet to it. </p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>The first
+resource we will customize is the virtual network. By default, this virtual
+network will have one subnet and for this deployment it should have two. Using
+the JSON Outline window, expand the variables section and find the<b> subnetName
+</b>variable.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="127" height="21" id="Picture 8" src="./Exercise 2_files/image009.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="951" height="70" id="Picture 7" src="./Exercise 2_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Replace the last
+instance of the text subnet, with the text web. Your variable should now look
+like this:</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="542" height="25" id="Picture 9" src="./Exercise 2_files/image011.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Create another
+variable immediately after the subnetName variable called <b>subnet2Name</b>.
+Set the name of the subnet to <b>SQL</b>. </p>
+
+<p class="MsoListParagraphCxSpLast">You can paste in the code below:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Code" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">"subnet2Name": "[concat(variables('namingInfix'),
+'SQL')]",</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Your variables should look like this:</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="605" height="83" id="Picture 10" src="./Exercise 2_files/image012.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Find the
+subnetPrefix variable using the JSON outline window. Create a new line
+immediately after the comma in the code editor to make room for a new variable.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="652" height="56" id="Picture 11" src="./Exercise 2_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Paste the
+following code after the subnetPrefix variable.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Code" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">"subnet2Prefix"<span style="color:black">: </span><span style="color:#A31515">"10.0.1.0/24"</span><span style="color:black">,</span></p>
+
+</div>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your variables should look like this:</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="612" height="82" id="Picture 40" src="./Exercise 2_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Using the JSON
+Outline window, navigate to the Virtual Network resource.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="179" height="40" id="Picture 13" src="./Exercise 2_files/image015.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Find the subnets
+block, and place your cursor on the right side of the closing brace for the
+first subnet. Press <b>enter</b> to make a new line.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="491" height="166" id="Picture 14" src="./Exercise 2_files/image016.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Paste the
+following code into the new line. This will add the second subnet to the
+virtual network.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="CodeCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">{</p>
+
+<p class="CodeCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp; <span style="color:#2E75B6">"name"</span>:
+<span style="color:#A31515">"[variables('subnet2Name')]"</span>,</p>
+
+<p class="CodeCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp; <span style="color:#2E75B6">"properties"</span>:
+{</p>
+
+<p class="CodeCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp;&nbsp;&nbsp; <span style="color:#2E75B6">"addressPrefix"</span>:
+<span style="color:#A31515">"[variables('subnet2Prefix')]"</span></p>
+
+<p class="CodeCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp; }</p>
+
+<p class="CodeCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">}</p>
+
+</div>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 4: Customize the Virtual Machine Scale Set with the PowerShell DSC
+extension</h2>
+
+<h3>Overview</h3>
+
+<p class="MsoNormal">In this task, you will add a PowerShell DSC extension to the
+virtual machine scale set to customize each instance after it is provisioned.
+The extension will install the web server IIS and deploy an ASP.NET application
+called CloudShop.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the JSON
+Outline window, click the new resource button on the toolbar. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="126" height="49" id="Picture 15" src="./Exercise 2_files/image017.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click the <b>PowerShell
+DSC for VMSS Extension</b> resource, specify the name as <b>DeployCloudShop</b>.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="786" height="114" id="Picture 16" src="./Exercise 2_files/image018.jpg"></p>
+
+<p class="MsoNormal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This step will create a new folder in Solution
+Explorer called DSC with the starter DSC script in the folder.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="303" height="235" id="Picture 17" src="./Exercise 2_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Open the <b>DeployCloudShop.ps1</b>
+script by double clicking it. Also, using File Explorer navigate to
+C:\OpsgilityTraining and double click the <b>scaleset-extension-code.txt</b>
+file to open it in notepad. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Delete all of
+the code in <b>DeployCloudShop.ps1</b> by pressing <b>CTRL-A</b> and pressing <b>delete</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Switch back to
+notepad, and select all of the code in the <b>scaleset-extension-code.txt</b>
+file and copy it to the clipboard by pressing <b>CTRL-A</b> and then <b>CTRL-C</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Paste the copied
+code into <b>DeployCloudShop.ps1</b> by switching back to Visual Studio and
+pasting the code into the file with <b>CTRL-X</b>. Press <b>CTRL-S</b> to save.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>This script
+extension accepts a parameter that references a web application to download and
+deploy to the virtual machine scale set. To accomplish this the template must
+accept the URL for the application to deploy.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Add a new parameter to your template by
+placing your cursor to the right of the last parameter in the
+WindowsVirtualMachineScaleSet.json file and pressing enter. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="389" height="162" id="Picture 18" src="./Exercise 2_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast">Then paste in the following code that
+references the application. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">"webDeployPackage"<span style="color:black">: {</span></p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2"><span style="color:black">&nbsp;&nbsp; </span>"type"<span style="color:black">: </span><span style="color:#A31515">"string"</span><span style="color:black">,</span></p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2"><span style="color:black">&nbsp;&nbsp; </span>"defaultValue"<span style="color:black">:
+</span><span style="color:#A31515">"http://opsgilitytraining.blob.core.windows.net/samples/cloudshop.zip"</span></p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2"><span style="color:black">&nbsp;}</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Using the JSON
+Outline navigate to the <b>VMScaleSet</b> resource.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="160" height="112" id="Picture 19" src="./Exercise 2_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>From there,
+navigate in the file to the <b>nodeName</b> parameter that is passed to the
+Microsoft.PowerShell.DSC extension. Put your cursor after the <b>"localhost"</b>
+value and press <b>enter</b> to create a new line. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: The configurationArguments block is
+where you specify the parameters that are passed to the PowerShell DSC extension.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="701" height="442" id="Picture 20" src="./Exercise 2_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>To pass in the parameter to the
+script paste in the following code:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2"><span style="color:#2E75B6">"webDeployPackage"</span><span style="color:black">: </span>"[parameters('webDeployPackage')]"</p>
+
+</div>
+
+<p class="MsoNormal" style="text-indent:.5in">The code will look like this: </p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="516" height="86" id="Picture 21" src="./Exercise 2_files/image023.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 5: Deploy the Application Database</h2>
+
+<h3>Overview</h3>
+
+<p class="MsoNormal">In this task, you will deploy a SQL Server Virtual Machine
+that will be used for the application database. </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the JSON
+Outline window, click the Add Resource button.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="123" height="49" id="Picture 22" src="./Exercise 2_files/image024.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Choose the <b>Storage
+Account</b> resource, specify the name as <b>sqlstorage</b>, and click <b>Add</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="783" height="588" id="Picture 33" src="./Exercise 2_files/image025.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the JSON
+Outline window, click the Add Resource button.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="123" height="49" id="Picture 34" src="./Exercise 2_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Add another
+virtual machine to the template by clicking the Windows Virtual Machine tile. </p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif"><img border="0" width="260" height="63" id="Picture 23" src="./Exercise 2_files/image026.jpg"></span></p>
+
+<p class="NormalIndent1"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Name this
+virtual machine resource <b>SQLVM,</b> specify<b> sqlstorage </b>for the
+storage account<b>,</b> and reference <b>subnet2Name</b> subnet and then click <b>Add.</b></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="786" height="590" id="Picture 35" src="./Exercise 2_files/image027.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span><span class="ListParagraphChar">In the JSON Outline window, expand the
+variables section, and then navigate to the following variables:</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><img border="0" width="163" height="41" id="Picture 29" src="./Exercise 2_files/image028.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span><span class="ListParagraphChar">Set the values of the <b>SQLVMImagePublisher</b>
+and <b>SQLVMImageOffer</b> variables to the following SQL Server image values:</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">"SQLVMImagePublisher"<span style="color:black">: </span><span style="color:#A31515">"MicrosoftSQLServer"</span><span style="color:black">,</span></p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">"SQLVMImageOffer"<span style="color:black">: </span><span style="color:#A31515">"SQL2014SP2-WS2012R2"</span><span style="color:black">,</span></p>
+
+</div>
+
+<p class="CodeIndent" style="margin-left:0in"><span class="ListParagraphChar"><span style="font-size:12.0pt">&nbsp;</span></span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span><span class="ListParagraphChar">In the JSON Outline window,
+navigate to the <b>SQLVMWindowsOSVersion</b> parameter. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="212" height="24" id="Picture 77" src="./Exercise 2_files/image029.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span><span class="ListParagraphChar"><b>Right click</b> on the variable
+and click <b>delete</b>. </span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span class="ListParagraphChar">Where you deleted the parameter, paste in the following
+code:</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2"><span style="color:#2E75B6">"SQLVMSKU"</span>: {</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp; <span style="color:#2E75B6">"type"</span>: <span style="color:#A31515">"string"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp; <span style="color:#2E75B6">"defaultValue"</span>: <span style="color:#A31515">"Web"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp; <span style="color:#2E75B6">"allowedValues"</span>: [</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#A31515">"Web"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#A31515">"Standard"</span></p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;&nbsp;&nbsp; ]</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">}</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;line-height:normal"><span class="ListParagraphChar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The updated code should look like this:</span></p>
+
+<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><img border="0" width="310" height="264" id="Picture 32" src="./Exercise 2_files/image030.jpg"></p>
+
+<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0in;margin-bottom:0in;
+margin-left:0in;margin-bottom:.0001pt;line-height:normal"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">11.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span class="ListParagraphChar">Click the <b>SQLVM</b> virtual machine resource to
+navigate to its properties. </span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="110" height="29" id="Picture 78" src="./Exercise 2_files/image031.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">12.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span class="ListParagraphChar">You should see a red line beneath <b>SQLVMWindowsOSVersion</b>.
+This means that the parameter is not defined in the parameters section (because
+we just deleted it). You will also see a red square on the navigation bar. This
+means Visual Studio has detected a problem with the JSON file at that location.</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><img border="0" width="408" height="121" id="Picture 26" src="./Exercise 2_files/image032.jpg"><span class="ListParagraphChar">&nbsp;&nbsp; </span><img border="0" width="18" height="114" id="Picture 31" src="./Exercise 2_files/image033.jpg"></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span class="ListParagraphChar">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span class="ListParagraphChar">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span class="ListParagraphChar">Update the SKU reference to point to the renamed
+parameter: <b>SQLVMSKU</b>.</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-autospace:none"><a name="OLE_LINK32"></a><a name="OLE_LINK31"><img border="0" width="407" height="107" id="Picture 79" src="./Exercise 2_files/image034.jpg"></a></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span style="background:white">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span style="background:white">14.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span style="background:white">Using the JSON Outline window, navigate to the last
+variable in the list. In the code editor window make a new line at the end of
+that variable and paste the following code in. &nbsp;&nbsp;</span></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif;
+background:white">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="CodeCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2"><span style="color:#2E75B6">"SQLDISK1"</span><span style="color:black">: </span>"[concat('http://',variables('sqlstorageName'),'.blob.core.windows.net/','vhds','/','dataDisk1.vhd')]"<span style="color:black">,</span></p>
+
+<p class="CodeCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2"><span style="color:#2E75B6">"SQLDISK2"</span><span style="color:black">: </span>"[concat('http://',variables('sqlstorageName'),'.blob.core.windows.net/','vhds','/','dataDisk2.vhd')]"</p>
+
+</div>
+
+<p class="NormalIndent1" style="margin-left:0in;text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif;background:white">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-indent:.5in">Example:</p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="1049" height="71" id="Picture 37" src="./Exercise 2_files/image035.jpg"></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span style="background:white">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span style="background:white">15.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span></span><span style="background:white">Click the SQLVM resource in the JSON Outline and in
+the template file find the <b>osDisk</b> property. Identify the last bracket
+for the osDisk code block and make a new line. </span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span style="background:white">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpLast"><span style="background:white">Paste in the
+following code to reference the data disks. </span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">"dataDisks":
+[</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">{</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"name": "datadisk1",</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"diskSizeGB": "1023",</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"lun": 0,</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"vhd": { "uri": "[variables('SQLDISK1')]" },</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"createOption": "Empty"</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">},</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">{</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"name": "datadisk2",</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"diskSizeGB": "1023",</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"lun": 1,</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"vhd": { "uri": "[variables('SQLDISK2')]" },</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;
+"createOption": "Empty"</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">}</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">]</p>
+
+</div>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal"><span style="background:white">Example:</span></p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="975" height="488" id="Picture 38" src="./Exercise 2_files/image036.jpg"></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="color:black;background:white">&nbsp;</span></p>
+
+<h2><a name="_Toc479277543">Task <span style="background:white">6: Configure a
+PowerShell DSC Extension to define the SQL Server configuration</span></a></h2>
+
+<h3><span style="background:white">Overview</span></h3>
+
+<p class="MsoNormal"><span style="background:white">In this task, you will add a
+PowerShell DSC Extension to the virtual machine to automatically format the
+disks of the SQL Server and also downloads and automatically restore a
+database. </span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><span style="background:white">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Add a new PowerShell DSC Extension named <b>SQLDSC</b> and
+associate with the SQLVM VM.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="597" height="451" id="Picture 257" src="./Exercise 2_files/image037.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Open the <b>SQLDSC.ps1</b> script
+by double clicking it. Also, using File Explorer navigate to <b>C:\OpsgilityTraining</b>
+and double click the <b>sql-extension-code.txt</b> file to open it in notepad. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Delete all of the code in <b>SQLDSC.ps1</b>
+by pressing <b>CTRL-A</b> and pressing <b>delete</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Switch back to notepad, and select
+all of the code in the <b>sql-extension-code.txt</b> file and copy it to the
+clipboard by pressing <b>CTRL-A</b> and then <b>CTRL-C</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Paste the copied code into <b>SQLDSC.ps1</b>
+by switching back to Visual Studio and pasting the code into the file with <b>CTRL-X</b>.
+Press <b>CTRL-S</b> to save.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Summary</h2>
+
+<p class="MsoNormal">In this exercise, you used Visual Studio 2017 Community
+edition to create a new Azure Resource Group project and authored an ARM
+template that defined several resources including a virtual network, virtual
+machine scale sets, and a virtual machine for SQL server. You also specified
+PowerShell DSC extensions to customize both virtual machine tiers at provision
+time. </p>
+
+</div>
+
+
+
+
+</body></html>

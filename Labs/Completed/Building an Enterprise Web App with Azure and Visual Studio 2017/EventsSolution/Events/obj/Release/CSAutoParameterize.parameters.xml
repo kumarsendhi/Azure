@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:seyonentweb.database.windows.net,1433;Initial Catalog=eventsdb;Persist Security Info=False;User ID=demouser;Password=Password123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\demouser\\Desktop\\StudentFiles\ \(1\)\\EventsSolution\\Events\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="RedisConnection-Web.config Connection String" description="RedisConnection Connection String used in web.config by the application to access the database." defaultValue="eventAppCache.redis.cache.windows.net,ssl=true,password=jIR7bWlJtZmbQgs26p0+EA85Ent6UoZBfVZOvL7FQ7g=" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\demouser\\Desktop\\StudentFiles\ \(1\)\\EventsSolution\\Events\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RedisConnection']/@connectionString" />
+  </parameter>
+</parameters>

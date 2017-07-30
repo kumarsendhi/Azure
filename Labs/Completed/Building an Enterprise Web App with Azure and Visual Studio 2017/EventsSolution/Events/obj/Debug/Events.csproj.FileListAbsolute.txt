@@ -1,0 +1,279 @@
+C:\OpsgilityTraining\EventsSolution\Events\bin\Events.dll.config
+C:\OpsgilityTraining\EventsSolution\Events\bin\Events.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Events.pdb
+C:\OpsgilityTraining\EventsSolution\Events\bin\Antlr3.Runtime.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\EntityFramework.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\EntityFramework.SqlServer.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.Edm.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.OData.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.Services.Client.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.Cookies.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Web.Infrastructure.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Newtonsoft.Json.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Owin.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Spatial.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Helpers.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Mvc.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Optimization.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Razor.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.Deployment.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.Razor.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\WebGrease.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Antlr3.Runtime.pdb
+C:\OpsgilityTraining\EventsSolution\Events\bin\EntityFramework.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\EntityFramework.SqlServer.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.Edm.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.OData.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Data.Services.Client.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.Cookies.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Owin.Security.OpenIdConnect.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Newtonsoft.Json.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Spatial.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Helpers.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Mvc.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Razor.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.Deployment.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.WebPages.Razor.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\System.Web.Optimization.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\de\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\es\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\it\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\de\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\es\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\fr\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\it\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ja\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ko\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ru\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\de\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\es\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\fr\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\it\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ja\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ko\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\ru\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hans\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\zh-Hant\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution\Events\obj\Debug\Events.dll
+C:\OpsgilityTraining\EventsSolution\Events\obj\Debug\Events.pdb
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\OpsgilityTraining\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\obj\Debug\Events.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\obj\Debug\Events.pdb
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Events.dll.config
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Events.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Events.pdb
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Antlr3.Runtime.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\EntityFramework.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\EntityFramework.SqlServer.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.Edm.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.OData.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.Services.Client.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.Cookies.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Web.Infrastructure.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Newtonsoft.Json.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Owin.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Spatial.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Helpers.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Mvc.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Optimization.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Razor.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.Deployment.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.Razor.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\WebGrease.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Antlr3.Runtime.pdb
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\EntityFramework.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\EntityFramework.SqlServer.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.Edm.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.OData.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Data.Services.Client.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.Cookies.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Microsoft.Owin.Security.OpenIdConnect.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\Newtonsoft.Json.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Spatial.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Helpers.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Mvc.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Razor.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.Deployment.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.WebPages.Razor.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\System.Web.Optimization.xml
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\de\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\es\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\it\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\de\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\es\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\fr\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\it\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ja\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ko\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ru\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\de\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\es\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\fr\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\it\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ja\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ko\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\ru\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hans\System.Spatial.resources.dll
+C:\OpsgilityTraining\EventsSolution-no-azuread\Events\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Events.dll.config
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Events.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Events.pdb
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Antlr3.Runtime.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\EntityFramework.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\EntityFramework.SqlServer.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.Edm.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.OData.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.Services.Client.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Newtonsoft.Json.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Owin.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Spatial.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Helpers.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Mvc.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Optimization.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Razor.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.Deployment.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.Razor.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\WebGrease.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Antlr3.Runtime.pdb
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\EntityFramework.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\EntityFramework.SqlServer.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.Edm.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.OData.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Data.Services.Client.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Owin.Security.OpenIdConnect.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Newtonsoft.Json.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Spatial.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Helpers.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Mvc.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Razor.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.Deployment.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.WebPages.Razor.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\System.Web.Optimization.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\de\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\es\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\fr\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\it\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ja\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ko\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\ru\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\obj\Debug\Events.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\obj\Debug\Events.pdb
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.Azure.ActiveDirectory.GraphClient.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\StackExchange.Redis.dll
+C:\Users\demouser\Desktop\StudentFiles (1)\EventsSolution\Events\bin\StackExchange.Redis.xml

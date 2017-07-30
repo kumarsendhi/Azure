@@ -1,0 +1,927 @@
+
+<!-- saved from url=(0105)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20Azure%20Storage/Exercise4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	mso-style-link:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.ppBulletList, li.ppBulletList, div.ppBulletList
+	{mso-style-name:"pp Bullet List";
+	mso-style-link:"pp Bullet List Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBulletListIndent, li.ppBulletListIndent, div.ppBulletListIndent
+	{mso-style-name:"pp Bullet List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBulletListChar
+	{mso-style-name:"pp Bullet List Char";
+	mso-style-link:"pp Bullet List";
+	font-family:"Times New Roman",serif;}
+p.ppBulletListIndent2, li.ppBulletListIndent2, div.ppBulletListIndent2
+	{mso-style-name:"pp Bullet List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppCode, li.ppCode, div.ppCode
+	{mso-style-name:"pp Code";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpFirst, li.ppCodeCxSpFirst, div.ppCodeCxSpFirst
+	{mso-style-name:"pp CodeCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpMiddle, li.ppCodeCxSpMiddle, div.ppCodeCxSpMiddle
+	{mso-style-name:"pp CodeCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpLast, li.ppCodeCxSpLast, div.ppCodeCxSpLast
+	{mso-style-name:"pp CodeCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent, li.ppCodeIndent, div.ppCodeIndent
+	{mso-style-name:"pp Code Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpFirst, li.ppCodeIndentCxSpFirst, div.ppCodeIndentCxSpFirst
+	{mso-style-name:"pp Code IndentCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpMiddle, li.ppCodeIndentCxSpMiddle, div.ppCodeIndentCxSpMiddle
+	{mso-style-name:"pp Code IndentCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpLast, li.ppCodeIndentCxSpLast, div.ppCodeIndentCxSpLast
+	{mso-style-name:"pp Code IndentCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2, li.ppCodeIndent2, div.ppCodeIndent2
+	{mso-style-name:"pp Code Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpFirst, li.ppCodeIndent2CxSpFirst, div.ppCodeIndent2CxSpFirst
+	{mso-style-name:"pp Code Indent 2CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpMiddle, li.ppCodeIndent2CxSpMiddle, div.ppCodeIndent2CxSpMiddle
+	{mso-style-name:"pp Code Indent 2CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpLast, li.ppCodeIndent2CxSpLast, div.ppCodeIndent2CxSpLast
+	{mso-style-name:"pp Code Indent 2CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3, li.ppCodeIndent3, div.ppCodeIndent3
+	{mso-style-name:"pp Code Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpFirst, li.ppCodeIndent3CxSpFirst, div.ppCodeIndent3CxSpFirst
+	{mso-style-name:"pp Code Indent 3CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpMiddle, li.ppCodeIndent3CxSpMiddle, div.ppCodeIndent3CxSpMiddle
+	{mso-style-name:"pp Code Indent 3CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpLast, li.ppCodeIndent3CxSpLast, div.ppCodeIndent3CxSpLast
+	{mso-style-name:"pp Code Indent 3CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc438823441">Exercise 4: Download blobs from Azure to the local
+disk.</a> </h1>
+
+<p class="MsoNormal">In this exercise, you will use C# and the Azure SDK to
+programmatically download blob (files) from an Azure Storage Account.</p>
+
+<h2>Time estimate</h2>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>15 minutes</p>
+
+<p class="MsoNormalCxSpFirst" style="margin-left:.5in"><span style="font-size:
+10.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="1" type="1">
+ <li class="MsoNormalCxSpLast"><span style="line-height:107%">Now let’s see how
+     to download blobs from Azure to the local disk. First, create a new method
+     called <b>DownloadBlobs</b>(). Add this method call to <b>BasicBlobOps</b>
+     above the console commands and below the calls to <b>UploadBlobs</b> and <b>GetListOfBlobs</b>.</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">public</span><span style="font-size:9.0pt"> </span><span style="font-size:9.0pt;color:blue">void</span><span style="font-size:9.0pt"> BasicBlobOps()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:green">//set up the objects</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; SetUpObjects();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; UploadBlobs();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;
+GetListOfBlobs();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; DownloadBlobs();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:#2B91AF">Console</span><span style="font-size:
+9.0pt">.WriteLine(</span><span style="font-size:9.0pt;color:#A31515">"Press
+any key to exit."</span><span style="font-size:9.0pt">);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:#2B91AF">Console</span><span style="font-size:
+9.0pt">.ReadLine();</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt">}</span></p>
+
+</div>
+
+<p class="MsoNormalCxSpFirst" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpLast" style="margin-left:.5in"><span style="line-height:
+107%">In <b>DownloadBlobs</b>, let’s start by setting up the directory to which
+we want to download the files. We’re going to create a sub-directory under the <b>localPicsToUploadPath</b>
+and put the files there. </span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">public</span><span style="font-size:9.0pt"> </span><span style="font-size:9.0pt;color:blue">void</span><span style="font-size:9.0pt"> DownloadBlobs()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:green">//create a subfolder for the downloaded
+files </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:green">//&nbsp; under the folder with the images that
+we were using for the upload</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;
+localDownloadPath = </span><span style="font-size:9.0pt;color:#2B91AF">Path</span><span style="font-size:9.0pt">.Combine(localPicsToUploadPath, </span><span style="font-size:9.0pt;color:#A31515">"downloaded"</span><span style="font-size:9.0pt">);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:blue">if</span><span style="font-size:9.0pt"> (!</span><span style="font-size:9.0pt;color:#2B91AF">Directory</span><span style="font-size:
+9.0pt">.Exists(localDownloadPath))</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:#2B91AF">Directory</span><span style="font-size:
+9.0pt">.CreateDirectory(localDownloadPath);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt">}</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="2" type="1">
+ <li class="MsoNormalCxSpLast"><span style="line-height:107%">Next, we’ll define
+     the variable localFile, which is going to be the path and name of the file
+     on the local machine. &nbsp;Copy the code below under </span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:#2B91AF;
+     background:white">CloudBlockBlob</span><span style="font-size:9.5pt;
+     line-height:107%;font-family:Consolas;color:black;background:white">
+     cloudBlockBlob { </span><span style="font-size:9.5pt;line-height:107%;
+     font-family:Consolas;color:blue;background:white">get</span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:black;
+     background:white">; </span><span style="font-size:9.5pt;line-height:107%;
+     font-family:Consolas;color:blue;background:white">set</span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:black;
+     background:white">; }</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt"> localFile = </span><span style="font-size:9.0pt;
+color:blue">string</span><span style="font-size:9.0pt">.Empty;</span></p>
+
+</div>
+
+<ol style="margin-top:0in" start="3" type="1">
+ <li class="MsoNormal"><span style="line-height:107%">Next, let’s add the code
+     for the download. I’m going to check to see if the blob exists before I
+     try to download it, just in case there’s a problem. Let’s download two
+     files. First, you get a reference to the blob, and then you can call the
+     method DownloadToFile to download the blob.&nbsp; Add the code below to the <b>DownloadBlobs</b>
+     method <b><i>under the if statement</i></b>.</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt">cloudBlockBlob =
+cloudBlobContainer.GetBlockBlobReference(image1Name);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">if</span><span style="font-size:9.0pt"> (cloudBlockBlob.Exists())</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; localFile = </span><span style="font-size:9.0pt;color:#2B91AF">Path</span><span style="font-size:9.0pt">.Combine(localDownloadPath,
+image1Name);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;
+cloudBlockBlob.DownloadToFile(localFile, </span><span style="font-size:9.0pt;
+color:#2B91AF">FileMode</span><span style="font-size:9.0pt">.Create);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">cloudBlockBlob =
+cloudBlobContainer.GetBlockBlobReference(image2Name);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">if</span><span style="font-size:9.0pt"> (cloudBlockBlob.Exists())</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; localFile = </span><span style="font-size:9.0pt;color:#2B91AF">Path</span><span style="font-size:9.0pt">.Combine(localDownloadPath,
+image2Name);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;
+cloudBlockBlob.DownloadToFile(localFile, </span><span style="font-size:9.0pt;
+color:#2B91AF">FileMode</span><span style="font-size:9.0pt">.Create);</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt">}</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:.5in"><img width="376" height="285" id="Picture 14" src="./Exercise4_files/image001.jpg"></p>
+
+<ol style="margin-top:0in" start="4" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Now if you run
+     the whole console app by hitting <b>F5</b>, it will upload the files, list
+     the blobs, and then download these files. You can check the local
+     directory (<i>C:\OpsgilityTraining\Images\downloaded</i>) to see that the
+     downloads succeeded.</span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><img width="584" height="133" id="Picture 15" src="./Exercise4_files/image002.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

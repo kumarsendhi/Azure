@@ -1,0 +1,991 @@
+
+<!-- saved from url=(0118)https://opsgilityweb.blob.core.windows.net/online-labs/authoring-arm-template-iaas-visualstudio-2017/Exercise%201.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI Semilight";
+	panose-1:2 11 4 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:24.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+p.MsoRMPane, li.MsoRMPane, div.MsoRMPane
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#5B9BD5;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyText, li.ppBodyText, div.ppBodyText
+	{mso-style-name:"pp Body Text";
+	mso-style-link:"pp Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent, li.ppBodyTextIndent, div.ppBodyTextIndent
+	{mso-style-name:"pp Body Text Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent2, li.ppBodyTextIndent2, div.ppBodyTextIndent2
+	{mso-style-name:"pp Body Text Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.5in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBodyTextIndent3, li.ppBodyTextIndent3, div.ppBodyTextIndent3
+	{mso-style-name:"pp Body Text Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBodyTextChar
+	{mso-style-name:"pp Body Text Char";
+	mso-style-link:"pp Body Text";
+	font-family:"Times New Roman",serif;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+p.TableNorm, li.TableNorm, div.TableNorm
+	{mso-style-name:"Table Norm";
+	mso-style-link:"Table Norm Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.TableNormBOLD, li.TableNormBOLD, div.TableNormBOLD
+	{mso-style-name:"Table Norm BOLD";
+	mso-style-link:"Table Norm BOLD Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+span.TableNormChar
+	{mso-style-name:"Table Norm Char";
+	mso-style-link:"Table Norm";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.TableNormBOLDChar
+	{mso-style-name:"Table Norm BOLD Char";
+	mso-style-link:"Table Norm BOLD";
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+p.ActionEmphasis, li.ActionEmphasis, div.ActionEmphasis
+	{mso-style-name:ActionEmphasis;
+	mso-style-link:"ActionEmphasis Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;
+	font-weight:bold;}
+span.ActionEmphasisChar
+	{mso-style-name:"ActionEmphasis Char";
+	mso-style-link:ActionEmphasis;
+	font-family:"Segoe UI",sans-serif;
+	color:black;
+	font-weight:bold;}
+p.TitleSubHeading, li.TitleSubHeading, div.TitleSubHeading
+	{mso-style-name:"Title Sub Heading";
+	mso-style-link:"Title Sub Heading Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleSubHeadingChar
+	{mso-style-name:"Title Sub Heading Char";
+	mso-style-link:"Title Sub Heading";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	mso-style-link:"Table Heading Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;
+	color:#F2F2F2;
+	font-weight:bold;}
+span.TableHeadingChar
+	{mso-style-name:"Table Heading Char";
+	mso-style-link:"Table Heading";
+	font-family:"Segoe UI Semilight",sans-serif;
+	color:#F2F2F2;
+	font-weight:bold;}
+p.NormalIndent1, li.NormalIndent1, div.NormalIndent1
+	{mso-style-name:"Normal Indent 1";
+	mso-style-link:"Normal Indent 1 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:8.0pt;
+	font-family:"Segoe UI Semilight",sans-serif;}
+p.CodeIndent, li.CodeIndent, div.CodeIndent
+	{mso-style-name:"Code Indent";
+	mso-style-link:"Code Indent Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Lucida Console";
+	color:blue;}
+span.NormalIndent1Char
+	{mso-style-name:"Normal Indent 1 Char";
+	mso-style-link:"Normal Indent 1";
+	font-family:"Segoe UI Semilight",sans-serif;}
+span.CodeIndentChar
+	{mso-style-name:"Code Indent Char";
+	mso-style-link:"Code Indent";
+	font-family:"Lucida Console";
+	color:blue;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc479277529">Exercise 1: Creating an ARM Template</a> </h1>
+
+<h2><a name="_Toc479277530">Overview</a></h2>
+
+<p class="MsoNormal">In this lab, you will create a new Azure Resource Manager
+template add a virtual network and then deploy it to Microsoft Azure. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">TIP:&nbsp; In the
+Student Files for this lab there is a zip folder called FINAL-ARMIntro.zip
+which contains the completed Visual Studio solution.&nbsp; This should only be used
+as a ‘last resort’ troubleshooting step in case the deployment is not working
+and the student is unable to determine the syntax issues they are
+experiencing.&nbsp; Two websites that are useful are <a href="http://www.jsonlint.com/">http://www.jsonlint.com</a> for determining if
+the JSON is valid and <a href="http://www.text-compare.com/">http://www.text-compare.com</a>
+to see differences between your text files and the solution provided.</p>
+
+</div>
+
+<h2><a name="_Toc479277531">Time Estimate</a></h2>
+
+<p class="MsoListParagraph">30 minutes</p>
+
+<h2><a name="_Toc422630701"></a><a name="_Toc479277532"></a><a name="_Toc422630699">Task 1: Create a </a>new Azure Resource Manager Project</h2>
+
+<p class="MsoListParagraphCxSpFirst"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Launch <b>Visual Studio 2017 </b>and
+Sign in using your Visual Studio Account. (Click Sign Up, if you don’t have one
+and complete the process.)</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="290" height="347" id="Picture 37" src="./Exercise 1_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Within Visual Studio 2017 click <b>File</b>,
+<b>New</b>, and <b>Project</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="620" height="171" id="Picture 1" src="./Exercise 1_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Navigate to <b>Templates</b>, <b>Visual
+C#</b>, <b>Cloud</b>, and select <b>Azure Resource Group</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="518" height="388" id="Picture 62" src="./Exercise 1_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Change the name of the solution to: <b>ARMLabIntro</b>
+and the location to <b>C:\OpsgilityTraining</b>, and then click <b>OK</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="292" height="92" id="Picture 8" src="./Exercise 1_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Select the <b>Blank Template</b>, and
+click <b>OK</b>.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="251" height="60" id="Picture 5" src="./Exercise 1_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="color:black">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="color:black">Expand the <b>ARMLabIntro</b> project,
+and open the <b>azuredeploy.json</b> file.</span></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="264" height="128" id="Picture 40" src="./Exercise 1_files/image006.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpLast"><span style="color:black">&nbsp;</span></p>
+
+<h2><a name="_Toc479277533">Task 2: Add a Virtual Network to the ARM Template</a></h2>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The <b>azuredeploy.json</b>
+file contains four different sections: parameters, variables, resources and
+outputs. On the left hand side, a new window called <b>JSON Outline</b> should
+have been opened as well. If this was not the case, go to the <b>View</b>
+menu-&gt;<b>Other Windows</b> and choose <b>JSON Outline</b>. The window should
+look like this:</p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif"><img border="0" width="312" height="174" id="Picture 6" src="./Exercise 1_files/image007.jpg"></span></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><a name="Task1_step7"></a><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>JSON
+Outline</b> window press the <b>Add Resource</b> button on the top left corner,
+or right click on the resources and choose <b>Add New Resource</b>. </p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="178" height="168" id="Picture 4" src="./Exercise 1_files/image008.jpg"></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>Add
+Resource</b> dialog choose <b>Virtual Network</b> and name it <b>OPSTrainingVNET,
+</b>then click <b>Add</b>.</p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="588" height="213" id="Picture 65" src="./Exercise 1_files/image009.jpg"></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Go to the <b>azuredeploy.json</b>
+file, and inspect its content. Review the <b>variables</b> section. It should
+look like this:</p>
+
+<p class="CodeIndent"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"variables"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: {</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETPrefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.0.0/16"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet1Name"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"Subnet-1"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet1Prefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.0.0/24"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet2Name"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"Subnet-2"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet2Prefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.1.0/24"</span></p>
+
+<p class="CodeIndent" style="margin-left:0in;text-indent:.25in"><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">&nbsp;},</span></p>
+
+<p class="CodeIndent"><span style="color:black">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><a name="Task1_step11"></a>5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the name of the <b>Subnet-1</b> to <b>FrontendNetwork</b>, and
+the name of <b>Subnet-2</b> to <b>BackendNetwork</b>. <b><u>Save the file after
+making the changes</u></b>.</p>
+
+<p class="NormalIndent1"><span lang="SV" style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"variables"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: {</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETPrefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.0.0/16"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet1Name"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"FrontendNetwork"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet1Prefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.0.0/24"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet2Name"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"BackendNetwork"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">,</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.5pt;
+font-family:Consolas;color:#2E75B6;background:white">"OPSTrainingVNETSubnet2Prefix"</span><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">: </span><span style="font-size:9.5pt;font-family:Consolas;color:#A31515;background:white">"10.0.1.0/24"</span></p>
+
+<p class="NormalIndent1"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;&nbsp;&nbsp; },</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal"><a name="Task1_step12"></a>6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Deploy the template by right clicking on the project, and choosing <b>Deploy</b>-&gt;<b>New
+Deployment</b>.</p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="679" height="104" id="Picture 63" src="./Exercise 1_files/image010.png"></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>If you have
+not logged in to the account used for your Azure subscription yet, you will be
+asked to do so now. </p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;line-height:normal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>First fill
+in the email address associated with the Azure account and press continue.</p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif"><img border="0" width="406" height="237" id="Picture 34" src="./Exercise 1_files/image011.jpg"></span></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select the
+Azure subscription you want to use for deploying the lab, and under the
+Resource Group dropdown click <b>&lt;Create New …&gt;.</b></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span><img border="0" width="480" height="222" id="Picture 258" src="./Exercise 1_files/image012.jpg"></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>On the <b>Create Resource
+Group</b> dialog accept the default value for the name and choose the closest
+location to you, and press <b>Create.</b></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><img border="0" width="384" height="278" id="Picture 256" src="./Exercise 1_files/image013.jpg"></p>
+
+<p class="NormalIndent1" style="text-indent:0in"><span style="font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>When you are back on the <b>Deploy
+to Resource Group</b> dialog, press <b>Deploy </b>to execute the template.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>View the created resource
+group and virtual network in the Azure Management Portal by clicking the <b>Resource
+Groups</b> button and clicking the name of your resource group.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="119" height="31" id="Picture 47" src="./Exercise 1_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="312" height="40" id="Picture 7" src="./Exercise 1_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="422" height="122" id="Picture 10" src="./Exercise 1_files/image016.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc479277534">Summary</a></h2>
+
+<p class="MsoNormal">In this exercise, you started from creating an empty ARM template
+using Visual Studio 2017, added a virtual network with two subnets to it, and finally
+deployed the template to an Azure Resource Group.</p>
+
+</div>
+
+
+
+
+</body></html>

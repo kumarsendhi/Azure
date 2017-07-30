@@ -1,0 +1,1983 @@
+
+<!-- saved from url=(0107)https://opsgilityweb.blob.core.windows.net/online-labs/building-enterprise-web-app-vs2017/Exercise%204.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	mso-style-link:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.ppBulletList, li.ppBulletList, div.ppBulletList
+	{mso-style-name:"pp Bullet List";
+	mso-style-link:"pp Bullet List Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBulletListIndent, li.ppBulletListIndent, div.ppBulletListIndent
+	{mso-style-name:"pp Bullet List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBulletListChar
+	{mso-style-name:"pp Bullet List Char";
+	mso-style-link:"pp Bullet List";
+	font-family:"Times New Roman",serif;}
+p.ppBulletListIndent2, li.ppBulletListIndent2, div.ppBulletListIndent2
+	{mso-style-name:"pp Bullet List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppCode, li.ppCode, div.ppCode
+	{mso-style-name:"pp Code";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpFirst, li.ppCodeCxSpFirst, div.ppCodeCxSpFirst
+	{mso-style-name:"pp CodeCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpMiddle, li.ppCodeCxSpMiddle, div.ppCodeCxSpMiddle
+	{mso-style-name:"pp CodeCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpLast, li.ppCodeCxSpLast, div.ppCodeCxSpLast
+	{mso-style-name:"pp CodeCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent, li.ppCodeIndent, div.ppCodeIndent
+	{mso-style-name:"pp Code Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpFirst, li.ppCodeIndentCxSpFirst, div.ppCodeIndentCxSpFirst
+	{mso-style-name:"pp Code IndentCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpMiddle, li.ppCodeIndentCxSpMiddle, div.ppCodeIndentCxSpMiddle
+	{mso-style-name:"pp Code IndentCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpLast, li.ppCodeIndentCxSpLast, div.ppCodeIndentCxSpLast
+	{mso-style-name:"pp Code IndentCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2, li.ppCodeIndent2, div.ppCodeIndent2
+	{mso-style-name:"pp Code Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpFirst, li.ppCodeIndent2CxSpFirst, div.ppCodeIndent2CxSpFirst
+	{mso-style-name:"pp Code Indent 2CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpMiddle, li.ppCodeIndent2CxSpMiddle, div.ppCodeIndent2CxSpMiddle
+	{mso-style-name:"pp Code Indent 2CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpLast, li.ppCodeIndent2CxSpLast, div.ppCodeIndent2CxSpLast
+	{mso-style-name:"pp Code Indent 2CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3, li.ppCodeIndent3, div.ppCodeIndent3
+	{mso-style-name:"pp Code Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpFirst, li.ppCodeIndent3CxSpFirst, div.ppCodeIndent3CxSpFirst
+	{mso-style-name:"pp Code Indent 3CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpMiddle, li.ppCodeIndent3CxSpMiddle, div.ppCodeIndent3CxSpMiddle
+	{mso-style-name:"pp Code Indent 3CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpLast, li.ppCodeIndent3CxSpLast, div.ppCodeIndent3CxSpLast
+	{mso-style-name:"pp Code Indent 3CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc440575233"></a><a name="_Toc479037269">Exercise 4: Building an
+Azure AD Aware Web App</a> </h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc479037270">Overview</a></h2>
+
+<p class="MsoNormal"><span style="line-height:107%">In this exercise, you will create
+a web application that will leverage the SQL Database that you created earlier.
+You will then configure authentication with Azure AD, and write code to query
+the Azure AD Graph API.</span></p>
+
+<h2><a name="_Toc479037271">Time Estimate</a></h2>
+
+<p class="MsoNormal">90 Minutes</p>
+
+<p class="MsoNormal"><span style="line-height:107%">&nbsp;</span></p>
+
+<h2><a name="_Toc479037272"></a><a name="_Toc440575241">Task 1: Create a New
+Azure Web App</a></h2>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the
+Azure portal (portal.azure.com), click on <b>+New</b> &gt; <b>Web + Mobile</b>
+&gt; <b>Web App</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="660" height="322" id="Picture 955" src="./Exercise 4_files/image001.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify the
+following settings and click <b>Create</b> to provision the web application:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>App name: (<b><i>unique name ex: </i>entwebapp101</b>)</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource Group: <b>EntWebApp_RG</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>App Service plan/Location: <b>Create a new App Service Plan</b>
+named <b>EntWebApp-Plan</b> in the same region you deployed the database. Specify
+<b>S1 Standard </b>as the <b>pricing tier</b> and click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Application Insights: <b>On</b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst"><img width="665" height="305" id="Picture 956" src="./Exercise 4_files/image002.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+deployment of the web application takes ~2-5 minutes.&nbsp; You can monitor the
+status by clicking the notifcation icon on the top toolbar in the portal.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="484" height="111" id="Picture 957" src="./Exercise 4_files/image003.png"></p>
+
+<p class="MsoListParagraphCxSpLast"><img width="482" height="127" id="Picture 40" src="./Exercise 4_files/image004.png"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc479037273">Task 2: Open Solution and Configure Data Settings</a></h2>
+
+<p class="MsoNormal">In this task, you will open the Events solution and
+configure connection strings as well as create the tables in SQL needed to run
+the solution.<a name="_Toc440575239"></a><a name="_Toc438740613"></a></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>While logged into <b>labvm</b>, open the Events solution by
+double-clicking <b><i>C:\OpsgilityTraining\EventsSolution\Events.sln</i></b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">If this is the first time you have launched
+Visual Studio 2017, you will be prompted to sign in with an account licensed
+for this product. For the community version, you can use any Microsoft account
+or ideally the same set of credentials you are using for Azure. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Confirm
+that you can successfully build the solution by right-clicking on the <b>Events</b>
+solution and choosing <b>Build Solution</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="268" height="106" id="Picture 934" src="./Exercise 4_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on <b>Web.config</b>
+in the <b>Solution Explorer</b> window.<br>
+<img width="641" height="266" id="Picture 529" src="./Exercise 4_files/image006.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>To obtain
+the connection string for the primary database configured in Exercise 2, log
+into the Azure portal via <a href="https://portal.azure.com/">https://portal.azure.com</a>
+and click on <b>Resource groups</b> <b>&gt; EventsDB_RG &gt; eventsdb </b>and
+the click <b>Show database connection</b>. Copy the value for the ADO.NET
+connection string to your clipboard.<br>
+<img border="0" width="684" height="295" id="Picture 47" src="./Exercise 4_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="687" height="162" id="Picture 48" src="./Exercise 4_files/image008.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Update the
+<b>DefaultConnection</b> connectionString in web.config with the value in your
+clipboard.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>NOTE:</b> The connection string that is
+copied has placeholder data for the user and password – be sure to update these
+with valid values (ex: <b>demouser</b> | <b>demo@pass123</b>).</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="384" height="47" id="Picture 56" src="./Exercise 4_files/image009.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><br>
+<img border="0" width="692" height="299" id="Picture 533" src="./Exercise 4_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+<img border="0" width="702" height="162" id="Picture 50" src="./Exercise 4_files/image011.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>You will
+now add the connection strings to the <b>Application Connection Strings</b> in
+the Azure portal. &nbsp;Click on <b>Resource groups</b>, click <b>EntWebApp_RG</b>
+and choose your <b>App Service</b><br>
+<img border="0" width="667" height="309" id="Picture 59" src="./Exercise 4_files/image012.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Application
+settings</b> and scroll to the <b>Connection strings</b> section and add a new
+connection string called <b>DefaultConnection</b>, and paste the value from the
+web.config. Click <b>Save</b> after you are through. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="674" height="83" id="Picture 944" src="./Exercise 4_files/image013.jpg"><br>
+<br>
+</p>
+
+<h2><a name="_Toc479037274">Task 3: Update the application for transient fault
+handling</a></h2>
+
+<p class="MsoNormal">In this task, you will update the existing ADO.NET code to
+use the Transient Fault Handling block. The Transient Fault Handling
+Application Block for Azure ("Topaz") provides a set of reusable and
+testable components for adding retry logic into your Azure applications
+leveraging Azure SQL Database. This makes your Azure application more reliable
+and resilient to transient faults (such as temporary network connectivity
+issues or temporary service unavailability). This improves overall application
+stability.</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Within Visual Studio on the top menu click <b>View</b> -&gt; <b>Other
+Windows</b> -&gt; <b>Package Manager Console</b> and execute the following
+command to install the Enterprise Library Transient Fault Handling block from
+Nuget.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Install-Package EnterpriseLibrary.TransientFaultHandling</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="659" height="189" id="Picture 958" src="./Exercise 4_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Execute
+the following command to install the data library. This will enable several classes
+for reliable ADO.NET SqlConnections.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Install-Package EnterpriseLibrary.TransientFaultHandling.Data</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="666" height="192" id="Picture 959" src="./Exercise 4_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open the <b>global.asax</b>
+file and add the following using statement immediately after
+System.Web.Routing.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="121" height="29" id="Picture 953" src="./Exercise 4_files/image016.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Add the
+following code to the Application_Start() method immediately after the call to
+BundleConfig.RegisterBundles. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">var strategy = new FixedInterval("fixed",
+10, TimeSpan.FromSeconds(3));</p>
+
+<p class="CodeBlockCxSpMiddle">var strategies = new List&lt;RetryStrategy&gt; {
+strategy };</p>
+
+<p class="CodeBlockCxSpMiddle">var manager = new RetryManager(strategies,
+"fixed");</p>
+
+<p class="CodeBlockCxSpLast">RetryManager.SetDefault(manager);</p>
+
+</div>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">This code establishes an automatic retry
+policy to connect to the SQL Database. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open the <b>EventsRepository.cs
+</b>in Visual Studio. <br>
+<img border="0" width="148" height="43" id="Picture 946" src="./Exercise 4_files/image017.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Add the
+following using statements to the end of the existing using statements. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">using
+Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;</p>
+
+<p class="CodeBlockCxSpLast">using
+Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data;</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Update the
+<b>GetConnection</b> method to use the <b>ReliableSqlConnection</b> class
+instead of SqlConnection. This class will use the retry settings specified in
+the global.asax.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">private <b>Reliable</b>SqlConnection
+GetConnection()</p>
+
+<p class="CodeBlockCxSpMiddle">{</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; String conString =
+ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <b>Reliable</b>SqlConnection sqlConnection =
+new <b>Reliable</b>SqlConnection(conString);</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; return sqlConnection;</p>
+
+<p class="CodeBlockCxSpLast">}</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span lang="EN-NZ">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-NZ">Update the <b>CreateCommand</b> method by replacing the following
+code: </span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span lang="EN-NZ">&nbsp;SqlConnection connection =
+GetConnection();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span lang="EN-NZ">&nbsp;var command = new SqlCommand();</span></p>
+
+<p class="CodeBlockCxSpLast"><span lang="EN-NZ">&nbsp;command.Connection = connection;</span></p>
+
+</div>
+
+<p class="MsoListParagraph"><span lang="EN-NZ">with the following:</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span lang="EN-NZ">ReliableSqlConnection connection =
+GetConnection();</span></p>
+
+<p class="CodeBlockCxSpLast"><span lang="EN-NZ">var command =
+SqlCommandFactory.CreateCommand(connection);</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Rebuild
+the solution to ensure everything is correct. </p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc479037275">Task 4: Create Event Application Tables in SQL</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create tables in your SQL
+instance with some data that will be leveraged by the application.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Using <b>Visual
+Studio</b>, click <b>File -&gt; Open -&gt; File</b> and open the <b>EventTables.sql</b>
+file located in <b>C:\OpsgilityTraining\EventsSolution</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="615" height="345" id="Picture 62" src="./Exercise 4_files/image018.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>To connect
+to your SQL database to execute the script, click <b>SQL &gt; Connection &gt;
+Connect </b>from the toolbar.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-top:12.0pt"><img border="0" width="596" height="266" id="Picture 63" src="./Exercise 4_files/image019.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>Connect</b>
+window, add the host name for your SQL Database (from the connection string),
+change Authentication to SQL Server Authentication and specify the credentials
+used earlier to create the database and click <b>Connect</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="243" height="296" id="Picture 1" src="./Exercise 4_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the
+green play button (not the Start Button) to execute the script and populate the
+tables.<br>
+<img border="0" width="214" height="124" id="Picture 546" src="./Exercise 4_files/image021.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>You will
+get a message to indicate the update was successful</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="302" height="344" id="Picture 585" src="./Exercise 4_files/image022.png"></p>
+
+<p class="MsoListParagraphCxSpLast"><span lang="EN-NZ">&nbsp;</span></p>
+
+<h2><a name="_Toc479037276"></a><a name="_Toc440575244">Task 5: Configure Web
+App with Azure AD Authentication</a></h2>
+
+<p class="MsoNormal">In this exercise, you will configure a web application to
+use Azure AD Authentication using your subscription’s Azure Active Directory
+Tenant.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On <b>Solution
+Explorer</b>, <b>right-click</b> on <b>Service References</b> and click <b>Add
+Connected Service</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="572" height="123" id="Picture 39" src="./Exercise 4_files/image023.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Close <b>Authentication
+with Azure Active Directory</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="546" height="96" id="Picture 42" src="./Exercise 4_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the
+Configure Azure AD Authentication dialog click <b>Next</b>.<br>
+<img border="0" width="459" height="312" id="Picture 36" src="./Exercise 4_files/image025.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Choose
+your Domain from the dropdown list and click <b>create a new Azure AD
+application using the selected domain </b>and click <b>Next</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="675" height="459" id="Picture 586" src="./Exercise 4_files/image026.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Your
+application will be enabled with Read directory data permissions to read
+attributes out of Azure Active Directory. Click <b>Finish</b> to close the
+wizard.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="550" height="379" id="Picture 38" src="./Exercise 4_files/image027.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>If you get
+prompts to overwrite certain C# class files, choose <b>Yes</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Note the
+changes to your project by the addition of the wizard. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="522" height="321" id="Picture 43" src="./Exercise 4_files/image028.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>NOTE:</b> Build solution and ensure that
+build is successful but <b>DO NOT RUN THE APPLICATION NOW</b>. Grant the
+application Read directory data permissions by following the below steps. It is
+important to set this prior to the first access because the permissions of the
+application are cached.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open your <b>web.config</b>
+file and note the settings that were added by the wizard. These are specific to
+connecting to Azure AD for your application. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="628" height="203" id="Picture 67" src="./Exercise 4_files/image029.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Log into the
+Azure Management Portal (<a href="https://portal.azure.com/">https://portal.azure.com</a>)</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Navigate to <b>Azure Active
+Directory</b> under <b>More Services</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="470" height="571" id="Picture 588" src="./Exercise 4_files/image030.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click on the <b>App registrations</b>
+link and then click on the <b>Events</b> application entry.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="663" height="280" id="Picture 592" src="./Exercise 4_files/image031.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click on the <b>required
+permissions</b> setting section and then click on <b>Windows Azure Active
+Directory</b>.<br>
+<img border="0" width="668" height="199" id="Picture 593" src="./Exercise 4_files/image032.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Enable <b>Read Directory
+Data</b> in <b>Application Permissions</b> and click <b>SAVE</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="561" height="316" id="Picture 596" src="./Exercise 4_files/image033.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>NOTE:</b> Grant the application Read
+directory data permissions to the directory. It is important to set this prior
+to the first access because the permissions of the application are cached.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><a name="_Toc440575245">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click
+the <b>Grant Permissions</b> button and confirm when prompted to complete
+granting permissions to read the directory.</a></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="264" height="108" id="Picture 76" src="./Exercise 4_files/image034.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc479037277">Task 6: Validate Integration with Azure AD</a></h2>
+
+<p class="MsoNormal">In this exercise, you will launch the web application
+locally and login using Azure AD credentials to validate the integration. </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Close all
+Internet Explorer windows.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In Visual
+Studio, confirm that Internet Explorer is chosen and click it to launch the
+application debug mode. If desired, click Browse With… select Internet Explorer
+and Set as Default. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="136" height="117" id="Picture 898" src="./Exercise 4_files/image035.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="277" height="293" id="Picture 899" src="./Exercise 4_files/image036.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="500" height="110" id="Picture 609" src="./Exercise 4_files/image037.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Choose <b>Yes</b>
+on the prompts for the SSL self-signed certificate.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="434" height="176" id="Picture 615" src="./Exercise 4_files/image038.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="424" height="357" id="Picture 616" src="./Exercise 4_files/image039.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Login
+using your Azure account.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: Any user in your Azure AD tenant will
+be able to access the site. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>After a
+successful login, you will see the following error. The call to
+_eventsAppService.ActiveDirectoryUsersAsync() is failing because you need to
+add code to query Azure Active Directory and return a list of users.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="637" height="135" id="Picture 45" src="./Exercise 4_files/image040.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc479037278">Task 7: Use the Graph API to Query Azure AD</a> </h2>
+
+<p class="MsoNormal">In this exercise, you will add some code to query Azure AD
+for a list of users for the events application and read data such as name and
+the users thumbnail picture.</p>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+the <b>Microsoft.Azure.ActiveDirectory.GraphClient</b> Nuget package by running
+the following command:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Install-Package Microsoft.Azure.ActiveDirectory.GraphClient</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">You should see the following output when the
+package has completed installation. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="605" height="201" id="Picture 53" src="./Exercise 4_files/image041.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+the Active Directory clients nugget page by running the following command: </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Install-Package
+Microsoft.IdentityModel.Clients.ActiveDirectory</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Right
+click on <b>Helpers</b>, click <b>Add</b>, and then click <b>Existing Item</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="593" height="117" id="Picture 58" src="./Exercise 4_files/image042.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select <b>both</b>
+files in the <b>OpsgilityTraining\Helpers</b> folder and click <b>Add</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="310" height="173" id="Picture 65" src="./Exercise 4_files/image043.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="NoteCxSpFirst" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">The AzureADConstants class simply
+reads the configuration from your web.config (or later from App Settings in
+Azure Web Apps) to determine how to connect to Azure AD. </p>
+
+<p class="NoteCxSpMiddle" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">&nbsp;</p>
+
+<p class="NoteCxSpLast" style="margin-top:6.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;background:#F2F2F2">Examine the class AzureADAuthHelper.
+This class has several methods to help you authenticate to Azure AD and
+generate an authentication token. It also contains the method
+GetActiveDirectoryClient which you will use to query the Azure AD Graph API.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+implementation for the ConfigureAuth method needs to be updated to support
+async methods. Open the file \App_Start\Startup.Auth.cs and update the <b>AuthorizationCodeRecieved</b>
+code block to match the following: </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="1155" height="430" id="Picture 7" src="./Exercise 4_files/image044.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">AuthorizationCodeReceived = <span style="color:
+blue">async</span> (context) =&gt;</p>
+
+<p class="CodeBlockCxSpMiddle">{</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:blue">var</span> code =
+context.Code;</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:#2B91AF">ClientCredential</span>
+credential = <span style="color:blue">new</span> <span style="color:#2B91AF">ClientCredential</span>(clientId,
+appKey);</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:blue">string</span>
+signedInUserID = context.AuthenticationTicket.Identity.FindFirst(<span style="color:#2B91AF">ClaimTypes</span>.NameIdentifier).Value;</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:#2B91AF">AuthenticationContext</span>
+authContext = <span style="color:blue">new</span> <span style="color:#2B91AF">AuthenticationContext</span>(Authority,
+<span style="color:blue">new</span> <span style="color:#2B91AF">ADALTokenCache</span>(signedInUserID));</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:blue">var</span> result = <span style="color:blue">await</span>
+authContext.AcquireTokenByAuthorizationCodeAsync(</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; code, <span style="color:blue">new</span> <span style="color:#2B91AF">Uri</span>(<span style="color:#2B91AF">HttpContext</span>.Current.Request.Url.GetLeftPart(<span style="color:#2B91AF">UriPartial</span>.Path)), credential, graphResourceId);</p>
+
+<p class="CodeBlockCxSpLast">}</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open the
+file <b>EventsAppService.cs</b> in the Repository folder. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="249" height="81" id="Picture 51" src="./Exercise 4_files/image045.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Add the
+following using statements to the end of the existing using statements:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">using Microsoft.Azure.ActiveDirectory.GraphClient;</p>
+
+<p class="CodeBlockCxSpLast">using Microsoft.Azure.ActiveDirectory.GraphClient.Extensions;</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Find the
+following method <b>ActiveDirectoryUsersAsync</b>():</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="514" height="101" id="Picture 52" src="./Exercise 4_files/image046.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Add the
+following code to the <b>ActiveDirectoryUsersAsync() </b>between the
+activeDirectoryUsers declaration and the return statement.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="535" height="93" id="Picture 5" src="./Exercise 4_files/image047.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">ActiveDirectoryClient<span style="color:black">
+client = Helpers.</span>AuthenticationHelper<span style="color:black">.GetActiveDirectoryClient();</span></p>
+
+<p class="CodeBlockCxSpMiddle">IPagedCollection<span style="color:black">&lt;</span>IUser<span style="color:black">&gt; pagedCollection = </span><span style="color:blue">await</span><span style="color:black"> client.Users.ExecuteAsync();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">if</span><span style="color:black"> (pagedCollection != </span><span style="color:blue">null</span><span style="color:black">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp; </span><span style="color:blue">do</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>List<span style="color:black">&lt;</span>IUser<span style="color:black">&gt; usersList = pagedCollection.CurrentPage.ToList();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:blue">foreach</span><span style="color:black"> (</span>IUser<span style="color:black"> user </span><span style="color:blue">in</span><span style="color:black"> usersList)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ActiveDirectoryUser<span style="color:black"> adUser = </span><span style="color:blue">new</span><span style="color:black"> Models.</span>ActiveDirectoryUser<span style="color:black">();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.ActiveDirectoryId = user.ObjectId;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.FullName = user.DisplayName;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.Position = user.JobTitle;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.Location = user.City + </span><span style="color:#A31515">", "</span><span style="color:black"> + user.State;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.ImageUrl = </span><span style="color:#A31515">"/Users/ShowThumbnail/"</span><span style="color:black"> + user.ObjectId;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+adUser.ObjectId = user.ObjectId;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; activeDirectoryUsers.Add(adUser);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pagedCollection
+= </span><span style="color:blue">await</span><span style="color:black">
+pagedCollection.GetNextPageAsync();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp; } </span><span style="color:blue">while</span><span style="color:black"> (pagedCollection != </span><span style="color:blue">null</span><span style="color:black">);</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:black">}</span></p>
+
+</div>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">This code queries all the users from Azure
+Active Directory into a paged collection. It then iterates through the returned
+users and builds a list of objects that represent the user by reading
+properties from each user such as JobTitle, City, DisplayName and so on.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Build the solution again to
+identify any problems with the code. If the build is successful launch the site
+again. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>You should see events (read
+from Database). You won’t yet see a profile picture because you still need to
+write code to read a thumbnail from Azure AD. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="658" height="284" id="Picture 68" src="./Exercise 4_files/image048.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open the file <b>UsersController.cs</b>
+in the <b>Controllers</b> folder.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="293" height="182" id="Picture 69" src="./Exercise 4_files/image049.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Add the following using
+statements after the existing using statements:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:10.0pt;color:blue">using</span><span style="font-size:10.0pt"> Events.Helpers;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:10.0pt;color:blue">using</span><span style="font-size:10.0pt"> Microsoft.Azure.ActiveDirectory.GraphClient;</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Find the <b>ShowThumbnail</b>
+method.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="403" height="82" id="Picture 70" src="./Exercise 4_files/image050.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Add the following code to
+the <b>ShowThumbnail</b> method before the return statement. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:10.0pt">try</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:#2B91AF">ActiveDirectoryClient</span><span style="font-size:10.0pt;color:black"> client = </span><span style="font-size:
+10.0pt;color:#2B91AF">AuthenticationHelper</span><span style="font-size:10.0pt;
+color:black">.GetActiveDirectoryClient();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:#2B91AF">IUser</span><span style="font-size:10.0pt;
+color:black"> user = </span><span style="font-size:10.0pt">await</span><span style="font-size:10.0pt;color:black">
+client.Users.GetByObjectId(id).ExecuteAsync();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:#2B91AF">DataServiceStreamResponse</span><span style="font-size:10.0pt;color:black"> dataServiceStreamResponse = </span><span style="font-size:10.0pt">null</span><span style="font-size:10.0pt;color:black">;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt">try</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dataServiceStreamResponse = </span><span style="font-size:10.0pt">await</span><span style="font-size:10.0pt;color:black"> user.ThumbnailPhoto.DownloadAsync();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt">if</span><span style="font-size:10.0pt;
+color:black"> (dataServiceStreamResponse != </span><span style="font-size:10.0pt">null</span><span style="font-size:10.0pt;color:black">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt">return</span><span style="font-size:10.0pt;
+color:black"> File(dataServiceStreamResponse.Stream, </span><span style="font-size:10.0pt;color:#A31515">"image/jpeg"</span><span style="font-size:10.0pt;color:black">);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt">catch</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">// Return placeholder</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt">var</span><span style="font-size:10.0pt;
+color:black"> file = Server.MapPath(</span><span style="font-size:10.0pt;
+color:#A31515">"~/Images/user-placeholder.png"</span><span style="font-size:10.0pt;color:black">);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt">return</span><span style="font-size:10.0pt;
+color:black"> File(file, </span><span style="font-size:10.0pt;color:#A31515">"image/png"</span><span style="font-size:10.0pt;color:black">, </span><span style="font-size:10.0pt;
+color:#2B91AF">Path</span><span style="font-size:10.0pt;color:black">.GetFileName(file));</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt">catch</span><span style="font-size:10.0pt;color:black"> (</span><span style="font-size:10.0pt;
+color:#2B91AF">Exception</span><span style="font-size:10.0pt;color:black"> e)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt">if</span><span style="font-size:10.0pt;color:black">
+(Request.QueryString[</span><span style="font-size:10.0pt;color:#A31515">"reauth"</span><span style="font-size:10.0pt;color:black">] == </span><span style="font-size:10.0pt;
+color:#A31515">"True"</span><span style="font-size:10.0pt;color:black">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">//</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">// Send an OpenID Connect
+sign-in request to get a new set of tokens.</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">// If the user still has a
+valid session with Azure AD, they will not be prompted for their credentials.</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">// The OpenID Connect
+middleware will return to this controller after the sign-in response has been
+handled.</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size:10.0pt;color:green">//</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HttpContext.GetOwinContext()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.Authentication.Challenge(</span><span style="font-size:10.0pt;color:#2B91AF">OpenIdConnectAuthenticationDefaults</span><span style="font-size:10.0pt;color:black">.AuthenticationType);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:green">//</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:green">// The user needs to re-authorize.&nbsp; Show
+them a message to that effect.</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp; </span><span style="font-size:10.0pt;color:green">//</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:10.0pt;color:black">&nbsp;&nbsp;&nbsp;
+ViewBag.ErrorMessage = </span><span style="font-size:10.0pt;color:#A31515">"AuthorizationRequired"</span><span style="font-size:10.0pt;color:black">;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:10.0pt;color:black">}</span></p>
+
+</div>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">This code retrieves the users thumbnail
+image from Azure AD and serves it inline in the page.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Rebuild the solution and
+browse to the site. You should now see the default placeholder thumbnail.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="155" height="91" id="Picture 2" src="./Exercise 4_files/image051.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Close the browser, and relaunch the site.
+This time logged in one of the sample users created earlier and you should see
+the thumbnail, and the user information pulled from Azure AD using the Graph
+API.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">User credentials (note: you will be
+prompted to change your password): </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>bjones@[your tenant name].onmicrosoft.com</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>demo@pass1</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="394" height="215" id="Picture 71" src="./Exercise 4_files/image052.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc440575246"></a><a name="_Toc479037279">Task 8: Configure App
+Registration for your Azure Web App</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a new Azure AD app
+registration for the Azure Web app and then deploy to the Azure Web App you
+created earlier in the exercise.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Within the
+Azure Management Portal (<a href="http://portal.azure.com/">http://portal.azure.com</a>),
+<b>open App Services</b>, and then open your <b>Web App</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Authentication
+/ Authorization</b> tile.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="284" height="141" id="Picture 95" src="./Exercise 4_files/image053.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Enable App
+Service Authentication, change the action to take to <b>Login with Azure Active
+Directory</b>, and then click the <b>Azure Active Directory</b> tile to
+configure the app registration.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="424" height="166" id="Picture 160" src="./Exercise 4_files/image054.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify <b>Express</b>
+for the management mode, select <b>Create New AD App</b>, and name the app <b>EventsApp-Web</b>.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="503" height="315" id="Picture 161" src="./Exercise 4_files/image055.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>OK</b>,
+and then click <b>Save</b> on the Web App’s authentication settings.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Within the
+Azure Management Portal open <b>Azure Active Directory</b>. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="470" height="571" id="Picture 84" src="./Exercise 4_files/image056.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>App
+registrations</b> tile. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="234" height="118" id="Picture 162" src="./Exercise 4_files/image057.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>EventsApp-Web</b>
+app registration to open its properties. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="210" height="51" id="Picture 91" src="./Exercise 4_files/image058.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Required
+permissions</b> link.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="371" height="151" id="Picture 93" src="./Exercise 4_files/image059.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Check <b>Read directory data</b>
+and click <b>Save</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="561" height="316" id="Picture 92" src="./Exercise 4_files/image033.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>Grant Permissions</b>
+to apply the permissions to the app.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="184" height="44" id="Picture 94" src="./Exercise 4_files/image060.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The next step is to update
+the Application Settings for your website to match the app registration
+settings. Launch a second browser tab and navigate to the Azure Management
+Portal. Open your web app and click the <b>Application Settings</b> tile.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="276" height="93" id="Picture 163" src="./Exercise 4_files/image061.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: This step is needed because the web
+app itself reads these settings for the Graph API. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Add the following entries to
+the <b>App settings</b> section.</p>
+
+<p class="MsoListParagraphCxSpMiddle">ida:ClientId</p>
+
+<p class="MsoListParagraphCxSpMiddle">ida:ClientSecret</p>
+
+<p class="MsoListParagraphCxSpMiddle">ida:PostLogoutRedirectUri – set the value
+to the URL of your Azure Web App.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="636" height="220" id="Picture 167" src="./Exercise 4_files/image062.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the other tab, copy the
+Application ID value and paste it into the ida:ClientId app setting value. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="638" height="169" id="Picture 169" src="./Exercise 4_files/image063.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Back in the App
+Registration, click Keys.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="382" height="155" id="Picture 170" src="./Exercise 4_files/image064.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Specify <b>EventsAppWeb</b>
+for the name, <b>Never Expires</b>, and click <b>Save</b>. Copy the value of
+the key and update the <b>ida:ClientSecret</b> value in the web apps app
+settings.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="631" height="119" id="Picture 173" src="./Exercise 4_files/image065.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Your app settings should
+look like the following, then click <b>Save</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="629" height="219" id="Picture 172" src="./Exercise 4_files/image066.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In Visual Studio, right
+click on the <b>Events</b> project and click <b>Publish</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="464" height="177" id="Picture 72" src="./Exercise 4_files/image067.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Ensure <b>Microsoft Azure
+App Service</b> is selected, choose <b>Select Existing</b>, and then click <b>Publish</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="402" height="211" id="Picture 74" src="./Exercise 4_files/image068.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">20.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Ensure you are logged into
+the correct Microsoft account with access to your Azure subscription. Ensure
+the correct subscription is selected and then select your web app, then click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="462" height="345" id="Picture 78" src="./Exercise 4_files/image069.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">21.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Login to the site with entadmin@[tenant
+name].onmicrosoft.com (you may have to relaunch the URL in in-private mode) and
+<b>Accept</b> the consent form.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="415" height="256" id="Picture 3" src="./Exercise 4_files/image070.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc479037280">Summary</a></h2>
+
+<p class="MsoNormal"><span style="line-height:107%">In this exercise, you updated
+the connection strings in <b>web.config</b> as well as the <b>Application
+settings</b> in Azure with the information from the databases you configured in
+a previous lab. You then learned how to configure a web application with Azure
+SQL Database and Azure AD tenant authentication as well as wrote code to query
+Azure AD with the Graph API. </span></p>
+
+</div>
+
+
+
+
+</body></html>

@@ -1,0 +1,968 @@
+
+<!-- saved from url=(0102)https://opsgilityweb.blob.core.windows.net/online-labs/implementing-azure-automation/Exercise%207.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc476054778">Exercise 7: Managing Windows Computers with Azure
+Automation DSC</a></h1>
+
+<h2><a name="_Toc476054779">Overview</a></h2>
+
+<p class="MsoNormal" style="margin-top:1.65pt;margin-right:33.75pt;margin-bottom:
+0in;margin-left:6.0pt;margin-bottom:.0001pt;text-align:justify"><span style="line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;color:#252525">In this
+exercise, you will first perform a template deployment of an ARM template to
+deploy a VM into Azure.&nbsp; Then configure a DSC configuration to deploy a Web
+Server to the Azure VM. At the end of this Exercise you will gain the basic
+knowledge of deploying DSC from Azure Automation to your On-premises or cloud
+environments.</span></p>
+
+<h2><a name="_Toc476054780">Time Estimate</a></h2>
+
+<p class="MsoNormal" style="margin-top:1.65pt;margin-right:0in;margin-bottom:
+0in;margin-left:42.0pt;margin-bottom:.0001pt;line-height:normal"><span style="font-family:&quot;Gadugi&quot;,sans-serif;color:#252525">30</span><span style="font-family:&quot;Gadugi&quot;,sans-serif;color:#252525"> minutes</span></p>
+
+<h2><a name="_Toc476054781">Task 1:&nbsp; Template Deployment of Web Server</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>For this
+exercise, you will need to do a template deployment to have a Web VM to
+configure using Azure Automation DSC.&nbsp; From the <b>LABVM</b> open the Azure
+Portal in Internet Explorer.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Resource
+Groups &gt; +Add</b> and then Name the Resource Group: <b>DSCRG,</b> choose
+your Subscription and then Select <b>East US</b> for the Region.&nbsp; Then click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="294" height="248" id="Picture 372" src="./Exercise 7_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+within the newly created DSCRG, click +Add</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="410" height="78" id="Picture 373" src="./Exercise 7_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the
+Filter box type: <b>Template Deployment</b> and press <b>enter</b>.&nbsp; Then click
+<b>Template Deployment</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="185" height="202" id="Picture 374" src="./Exercise 7_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Press <b>Create</b>
+and then on the Customer Deployment Blade click <b>Edit</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="436" height="105" id="Picture 375" src="./Exercise 7_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Load
+File </b>button.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="452" height="81" id="Picture 378" src="./Exercise 7_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Locate the
+<b>FourthCoffeeSingleVm.json</b> file which is in the <b>C:\OpsgilityTraining\Opsgility
+Automation Resources</b> folder on your <b>LABVM</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="566" height="206" id="Picture 379" src="./Exercise 7_files/image006.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>This will
+load the ARM template, click <b>Save</b>.&nbsp; Complete the Settings with these
+values, click the <b>I Agree</b> and <b>Purchase</b> buttons.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Fourth
+Coffee Web VM Name: <b>FCWEBVM1</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Fourth
+Coffee Web VM Admin User: <b>demouser</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Fourth
+Coffee Web VM Admin Password: <b>demo@pass123</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Fourth
+Coffee Web VM Windows OSVersion: <b>2016-Datacenter</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">e.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Fourth
+Coffee Web VM PubIp Dns Name:&nbsp; <b>fcwebvm18675309</b> (must be unique to Azure,
+lowercase, 3-24 characters)</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="527" height="218" id="Picture 380" src="./Exercise 7_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">f.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux
+VM Name:&nbsp; linuxvm</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">g.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux VM
+User Name:&nbsp; demouser</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">h.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux VM
+Admin Password:&nbsp; demo@pass123</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">i.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux
+VM Ubuntu OSVersion: 14.04.2-LTS</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">j.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Linux
+VM Pub IP DNS Name: <b>linuxvm8675309 </b>(must be unique to Azure, lowercase,
+3-24 characters)</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="550" height="152" id="Picture 418" src="./Exercise 7_files/image008.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+deployment will be submitted to Azure to build the <b>FCWEBVM1 </b>and <b>linuxvm</b>
+along with their associated resources in the <b>DSCRG</b> Resource Group.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="115" height="113" id="Picture 381" src="./Exercise 7_files/image009.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">NOTE:&nbsp; Wait for the Deployment to complete prior
+to moving on to the next steps.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the deployment has completed
+the <b>DSCRG</b> resource group should have five resources. Click on the <b>Storage
+Account</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="190" height="175" id="Picture 383" src="./Exercise 7_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>Blobs &gt; +Container</b>,
+and then name it the new containers <b>dsc</b> (must be lowercase), Access type
+should be set to <b>Blob</b>.&nbsp; Then click <b>Create.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="432" height="125" id="Picture 387" src="./Exercise 7_files/image011.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click the new <b>dsc </b>container,
+and then select <b>Upload</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="395" height="265" id="Picture 385" src="./Exercise 7_files/image012.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Under Block Size Select
+512KB and make sure that Block blob is selected.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Next, click the Folder icon
+and then locate <b>C:\OpsgilityTraining\Opsgility Automation Resources\FourthCoffee.zip.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="460" height="212" id="Picture 386" src="./Exercise 7_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the blade is configured
+as seen below, click <b>Upload</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="406" height="227" id="Picture 389" src="./Exercise 7_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The file will now show as in
+the <b>dsc</b> container of the storage account.&nbsp; This will be downloaded later
+using the <b>DSC</b> scripts to configure the web server.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="216" height="232" id="Picture 390" src="./Exercise 7_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click the <b>FourthCoffee.zip</b>
+filename and then capture the URL to the zip file that is now located in Azure
+Storage and copy it into a Notepad.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="277" height="68" id="Picture 391" src="./Exercise 7_files/image016.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="576" height="77" id="Picture 392" src="./Exercise 7_files/image017.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>From the <b>LABVM</b> open <b>PowerShell
+ISE</b> and open the <b>FourthCoffeeWeb.ps1</b> script. Edit line <b>35</b> of
+the script by pasting in <b>your URL</b> that you just copied and then Save the
+script.</p>
+
+<p class="MsoListParagraphCxSpLast"><img width="643" height="79" id="Picture 393" src="./Exercise 7_files/image018.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 2: Creating a DSC Configuration for the Web Server</h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:106%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From the <b>Lab-Deploy
+Automation Account</b> select <b>DSC Configurations.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%"><img width="171" height="82" id="Picture 394" src="./Exercise 7_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Then
+select +<b>Add a configuration</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%"><img width="261" height="83" id="Picture 395" src="./Exercise 7_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:106%">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the
+folder icon and browse for <b>C:\OpsgilityTraining\Opsgility Automation
+Resources\FourthCoffeeWeb.ps1</b> and then click OK.&nbsp; This is the DSC Script
+that will configure the web server.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="190" height="230" id="Picture 396" src="./Exercise 7_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select <b>FourthCoffeeWeb</b>
+DSC Configuration and then click <b>Compile</b> button.&nbsp; Click <b>Yes</b> to
+confirm.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="475" height="107" id="Picture 397" src="./Exercise 7_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="385" height="158" id="Picture 398" src="./Exercise 7_files/image023.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: This process can take 10 – 15 minutes
+to complete.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img width="416" height="222" id="Picture 361" src="./Exercise 7_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Once
+completed your Node Configurations will resemble the below. </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="422" height="237" id="Picture 362" src="./Exercise 7_files/image025.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Move back
+to the Overview page of <b>Lab-Deploy </b>and click DSC Nodes.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="192" height="99" id="Picture 35" src="./Exercise 7_files/image026.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click +<b>Add
+Azure VM</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="445" height="88" id="Picture 41" src="./Exercise 7_files/image027.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Select
+virtual machines to onboard.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="324" height="110" id="Picture 202" src="./Exercise 7_files/image028.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Locate the
+new VM deployed in this task named <b>FCWEBVM1.&nbsp; </b>Check the box and click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="439" height="199" id="Picture 203" src="./Exercise 7_files/image029.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Next select <b>Registration</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="314" height="59" id="Picture 212" src="./Exercise 7_files/image030.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>&nbsp;From the drop-down <b>Node
+Configuration Name</b> field select <b>FourthCoffeeWeb.WebServer</b>, Check the
+<b>Reboot Node if Needed</b>, and leave the remainder as defaults and click <b>OK</b>.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="308" height="483" id="Picture 213" src="./Exercise 7_files/image031.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Press <b>Create</b> button
+to start the deployment of the DSC extension to the VM must complete.&nbsp; Once
+this is complete the VM will appear as a DSC Node and complete the
+configurations.&nbsp;&nbsp; </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="353" height="95" id="Picture 217" src="./Exercise 7_files/image032.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span><b>FCWEBVM1</b> will grab
+the configuration settings and install the IIS-Web role per the script that was
+written.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="489" height="184" id="Picture 218" src="./Exercise 7_files/image033.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the Node shows up as a DSC
+Nodes you can review the reports of the configuration deployment and its
+health.&nbsp; Press <b>Refresh</b> after a few minutes to see it move to Compliant.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="493" height="191" id="Picture 219" src="./Exercise 7_files/image034.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>If you click the note name
+you will gain access to a blade where all of the reports of the VM are visible,
+change the DSC node that it is configured to use or Unregister if from Azure
+Automation DSC.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Azure Portal open the
+resource group named DSCRG and locate the Public IP named <b>fourthCoffeeWebVMPubIP</b>.&nbsp;
+Open this and locate the DNS name that you provided during the template
+deployment.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="553" height="90" id="Picture 221" src="./Exercise 7_files/image035.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Paste this DNS name into a
+new browser tab.&nbsp; The Fourth Coffee website should load after a few seconds.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="423" height="280" id="Picture 223" src="./Exercise 7_files/image036.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>Note</b>: If 15 minutes, passes and your
+Web-Server is not reachable.&nbsp; Open an RDP connection to it and then open
+PowerShell. Run the <b>Get-WindowsFeature -Name “Web-Server”</b> cmdlet to
+verify the role was not installed.&nbsp; If not installed run the <b>Update-DscConfiguration
+-Wait -Verbose</b> cmdlet. Your output should look like below. <b>Once
+Compliant move on to Task 3</b>.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img width="482" height="355" id="Picture 367" src="./Exercise 7_files/image037.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc476054782">Task 3: Testing the DSC Configuration</a></h2>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From <b>LABVM</b>
+use the Azure portal to open a RDP connection the <b>FCWEBVM1</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From <b>FCWEBVM1</b>
+open PowerShell. Run the cmdlet <b>Remove-WindowsFeature -Name 'Web-Server'
+-Verbose</b> to remove the Web Server role.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="544" height="175" id="Picture 288" src="./Exercise 7_files/image038.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Restart <b>FCWEBVM1</b>
+and then reconnect using RDP.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in;text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Once
+reconnected to FCWEBVM1 open PowerShell and run the following code to prove
+that the machine no longer has IIS installed.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock"><b>Get-WindowsFeature -Name “Web-Server”</b></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img width="610" height="144" id="Picture 296" src="./Exercise 7_files/image039.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Head back
+to the Lab-Deployment Azure Automation Account and click DSC Nodes.&nbsp; FCWEBVM1
+should now show as <b>Not Compliant.&nbsp; </b>Click on this <b>Not Complaint</b> to
+review the report where the script is compliant, but the <b>WindowsFeature</b>
+is the issue.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="338" height="59" id="Picture 306" src="./Exercise 7_files/image040.jpg">&nbsp;<img width="289" height="114" id="Picture 308" src="./Exercise 7_files/image041.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Move back
+to the RDP window for <b>FCWEBVM1</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in;text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+PowerShell on <b>FCWEBVM1</b> run the following cmdlet.&nbsp; This will pull the
+configuration from the server to reinstall the server with the Web Role.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock"><b>Update-DSCConfiguration -Wait -Verbose</b></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in"><img width="656" height="175" id="Picture 309" src="./Exercise 7_files/image042.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in;text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From <b>FCWEBVM1</b>
+in PowerShell run the following cmdlet to ensure that the Web Server Role was
+reinstalled.&nbsp; If the IIS shows as installed verify this by visiting the public
+IP of your server and the FourthCoffee Website should be back up and running.&nbsp; </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock"><b>Get-WindowsFeature -Name “Web-Server”</b></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: If you see the website, then you can
+move on to the next Task.&nbsp; If the site didn’t appear and IIS shows as not
+installed not continue to the next step to troubleshoot your DSC configuration.
+</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in;text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>From <b>FCWEBVM1</b>
+in PowerShell run the command the following command to pull the configuration
+file locally from the server. Review the status of your node in Azure from the
+DSC Nodes blade and verify that the status is in progress. Once completed your
+Web-Server will be up and running.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock">Start-DscConfiguration -UseExisting -Verbose </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in"><img width="605" height="67" id="Picture 315" src="./Exercise 7_files/image043.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in;text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>After few minutes run the
+cmdlet to ensure that IIS was reinstalled.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock">Get-WindowsFeature -Name “Web-Server”</p>
+
+</div>
+
+<p class="MsoListParagraph" style="margin-left:.75in"><img width="615" height="69" id="Picture 318" src="./Exercise 7_files/image044.jpg"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">NOTE:&nbsp; Under normal circumstances that DSC
+would have completed this on it’s own to get the server back to a compliant
+configuration, but it’s important to understand you can force it to get back
+immediately using these means.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in;text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open the browser and point
+to the DNS name of the FCWEBVM1 Public IP Address and the FourthCoffee web site
+will appear again.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img width="423" height="280" id="Picture 319" src="./Exercise 7_files/image045.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2>Summary </h2>
+
+<p class="MsoNormal" style="margin-top:1.65pt;margin-right:33.75pt;margin-bottom:
+0in;margin-left:6.0pt;margin-bottom:.0001pt;text-align:justify"><span style="line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;color:#252525">In this
+exercise, you first performed a template deployment of an ARM template to
+deploy a VM into Azure.&nbsp; Then configured a DSC configuration to deploy a Web
+Server to the Azure VM. At the end of this Exercise you gained the basic
+knowledge of deploying DSC from Azure Automation to your On-premises or cloud
+environments.</span></p>
+
+</div>
+
+
+
+
+</body></html>

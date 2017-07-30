@@ -1,0 +1,1561 @@
+
+<!-- saved from url=(0115)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20API%20Management/Exported/Exercise1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	mso-style-link:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.ppBulletList, li.ppBulletList, div.ppBulletList
+	{mso-style-name:"pp Bullet List";
+	mso-style-link:"pp Bullet List Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBulletListIndent, li.ppBulletListIndent, div.ppBulletListIndent
+	{mso-style-name:"pp Bullet List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBulletListChar
+	{mso-style-name:"pp Bullet List Char";
+	mso-style-link:"pp Bullet List";
+	font-family:"Times New Roman",serif;}
+p.ppBulletListIndent2, li.ppBulletListIndent2, div.ppBulletListIndent2
+	{mso-style-name:"pp Bullet List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppCode, li.ppCode, div.ppCode
+	{mso-style-name:"pp Code";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpFirst, li.ppCodeCxSpFirst, div.ppCodeCxSpFirst
+	{mso-style-name:"pp CodeCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpMiddle, li.ppCodeCxSpMiddle, div.ppCodeCxSpMiddle
+	{mso-style-name:"pp CodeCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpLast, li.ppCodeCxSpLast, div.ppCodeCxSpLast
+	{mso-style-name:"pp CodeCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent, li.ppCodeIndent, div.ppCodeIndent
+	{mso-style-name:"pp Code Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpFirst, li.ppCodeIndentCxSpFirst, div.ppCodeIndentCxSpFirst
+	{mso-style-name:"pp Code IndentCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpMiddle, li.ppCodeIndentCxSpMiddle, div.ppCodeIndentCxSpMiddle
+	{mso-style-name:"pp Code IndentCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpLast, li.ppCodeIndentCxSpLast, div.ppCodeIndentCxSpLast
+	{mso-style-name:"pp Code IndentCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2, li.ppCodeIndent2, div.ppCodeIndent2
+	{mso-style-name:"pp Code Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpFirst, li.ppCodeIndent2CxSpFirst, div.ppCodeIndent2CxSpFirst
+	{mso-style-name:"pp Code Indent 2CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpMiddle, li.ppCodeIndent2CxSpMiddle, div.ppCodeIndent2CxSpMiddle
+	{mso-style-name:"pp Code Indent 2CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpLast, li.ppCodeIndent2CxSpLast, div.ppCodeIndent2CxSpLast
+	{mso-style-name:"pp Code Indent 2CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3, li.ppCodeIndent3, div.ppCodeIndent3
+	{mso-style-name:"pp Code Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpFirst, li.ppCodeIndent3CxSpFirst, div.ppCodeIndent3CxSpFirst
+	{mso-style-name:"pp Code Indent 3CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpMiddle, li.ppCodeIndent3CxSpMiddle, div.ppCodeIndent3CxSpMiddle
+	{mso-style-name:"pp Code Indent 3CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpLast, li.ppCodeIndent3CxSpLast, div.ppCodeIndent3CxSpLast
+	{mso-style-name:"pp Code Indent 3CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-style:italic;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc482182207">Exercise 1: Create and Deploy an API App to Azure
+App Service</a></h1>
+
+<h2><a name="_Toc482182208"></a><a name="_Toc467674816">Overview</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a Web API using ASP.NET
+MVC that will then be deployed into Azure API Apps. You will also integrate
+Swagger using the Swashbuckle NuGet package to automatically generate usage
+documentation for the Web API.</p>
+
+<h2><a name="_Toc482182209"></a><a name="_Toc467674817">Prerequisites</a></h2>
+
+<p class="MsoListParagraphCxSpFirst">Microsoft Azure Subscription: <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">http://azure.microsoft.com/en-us/pricing/free-trial/</a>
+</p>
+
+<p class="MsoListParagraphCxSpLast">Visual Studio Community 2015 or greater</p>
+
+<h2><a name="_Toc482182210"></a><a name="_Toc467674818">Time Estimate</a></h2>
+
+<p class="MsoListParagraph">45 minutes</p>
+
+<h2><a name="_Toc482182211"></a><a name="_Toc467674820">Task 1: Create Resource
+Group and Storage Account</a></h2>
+
+<p class="MsoNormal">In this Task, you will create a Storage Account that will
+use Table Storage for the back-end data store for the Contact entities the Web
+API will interact with.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="line-height:107%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Open your browser and navigate to <a href="http://portal.azure.com/">http://portal.azure.com</a> </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>In the Azure Portal, click on the <b>+New</b> button in the
+toolbar, then <b>Storage</b>, and click on <b>Storage account</b><br>
+<img border="0" width="662" height="314" id="Picture 491" src="./Exercise1_files/image001.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Enter the following values into the <b>Create storage account</b>
+blade:</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Name:<b> enter
+a unique name for the Storage Account</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Replication:
+<b>Locally-redundant storage (LRS)</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Resource
+group: <b>LABWEBAPI</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Location: <b>Choose
+the Azure region closest to you<br>
+<br>
+</b><img border="0" width="248" height="521" id="Picture 495" src="./Exercise1_files/image002.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Click <b>Create<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Once the Resource Group and Storage Account have been created,
+click on <b>Resource groups</b>, click the <b>LABWEBAPI</b> resource group,
+then click on the <b>Storage Account</b> that was just created.<br>
+<img border="0" width="576" height="203" id="Picture 497" src="./Exercise1_files/image003.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>On the Storage Account blade, click on <b>Access keys</b><br>
+<img border="0" width="236" height="92" id="Picture 513" src="./Exercise1_files/image004.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="line-height:107%">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Click on the ellipse next to one of the Access keys for the
+storage account, then click on <b>View connection string<br>
+</b><img border="0" width="569" height="128" id="Picture 514" src="./Exercise1_files/image005.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="line-height:107%">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Copy the <b>Connection String </b>for the Storage Account and
+save it for use later.<br>
+<img border="0" width="606" height="253" id="Picture 515" src="./Exercise1_files/image006.png"><br>
+<br>
+</p>
+
+<h2><a name="_Toc482182212"></a><a name="_Toc467674821">Task 2: Create Web API
+Project</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a new Web API project
+within Visual Studio that is configured to deploy to Azure App Service.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open <b>Visual
+Studio<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>File</b> menu, then <b>New</b>, and <b>Project…<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>New
+Project </b>dialog, select the <b>ASP.NET Web Application (.NET Framework)</b>
+project template.<br>
+<img border="0" width="638" height="217" id="Picture 1" src="./Exercise1_files/image007.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Enter a
+name <b>LabWebApi</b> for the project name, and click <b>OK<br>
+</b><img border="0" width="638" height="106" id="Picture 2" src="./Exercise1_files/image008.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>New
+ASP.NET Web Application </b>dialog, click on <b>Web API</b>, and click <b>OK</b><br>
+<img border="0" width="632" height="414" id="Picture 3" src="./Exercise1_files/image009.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Once the
+project has been created, right-click on the projects <b>References </b>within
+the Solution Explorer window, then click on <b>Manage NuGet Packages…</b><br>
+<img border="0" width="351" height="349" id="Picture 7" src="./Exercise1_files/image010.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>NuGet</b>
+<b>References</b> window, click on <b>Browse</b>, then type in <b>WindowsAzure.Storage</b>
+into the search box.<br>
+<img border="0" width="415" height="101" id="Picture 526" src="./Exercise1_files/image011.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>WindowsAzure.Storage</b> NuGet package, then click the <b>Install </b>button
+to add a reference to it in the project.<br>
+<img border="0" width="642" height="174" id="Picture 8" src="./Exercise1_files/image012.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>OK
+</b>on the <b>Review Changes</b> dialog<br>
+<img border="0" width="490" height="495" id="Picture 9" src="./Exercise1_files/image013.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>I Accept</b> on the
+<b>License Acceptance</b> dialog.<br>
+<img border="0" width="442" height="450" id="Picture 10" src="./Exercise1_files/image014.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Expand the <b>Controllers </b>folder
+within the <b>Solution Explorer </b>window.<br>
+<img border="0" width="354" height="340" id="Picture 11" src="./Exercise1_files/image015.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Delete the <b>ValuesController.cs</b>
+file from the project. This will not be needed in this lab.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Right-click on the <b>Controllers</b>
+folder, and click on <b>Add</b>, then <b>Controller…<br>
+</b><img border="0" width="595" height="354" id="Picture 12" src="./Exercise1_files/image016.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the <b>Add Scaffold</b>
+dialog, select the <b>Web API 2 Controller – Empty</b> option and click <b>Add<br>
+</b><img border="0" width="543" height="377" id="Picture 13" src="./Exercise1_files/image017.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Name the Controller, <b>ContactsController</b>,
+then click <b>Add<br>
+</b><img border="0" width="590" height="126" id="Picture 15" src="./Exercise1_files/image018.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Copy the contents of the <b>ContactsController.cs</b>
+code file from the downloaded student files, and paste it into the newly
+created code file within the project.<br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Within the <b>Solution
+Explorer</b> window, open the <b>Web.config </b>file.<br>
+<img border="0" width="236" height="131" id="Picture 16" src="./Exercise1_files/image019.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Above the <i>&lt;appSettings&gt;</i>
+element, add a new <b><i>&lt;connectionStrings&gt;</i></b> element.<br>
+<img border="0" width="386" height="122" id="Picture 17" src="./Exercise1_files/image020.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Within the <i>&lt;connectionStrings&gt;</i>
+configuration element, paste in the following snippet to add the <b>Connection
+String</b> for the <b>Azure Storage Account</b>. Replace the <b>{connection-string}</b>
+value with the actual <b>Storage Account Connection String</b> that was copied
+in the previous exercise.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock"><span style="font-size:9.5pt;color:blue">&lt;</span><span style="font-size:9.5pt;color:#A31515">add</span><span style="font-size:9.5pt;
+color:blue"> </span><span style="font-size:9.5pt;color:red">name</span><span style="font-size:9.5pt;color:blue">=</span><span style="font-size:9.5pt;
+color:black">"</span><span style="font-size:9.5pt;color:blue">tableStorageConnString</span><span style="font-size:9.5pt;color:black">"</span><span style="font-size:9.5pt;
+color:blue"> </span><span style="font-size:9.5pt;color:red">connectionString</span><span style="font-size:9.5pt;color:blue">=</span><span style="font-size:9.5pt;
+color:black">"</span><span style="font-size:9.5pt;color:blue">{connection-string}</span><span style="font-size:9.5pt;color:black">"</span><span style="font-size:9.5pt;
+color:blue"> /&gt;</span></p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">20.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>The Connection String in the <b>Web.config</b> file should look similar
+to the following screenshot:<br>
+<img border="0" width="720" height="108" id="Picture 18" src="./Exercise1_files/image021.jpg"><br>
+<br>
+</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc482182213"></a><a name="_Toc467674822">Task 3: Integrate
+Swagger</a></h2>
+
+<p class="MsoNormal">In this Task, you will integrate Swagger into the Web API
+project using the Swashbuckle NuGet package.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>With the
+Web API project still open in Visual Studio, right click on the project <b>References</b>
+within the <b>Solution Explorer</b> window, and click on <b>Manage NuGet
+Packages…</b><br>
+<img border="0" width="326" height="347" id="Picture 19" src="./Exercise1_files/image022.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>NuGet
+References</b> window, click on <b>Browse</b>, then type <b>Swashbuckle</b>
+into the search box.<br>
+<img border="0" width="398" height="97" id="Picture 566" src="./Exercise1_files/image023.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>Swashbuckle</b> NuGet package, then click <b>Install</b> to add a
+reference to it within the project.<br>
+<img border="0" width="720" height="106" id="Picture 567" src="./Exercise1_files/image024.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>Review
+Changes</b> dialog, click<b> OK<br>
+</b><img border="0" width="490" height="498" id="Picture 21" src="./Exercise1_files/image025.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>Start </b>button (or press F5) in the Visual Studio Toolbar to run the
+Web API locally to ensure everything compiles and the app can run. Once running
+locally, the app will open up in a new browser window.<br>
+<img border="0" width="297" height="73" id="Picture 26" src="./Exercise1_files/image026.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the
+browser window that opened, navigate to the<b> /swagger</b> folder on the app
+to view the <b>Swagger UI</b>.<br>
+<img border="0" width="720" height="252" id="Picture 31" src="./Exercise1_files/image027.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Close the
+browser window and stop debugging the app.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc482182214"></a><a name="_Toc467674823">Task 4: Deploy to Azure
+App Service</a> API App</h2>
+
+<p class="MsoNormal">In this Task, you will deploy the newly build Web API app
+out to Azure App Service.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open a
+browser window or new tab and navigate to the Azure Portal at <a href="http://portal.azure.com/">http://portal.azure.com</a> <br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>+New</b> button in the navigation.<br>
+<img border="0" width="223" height="192" id="Picture 672" src="./Exercise1_files/image028.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Type <b>API
+App</b> into the <b>Search the marketplace </b>box and press <b>Enter</b>.<b><br>
+</b><img border="0" width="298" height="174" id="Picture 580" src="./Exercise1_files/image029.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+the <b>API App</b> option in the search results<br>
+<img border="0" width="720" height="251" id="Picture 675" src="./Exercise1_files/image030.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Create<br>
+</b><img border="0" width="119" height="41" id="Picture 582" src="./Exercise1_files/image031.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>API
+App </b>blade, enter the following values:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>App name: <b>Enter a unique app name</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource Group: <b>Choose the existing LABWEBAPI resource group<br>
+<br>
+</b><img border="0" width="238" height="174" id="Picture 583" src="./Exercise1_files/image032.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on <b>App
+Service plan/Location</b>, then <b>Create New<br>
+</b><img border="0" width="576" height="246" id="Picture 584" src="./Exercise1_files/image033.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>New
+App Service Plan</b> blade, enter an <b>App Service plan name</b>, and choose
+the same <b>Location</b> chosen for the Storage Account that was previously
+created.<br>
+<img border="0" width="289" height="122" id="Picture 585" src="./Exercise1_files/image034.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on <b>Pricing
+tier</b>, choose the <b>S1 Standard </b>pricing tier, and click <b>Select<br>
+</b><img border="0" width="437" height="366" id="Picture 586" src="./Exercise1_files/image035.png"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>OK<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click <b>Create<br>
+</b><img border="0" width="114" height="40" id="Picture 587" src="./Exercise1_files/image036.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open the <b>LabWebApi</b>
+project in Visual Studio, right-click the <b>Project</b> within the <b>Solution
+Explorer </b>window, then click <b>Publish…</b><br>
+<img border="0" width="490" height="198" id="Picture 676" src="./Exercise1_files/image037.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>On the <b>Publish</b> window,
+click the <b>Microsoft Azure App Service</b> option, check the <b>Select
+Existing</b> option, then click <b>Publish</b>.<br>
+<img border="0" width="659" height="301" id="Picture 677" src="./Exercise1_files/image038.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>If not logged into your
+Azure Subscription, click on the button in the upper-right of the <b>App
+Service</b> dialog, click <b>Add an account…</b> and follow the prompt to log
+into your Azure Subscription.<br>
+<img border="0" width="720" height="102" id="Picture 678" src="./Exercise1_files/image039.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Expand the <b>LABWEBAPI</b>
+Resource Group and select the <b>API App </b>that was just created through the
+Azure Portal, then click <b>OK</b>.<br>
+<img border="0" width="595" height="450" id="Picture 679" src="./Exercise1_files/image040.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the Publish has been
+completed, Visual Studio will open a Browse tab navigated to the API App
+running in Azure.<br>
+<img border="0" width="509" height="254" id="Picture 682" src="./Exercise1_files/image041.jpg"><br>
+<br>
+</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">The Web Deploy Publish status will be shown
+in the <b>Output</b> window.<br>
+<img border="0" width="535" height="305" id="Picture 681" src="./Exercise1_files/image042.jpg"></p>
+
+</div>
+
+<p class="MsoNormal"><br>
+<br>
+</p>
+
+<h2><a name="_Toc482182215"></a><a name="_Toc467674824">Task 5: Test out the
+API</a></h2>
+
+<p class="MsoNormal">In this Task, you will test out the Web API by making calls
+against it using the Swagger UI within a web browser.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Either
+open a new browser window and navigate to the domain name for the Azure API App.<br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open the <b>Swagger
+UI</b> for the API App by navigating to the <b>/swagger</b> folder within the
+application.<br>
+<img border="0" width="720" height="240" id="Picture 683" src="./Exercise1_files/image043.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on <b>Contacts</b>
+to expand out the different <b>API Actions</b> available.<b><br>
+</b><img border="0" width="502" height="389" id="Picture 684" src="./Exercise1_files/image044.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+and expand the <b>PUT /api/Contacts</b> action that can be used to <b>Insert</b>
+a new contact record.<br>
+<img border="0" width="720" height="456" id="Picture 645" src="./Exercise1_files/image045.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Enter the
+following <b>JSON</b> snippet into the field for the <b>value </b>parameter,
+and click<b> Try it out!</b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlockCxSpFirst">{</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "Age": 42,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "PrimaryPhone": "555-1234",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "Address1": "123 My Street",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "Address2": "",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "City": "Localville",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "StateProv": "NY",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "PostalCode": "11111",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "PartitionKey": "Jones",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "RowKey": "Martha",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "Timestamp":
+"2016-11-23T20:12:48.587Z",</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp; "ETag": "string"</p>
+
+<p class="CodeBlockCxSpLast">}</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Scroll
+down to see the <b>Response Code</b> of <b>204</b> meaning the action executed
+successfully and didn’t return any content in the response. Conversely, a <b>500</b>
+here would signify a Server Error.<br>
+<img border="0" width="231" height="75" id="Picture 649" src="./Exercise1_files/image046.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on
+and expand the <b>GET /api/Contacts</b> action that can be used to list all the
+Contacts stored, and click <b>Try it out!</b><br>
+<img border="0" width="657" height="306" id="Picture 650" src="./Exercise1_files/image047.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Scroll
+down and view the <b>Response Body</b> to see the <b>JSON</b> data returned by
+the API action method, as well as the <b>Response Code </b>of <b>200</b>.<br>
+<img border="0" width="662" height="325" id="Picture 654" src="./Exercise1_files/image048.jpg"><br>
+<br>
+</p>
+
+<h2><a name="_Toc482182216"></a><a name="_Toc467682019">Task 6: Register
+Swagger API Definition with API App</a></h2>
+
+<p class="MsoNormal">In this Task, you will log into the Azure Portal, and setup
+the API Definition property on the API App with the correct location of the
+Swagger docs API for the Web API.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In a new
+browser window, or tab, navigate to the Azure Portal at <a href="http://portal.azure.com/">http://portal.azure.com</a><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click on <b>Resource
+Groups</b>, then select the <b>LABWEBAPI </b>Resource group, and click on the <b>API
+App</b>.<br>
+<img border="0" width="576" height="210" id="Picture 655" src="./Exercise1_files/image049.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>API
+App </b>blade, scroll down the settings options and click on <b>API Definition</b>.<br>
+<img border="0" width="211" height="87" id="Picture 656" src="./Exercise1_files/image050.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Enter the
+location to the <b>Swagger </b>documentation API Definition into the <b>API
+definition location </b>field. The value to enter here is the full <b>Domain
+name of your API App</b>, with <b>/swagger/docs/v1</b> appended to the end of
+it.<br>
+<img border="0" width="721" height="204" id="Picture 685" src="./Exercise1_files/image051.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Save</b></p>
+
+<h2><a name="_Toc482182217"></a><a name="_Toc467682020">Task 7: Generate Client
+SDK</a></h2>
+
+<p class="MsoNormal">In this Task, you will use Swagger and Visual Studio to
+generate a Client SDK for your Web API that will be used within a .NET Console
+Application.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Open a new
+instance of <b>Visual Studio</b>, click on the <b>File </b>menu, then <b>New</b>,
+and click <b>Project…<br>
+</b><img border="0" width="638" height="97" id="Picture 686" src="./Exercise1_files/image052.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>New
+Project</b> dialog, navigate to the <b>Windows Classic Desktop</b> project
+template section, select the <b>Console App</b> template.<br>
+<img border="0" width="679" height="248" id="Picture 34" src="./Exercise1_files/image053.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Type in a <b>Name</b>
+for the Console Application project, then click <b>OK<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>Solution
+Explorer</b> window, right-click on the project, then click on <b>Add</b>, then
+<b>REST API Client…</b><br>
+<img border="0" width="720" height="386" id="Picture 35" src="./Exercise1_files/image054.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>Add
+REST API Client</b> dialog, select the <b>Swagger Url</b> option and click the <b>Select
+Azure Asset… </b>button.<br>
+<img border="0" width="480" height="178" id="Picture 664" src="./Exercise1_files/image055.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the <b>App
+Service </b>dialog, ensure the button in the upper-right show you are logged
+into your Azure Subscription. If not, then click the button and select <b>Add
+an account…</b> then follow the prompt to log into your Azure Subscription.<br>
+<img border="0" width="720" height="102" id="Picture 36" src="./Exercise1_files/image056.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Expand the
+<b>LABWEBAPI</b> resource group, and select the <b>API App</b>.<br>
+<img border="0" width="254" height="318" id="Picture 37" src="./Exercise1_files/image057.jpg"><br>
+<br>
+</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">If the API App doesn’t show in this dialog,
+then the API Definition Location wasn’t configured. Once the API Definition
+Location is configured as in Exercise 1, then the API App will show in this
+dialog as expected.</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>OK<br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>OK</b>
+on the <b>Add REST API Client</b> dialog.<br>
+<img border="0" width="498" height="302" id="Picture 667" src="./Exercise1_files/image058.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once the <b>Client SDK</b>
+code has been generated, it will be saved into a subfolder within the Project
+with the same name as the <b>API App</b>. You can navigate to this folder to
+see the full Client SDK source code.<br>
+<img border="0" width="260" height="378" id="Picture 39" src="./Exercise1_files/image059.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open the <b>Program.cs</b>
+source code file.<br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Add the following line of
+code to the <b>void Main</b> method to instantiate a new instance of the <b>API
+App Client</b>. The class name used will be the same name as your API App, so
+be sure to change the name of the class from shown below:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlockCxSpFirst"><span style="color:blue">var</span><span style="color:black"> apiClient = </span><span style="color:blue">new</span><span style="color:black"> </span>LabWebApi2063A<span style="color:black">(</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:black">&nbsp;&nbsp;&nbsp; </span><span style="color:blue">new</span><span style="color:black"> Microsoft.Rest.</span>TokenCredentials<span style="color:black">(</span><span style="color:#A31515">"test-token"</span><span style="color:black">)</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:black">);</span></p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Paste in the following line of code to create a new <b>Contact</b>
+object that will be used to insert a new record.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlockCxSpFirst"><span style="color:blue">var</span> newContact = <span style="color:blue">new</span> Models.<span style="color:#2B91AF">Contact</span></p>
+
+<p class="CodeBlockCxSpMiddle">{</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; PartitionKey = <span style="color:#A31515">"Gates"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; RowKey = <span style="color:#A31515">"William"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; City = <span style="color:#A31515">"New
+York"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; StateProv = <span style="color:#A31515">"NY"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; PrimaryPhone = <span style="color:#A31515">"555-1234"</span></p>
+
+<p class="CodeBlockCxSpLast">};</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Paste in the following line of code that uses the <b>Put</b> action
+method on the <b>Contacts</b> <b>API</b> to insert a new <b>Contact </b>record.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlock">apiClient.Contacts.Put(newContact);</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Press <b>Ctrl-F5</b> to
+debug the console app and ensure it executes without error.<br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Delete the previous 2 lines
+of code, leaving the <b>apiClient </b>variable declaration.<br>
+<img border="0" width="462" height="128" id="Picture 40" src="./Exercise1_files/image060.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Paste in the following code
+that retrieves <b>All Contacts </b>using the <b>Get</b> action method on the <b>Contacts
+API</b>, then writes them out to the Console.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2">
+
+<p class="CodeBlockCxSpFirst"><span style="color:blue">var</span> allContacts =
+apiClient.Contacts.Get();</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">foreach</span>(<span style="color:blue">var</span> contact <span style="color:blue">in</span>
+allContacts)</p>
+
+<p class="CodeBlockCxSpMiddle">{</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp; <span style="color:#2B91AF">Console</span>.WriteLine(</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">string</span>.Format(<span style="color:#A31515">"{0}, {1} - {2}, {3}"</span>,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contact.RowKey, <span style="color:green">// first name</span></p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contact.PartitionKey, <span style="color:green">// last name</span></p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contact.City,</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contact.StateProv</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+
+<p class="CodeBlockCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );</p>
+
+<p class="CodeBlockCxSpLast">}</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Press <b>Ctrl-F5</b> to debug the console app and see the output of all
+contacts in the Console.<br>
+<img border="0" width="322" height="111" id="Picture 41" src="./Exercise1_files/image061.jpg"></p>
+
+</div>
+
+
+
+
+</body></html>

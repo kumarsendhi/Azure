@@ -1,0 +1,1677 @@
+
+<!-- saved from url=(0167)https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:14.25pt;
+	margin-left:0in;
+	background:#F9F9F9;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;
+	background:#F9F9F9;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc473880561">Managing Azure SQL Database with PowerShell</a></h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="720" style="width:7.5in;border-collapse:collapse">
+ <tbody><tr>
+  <td width="720" valign="top" style="width:7.5in;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#00ABEB;padding:.75pt 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Conditions and Terms of Use</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="720" valign="top" style="width:7.5in;border:solid white 1.0pt;
+  border-top:none;background:#CBE2F7;padding:.75pt 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This training package is proprietary and confidential.&nbsp;
+  Duplicating, reselling and/or distribution of course materials in their
+  entirety or in part is not permitted without the expressed prior written
+  consent of Opsgility, LLC.&nbsp; The contents of this package are for
+  informational and training purposes only and are provided "as is"
+  without warranty of any kind, whether express or implied, including but not
+  limited to the implied warranties of merchantability, fitness for a
+  particular purpose, and non-infringement.</p>
+  <p class="MsoNormal">&nbsp;</p>
+  <p class="MsoNormal">Training package content, including URLs and other
+  Internet Web site references, is subject to change without notice. Because
+  Opsgility must respond to changing market conditions, the content should not
+  be interpreted to be a commitment on the part of Opsgility, and Opsgility
+  does not guarantee the accuracy of any information presented after the date
+  of release, publication or delivery of training sessions.</p>
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Segoe UI&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:107%;
+color:#2E74B5">&nbsp;</span></b></p>
+
+<h2><a name="_Toc473880562">Lab Overview</a></h2>
+
+<p class="MsoNormal">In this lab, you will use PowerShell to manage Azure SQL
+Database. You will create a logical Azure SQL Server via PowerShell. You will
+then manage the firewall to allow remote connectivity to allow for client
+access. You will restore a database from an existing BACPAC file. Finally, you
+will use PowerShell to scale the database performance and pricing tier and
+setup an Azure Automation job to scale the database up at the beginning of the
+day and scaled it back down at the end of the day to optimize costs.</p>
+
+<p class="MsoNormal"><img width="720" height="567" src="./Managing Azure SQL Database with PowerShell_files/image001.png"></p>
+
+<h2><a name="_Toc473880563">Prerequisites</a></h2>
+
+<p class="MsoListParagraphCxSpFirst">Microsoft Azure Subscription: <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">http://azure.microsoft.com/en-us/pricing/free-trial/</a>
+</p>
+
+<p class="MsoListParagraphCxSpLast">Azure PowerShell 3.0 or higher: <a href="https://azure.microsoft.com/en-us/downloads/">https://azure.microsoft.com/en-us/downloads/</a>
+&nbsp;</p>
+
+<h2><a name="_Toc473880564">Time Estimate</a></h2>
+
+<p class="MsoListParagraph">75 minutes</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc473880565">Table of Contents</a></h2>
+
+<p class="MsoToc1"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880561">Managing Azure SQL Database with
+PowerShell<span style="color:#262626;display:none;text-decoration:none"> </span><span style="color:#262626;display:none;text-decoration:none">1</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880562">Lab Overview<span style="color:#262626;
+display:none;text-decoration:none">.. </span><span style="color:#262626;display:none;text-decoration:none">2</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880563">Prerequisites<span style="color:#262626;
+display:none;text-decoration:none">. </span><span style="color:#262626;display:none;text-decoration:none">2</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880564">Time Estimate<span style="color:#262626;
+display:none;text-decoration:none">. </span><span style="color:#262626;display:none;text-decoration:none">2</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880565">Table of Contents<span style="color:#262626;display:none;text-decoration:none">. </span><span style="color:#262626;display:none;text-decoration:none">3</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880566">Exercise 1: Create a Storage Account<span style="color:#262626;display:none;text-decoration:none"> </span><span style="color:#262626;display:none;text-decoration:none">4</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880567">Exercise 2: Create a logical SQL
+Server using PowerShell<span style="color:#262626;display:none;text-decoration:
+none"> </span><span style="color:#262626;display:none;text-decoration:none">11</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880568">Exercise 3: Restore Azure SQL
+Database from BACPAC file<span style="color:#262626;display:none;text-decoration:
+none">. </span><span style="color:#262626;display:none;text-decoration:none">14</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880569">Exercise 4: Scale Azure SQL Database
+Performance with PowerShell<span style="color:#262626;display:none;text-decoration:
+none"> </span><span style="color:#262626;display:none;text-decoration:none">19</span></a></p>
+
+<p class="MsoToc2"><a href="https://opsgilityweb.blob.core.windows.net/online-labs/Managing%20Azure%20SQL%20Database%20with%20PowerShelll/Managing%20Azure%20SQL%20Database%20with%20PowerShell.htm#_Toc473880570">Lab Summary<span style="color:#262626;
+display:none;text-decoration:none">. </span><span style="color:#262626;display:none;text-decoration:none">25</span></a></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Segoe UI&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:107%;
+color:#2E74B5">&nbsp;</span></b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc473880566">Exercise 1: Create a Storage Account</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a storage account to be
+used for the remaining exercises in this lab.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Open your
+browser and navigate to <a href="http://portal.azure.com/">http://portal.azure.com</a><span class="MsoHyperlink"> </span></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Enter the
+account associated with your Microsoft Azure subscription.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><b>&nbsp;</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="390" height="339" id="Picture 41" src="./Managing Azure SQL Database with PowerShell_files/image002.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>If your account
+is associated with an organization account and a Microsoft account you may be
+prompted to choose which one to authenticate with for your Microsoft Azure
+account. &nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="418" height="242" id="Picture 42" src="./Managing Azure SQL Database with PowerShell_files/image003.png"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click the <b>+NEW
+</b>button in the upper left of the portal. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="83" height="39" id="Picture 18" src="./Managing Azure SQL Database with PowerShell_files/image004.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Type <b>Storage
+Account</b> into the search box and hit enter. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="287" height="105" id="Picture 19" src="./Managing Azure SQL Database with PowerShell_files/image005.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Choose <b>Storage
+account</b> from the search results. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="541" height="263" id="Picture 21" src="./Managing Azure SQL Database with PowerShell_files/image006.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click the <b>Create</b>
+button on the Storage account information pane.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="91" height="24" id="Picture 22" src="./Managing Azure SQL Database with PowerShell_files/image007.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>On the Create
+storage account blade, specify the following storage account configurations:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: <b><i>Choose a unique name</i></b> </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Deployment model: <b>Resource manager</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Account kind: <b>General purpose</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Performance: <b>Standard</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Replication: <b>Locally-redundant storage (LRS)</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Storage service encryption: <b>Disabled</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Subscription: <b><i>Choose your subscription</i></b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource group: <b>Create new, opssqldb</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: <b><i>Choose the region nearest you</i></b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in"><img border="0" width="166" height="441" id="Picture 25" src="./Managing Azure SQL Database with PowerShell_files/image008.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click create to
+provision the storage account.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="91" height="24" id="Picture 34" src="./Managing Azure SQL Database with PowerShell_files/image007.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>While you wait
+for your storage account to provision, download the <b>AdventureWorksLT.bacpac</b>
+file to your local machine from: <a href="http://bit.ly/2jwI5yG">http://bit.ly/2jwI5yG</a>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the Azure
+Portal, navigate to the <b>ospsqldb</b> resource group then open the storage
+account you just created (note that your storage account will have a different
+name than below).</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="661" height="212" id="Picture 53" src="./Managing Azure SQL Database with PowerShell_files/image009.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the Storage
+account blade, click on the <b>Blobs</b> tile.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="620" height="338" id="Picture 54" src="./Managing Azure SQL Database with PowerShell_files/image010.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the Blob service blade, click
+the <b>+Container</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="413" height="243" id="Picture 55" src="./Managing Azure SQL Database with PowerShell_files/image011.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the new container blade, type <b>sqlbackups</b>,
+then click the <b>Create</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="275" height="197" id="Picture 56" src="./Managing Azure SQL Database with PowerShell_files/image012.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the Blob service blade, open
+the <b>sqlbackups</b> container you just created.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="372" height="235" id="Picture 57" src="./Managing Azure SQL Database with PowerShell_files/image013.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>upload</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="543" height="229" id="Picture 58" src="./Managing Azure SQL Database with PowerShell_files/image014.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>open file</b> <b>button</b>,
+locate the <b>AdventureWorksLT.bacpac</b> file you downloaded earlier in this
+exercise, click open, then click <b>Upload</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="568" height="332" id="Picture 59" src="./Managing Azure SQL Database with PowerShell_files/image015.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>After the blob upload completes,
+you should see the <b>AdventureWorksLT.bacpac</b> file in the <b>sqlbackups</b>
+<b>container</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="500" height="234" id="Picture 60" src="./Managing Azure SQL Database with PowerShell_files/image016.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>AdventureWorksLT.bacpac</b>
+file to open the Blob<b> Properties</b> blade and click the <b>copy button</b>
+to copy the URL of the file. Paste the URL into notepad.exe for use later in
+the lab.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="301" height="235" id="Picture 193" src="./Managing Azure SQL Database with PowerShell_files/image017.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Navigate back to the storage
+account overview blade. Under <b>settings</b> click on <b>Access keys</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="475" height="447" id="Picture 61" src="./Managing Azure SQL Database with PowerShell_files/image018.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>copy button</b> for
+key1, then paste the key into notepad.exe for use in later exercises.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="608" height="303" id="Picture 62" src="./Managing Azure SQL Database with PowerShell_files/image019.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc473880567">Exercise 2: Create a logical SQL Server using
+PowerShell</a></h2>
+
+<p class="MsoNormal">In this exercise, you will create a logical SQL Server that
+you will use to host an Azure SQL Database. </p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:106%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Connect to your
+LABVM and launch the PowerShell ISE.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="241" height="51" id="Picture 26" src="./Managing Azure SQL Database with PowerShell_files/image020.png"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:107%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the command
+window execute the following and sign in to your Azure account.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Login-AzureRmAccount</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="line-height:106%">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:107%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>If you are not
+using your default subscription in Azure, execute the following command and
+identify the subscription you are using for this lab and make note of the
+subscription id.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Get-AzureRmSubscription</p>
+
+</div>
+
+<p class="MsoListParagraph" style="line-height:107%"><img border="0" width="492" height="175" id="Picture 3" src="./Managing Azure SQL Database with PowerShell_files/image021.png"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:106%">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Replace the
+placeholder value in the following command with your subscription id noted in
+the previous step. Execute the command to switch to the Azure Subscription you
+are using for this lab. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock">Set-AzureRmContext -SubscriptionId '&lt;your subscription
+id&gt;'</p>
+
+</div>
+
+<p class="MsoListParagraph"><img border="0" width="702" height="175" id="Picture 2" src="./Managing Azure SQL Database with PowerShell_files/image022.png"></p>
+
+<p class="MsoListParagraph">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>A logical SQL
+Server is the point of entry into an Azure SQL Database. Similar to an
+on-premises instance of SQL Server, it is used to manage security, and
+connectivity. However, an Azure SQL Server is not a physical instance. It is
+hosted on a shared physical resource in an Azure datacenter. The following
+script will create a new logical SQL Server in Azure. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Copy and paste this script into the your
+PowerShell ISE script window. Before this script will execute, you will need to
+change the $ServerName, $Location variables that are highlighted below. The
+$ServerName variable must be unique as it is a public endpoint on the Internet.
+The $Location variable should be set to the same location you have been using
+throughout the lab. If you deviated from the lab for any of the other variables
+you will need to change those as well.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Execute the script to create a new logical
+SQL Server in Azure by clicking the <b>Run</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="434" height="79" id="Picture 198" src="./Managing Azure SQL Database with PowerShell_files/image023.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$ResourceGroupName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerVersion<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"12.0"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$Location<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"South Central US"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerAdmin<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"demouser"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerAdminPassword<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Demo@pass123"</span><span style="color:windowtext">
+</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen"># Get the resource
+group object</span></p>
+
+<p class="CodeBlockCxSpMiddle">$myResourceGroup<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-AzureRmResourceGroup</span><span style="color:windowtext">
+</span><span style="color:navy">-Name</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext"> </span><span style="color:navy">-ea</span><span style="color:windowtext"> </span><span style="color:blueviolet">SilentlyContinue</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen"># Set server
+credentials</span></p>
+
+<p class="CodeBlockCxSpMiddle">$SecurePassword<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">ConvertTo-SecureString</span><span style="color:windowtext">
+</span><span style="color:navy">-String</span><span style="color:windowtext"> </span>$ServerAdminPassword<span style="color:windowtext"> </span><span style="color:navy">-AsPlainText</span><span style="color:windowtext"> </span><span style="color:navy">-Force</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerCreds<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:navy">-TypeName</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Management.Automation.PSCredential</span><span style="color:windowtext"> </span><span style="color:navy">-ArgumentList</span><span style="color:windowtext"> </span>$ServerAdmin<span style="color:darkgray">,</span><span style="color:windowtext"> </span>$SecurePassword</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen"># Create the logical
+SQL Server</span></p>
+
+<p class="CodeBlockCxSpMiddle">$Server<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-AzureRmSqlServer</span><span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$myResourceGroup<span style="color:windowtext">
+</span><span style="color:navy">-ea</span><span style="color:windowtext"> </span><span style="color:blueviolet">SilentlyContinue</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">if</span><span style="color:windowtext">(</span><span style="color:darkgray">!</span>$Server<span style="color:windowtext">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span><span style="color:blue">Write-host</span><span style="color:windowtext"> </span><span style="color:darkred">"Creating SQL server: </span>$ServerName<span style="color:darkred">"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span>$Server<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-AzureRmSqlServer</span><span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext">
+</span><span style="color:navy">-ServerName</span><span style="color:windowtext">
+</span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-Location</span><span style="color:windowtext"> </span>$Location<span style="color:windowtext"> </span><span style="color:navy">-ServerVersion</span><span style="color:windowtext"> </span>$ServerVersion<span style="color:windowtext"> </span><span style="color:navy">-SqlAdministratorCredentials</span><span style="color:windowtext">
+</span>$ServerCreds</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">else</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span><span style="color:blue">Write-host</span><span style="color:windowtext"> </span><span style="color:darkred">"SQL server </span>$ServerName<span style="color:darkred"> already exists:"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpLast">$Server</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;background:white;text-autospace:none"><span style="font-size:9.0pt;
+font-family:&quot;Lucida Console&quot;;color:windowtext">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>After the script
+completes, open a new tab in your PowerShell ISE. Copy and paste the following
+script to verify your server was created successfully. </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">This script will retrieve server
+configuration information from the new logical SQL Server. </p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$ResourceGroupName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$Server<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-AzureRmSqlServer</span><span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext">
+</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">Write-Host</span><span style="color:windowtext"> </span><span style="color:darkred">"Server name:
+"</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">ServerName</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">Write-Host</span><span style="color:windowtext"> </span><span style="color:darkred">"Fully
+qualified server name: </span>$ServerName<span style="color:darkred">.database.windows.net"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">Write-Host</span><span style="color:windowtext"> </span><span style="color:darkred">"Server
+location: "</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">Location</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">Write-Host</span><span style="color:windowtext"> </span><span style="color:darkred">"Server version:
+"</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">ServerVersion</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:blue">Write-Host</span><span style="color:windowtext"> </span><span style="color:darkred">"Server
+administrator login: "</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">SqlAdministratorLogin
+</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="413" height="89" id="Picture 199" src="./Managing Azure SQL Database with PowerShell_files/image024.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Access to Azure
+SQL Database is controlled by a firewall. Before we can restore databases to
+our logical SQL Server we must open the firewall for our client.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">The PowerShell script below will discover
+the client IP address of your lab machine, then create a new Firewall rule to
+allow connectivity from that client IP address. Copy and paste this code into
+your PowerShell ISE script window then execute it.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$serverResourceGroupName<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen"># Retrieve external
+IP address</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:orangered">$myIP</span><span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> (</span><span style="color:blue">Invoke-WebRequest</span><span style="color:windowtext"> </span>'http://myexternalip.com/raw'<span style="color:windowtext">)</span><span style="color:darkgray">.</span><span style="color:windowtext">Content </span><span style="color:darkgray">-replace</span><span style="color:windowtext"> </span>"`n"</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;font-family:&quot;Lucida Console&quot;;
+color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$TimeStamp<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-Date</span><span style="color:windowtext"> </span><span style="color:navy">-Format</span><span style="color:windowtext"> </span><span style="color:blueviolet">o</span><span style="color:windowtext"> </span><span style="color:darkgray">|</span><span style="color:windowtext"> </span><span style="color:blue">foreach</span><span style="color:windowtext"> {</span>$_<span style="color:windowtext"> </span><span style="color:darkgray">-replace</span><span style="color:windowtext"> </span><span style="color:darkred">":"</span><span style="color:darkgray">,</span><span style="color:windowtext"> </span><span style="color:darkred">"."</span><span style="color:windowtext">} </span><span style="color:darkgray">|</span><span style="color:windowtext"> </span><span style="color:blue">foreach</span><span style="color:windowtext"> {</span>$_<span style="color:windowtext"> </span><span style="color:darkgray">-replace</span><span style="color:windowtext"> </span><span style="color:darkred">"\+00.0"</span><span style="color:darkgray">,</span><span style="color:windowtext"> </span><span style="color:darkred">""</span><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Set parameters for
+the firewall rule</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverFirewallRuleName<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"ClientIP </span>$myIP<span style="color:darkred"> </span>$TimeStamp<span style="color:darkred">"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverFirewallStartIp<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$myIP</p>
+
+<p class="CodeBlockCxSpMiddle">$serverFirewallEndIp<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$myIP</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$myFirewallRule<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-AzureRmSqlServerFirewallRule</span><span style="color:windowtext"> </span><span style="color:navy">-FirewallRuleName</span><span style="color:windowtext"> </span>$serverFirewallRuleName<span style="color:
+windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$serverName<span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$serverResourceGroupName<span style="color:windowtext"> </span><span style="color:navy">-ea</span><span style="color:windowtext"> </span><span style="color:blueviolet">SilentlyContinue</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Create the new
+firewall rule</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">if</span><span style="color:windowtext">(</span><span style="color:darkgray">!</span>$myFirewallRule<span style="color:windowtext">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span><span style="color:blue">Write-host</span><span style="color:windowtext"> </span><span style="color:darkred">"Creating server firewall rule: </span>$serverFirewallRuleName<span style="color:darkred">"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span>$myFirewallRule<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-AzureRmSqlServerFirewallRule</span><span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$serverResourceGroupName<span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$serverName<span style="color:windowtext"> </span><span style="color:navy">-FirewallRuleName</span><span style="color:windowtext"> </span>$serverFirewallRuleName<span style="color:windowtext"> </span><span style="color:navy">-StartIpAddress</span><span style="color:windowtext"> </span>$serverFirewallStartIp<span style="color:windowtext">
+</span><span style="color:navy">-EndIpAddress</span><span style="color:windowtext">
+</span>$serverFirewallEndIp</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">else</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span><span style="color:blue">Write-host</span><span style="color:windowtext"> </span><span style="color:darkred">"Server firewall rule </span>$serverFirewallRuleName<span style="color:darkred"> already exists:"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpLast">$myFirewallRule </p>
+
+</div>
+
+<p class="MsoListParagraph">&nbsp;</p>
+
+<h2><a name="_Toc473880568">Exercise 3: Restore Azure SQL Database from BACPAC
+file</a></h2>
+
+<p class="MsoNormal">In this exercise, we will restore the AdventureWorksLT
+database from a BACPAC file. &nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Let’s verify
+that we can connect to our SQL Server. This script will make a connection to
+the server and then execute select * from sys.sysdatabases to give us a list of
+all databases on the logical server. At this point it should only list the
+master database in the output.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$serverName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverAdmin<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"demouser"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverAdminPassword<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Demo@pass123"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$databaseName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"master"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connectionString<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Server=tcp:"</span><span style="color:windowtext">
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$serverName<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">".database.windows.net"</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">",1433;Initial
+Catalog="</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$databaseName<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";Persist
+Security Info=False;User ID="</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">SqlAdministratorLogin
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";Password="</span><span style="color:windowtext">
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$ServerAdminPassword<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection
+Timeout=30;"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Data.SqlClient.SqlConnection</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:darkgray">.</span><span style="color:windowtext">ConnectionString </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$connectionString</p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:darkgray">.</span><span style="color:windowtext">Open()</span></p>
+
+<p class="CodeBlockCxSpMiddle">$command<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Data.SQLClient.SQLCommand</span><span style="color:windowtext">(</span><span style="color:darkred">"select *
+from sys.sysdatabases"</span><span style="color:darkgray">,</span><span style="color:windowtext"> </span>$connection<span style="color:windowtext">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$command<span style="color:darkgray">.</span><span style="color:windowtext">Connection </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$connection</p>
+
+<p class="CodeBlockCxSpMiddle">$reader<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$command<span style="color:darkgray">.</span><span style="color:windowtext">ExecuteReader()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$sysObjects<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">""</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">while</span><span style="color:windowtext"> (</span>$reader<span style="color:darkgray">.</span><span style="color:windowtext">Read()) {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp; </span>$sysObjects<span style="color:windowtext"> </span><span style="color:darkgray">+=</span><span style="color:windowtext"> </span>$reader<span style="color:darkgray">[</span><span style="color:darkred">"name"</span><span style="color:darkgray">]</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">"`n"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpMiddle">$sysObjects</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpLast">$connection<span style="color:darkgray">.</span><span style="color:windowtext">Close()</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;background:white;text-autospace:none"><span style="font-size:9.0pt;
+font-family:&quot;Lucida Console&quot;;color:windowtext">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="259" height="73" id="Picture 200" src="./Managing Azure SQL Database with PowerShell_files/image025.png">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Copy and paste
+the following script into a new PowerShell ISE tab but do not execute it yet.
+Examine the components of the script. Notice that we must open the firewall to
+allow the import service access to Azure SQL Database. </p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$ResourceGroupName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Open firewall to
+allow the import service to gain access to the Azure SQL Database</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">New-AzureRmSqlServerFirewallRule</span><span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span><span style="color:darkred">"</span><span style="color:orangered">$ResourceGroupName</span><span style="color:darkred">"</span><span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span><span style="color:darkred">"</span><span style="color:orangered">$ServerName</span><span style="color:darkred">"</span><span style="color:windowtext"> </span><span style="color:navy">-FirewallRuleName</span><span style="color:windowtext"> </span><span style="color:darkred">"ImportDatabase"</span><span style="color:windowtext"> </span><span style="color:navy">-StartIPAddress</span><span style="color:windowtext"> </span><span style="color:darkred">"0.0.0.0"</span><span style="color:windowtext"> </span><span style="color:navy">-EndIpAddress</span><span style="color:windowtext"> </span><span style="color:darkred">"0.0.0.0"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Name of our new
+database and the service tier</span></p>
+
+<p class="CodeBlockCxSpMiddle">$DatabaseName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"AdventureWorksLT"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$DatabaseEdition<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Basic"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$databaseServiceLevel<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Basic"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Storage acount url
+and access key where bacpac file is stored</span></p>
+
+<p class="CodeBlockCxSpMiddle">$storageKeyType<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"StorageAccessKey"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$storageUri<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"https://opssqldbstor.blob.core.windows.net/sqlbackups/AdventureWorksLT.bacpac"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$storageKey<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"XcoCZqzBKPLaeBcnsHtqUaXLK+Th35qPKGaU+df5Uf6OX8tq4/ZpgOksGS663GmYswk1fUDy7bolgPqmasJL+Q=="</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Admin credentials
+of the logical server</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerAdmin<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"demouser"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerAdminPassword<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Demo@pass123"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen"># Set server
+credentials</span></p>
+
+<p class="CodeBlockCxSpMiddle">$SecurePassword<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">ConvertTo-SecureString</span><span style="color:windowtext">
+</span><span style="color:navy">-String</span><span style="color:windowtext"> </span>$ServerAdminPassword<span style="color:windowtext"> </span><span style="color:navy">-AsPlainText</span><span style="color:windowtext"> </span><span style="color:navy">-Force</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerCreds<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:navy">-TypeName</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Management.Automation.PSCredential</span><span style="color:windowtext"> </span><span style="color:navy">-ArgumentList</span><span style="color:windowtext"> </span>$ServerAdmin<span style="color:darkgray">,</span><span style="color:windowtext"> </span>$SecurePassword</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Restore the
+AdventureWorksLT database from a bacpac file stored in Azure Blob Storage</span></p>
+
+<p class="CodeBlockCxSpMiddle">$importRequest<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-AzureRmSqlDatabaseImport</span><span style="color:windowtext">
+</span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext">
+</span><span style="color:navy">-ServerName</span><span style="color:windowtext">
+</span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-DatabaseName</span><span style="color:windowtext"> </span>$DatabaseName<span style="color:windowtext"> </span><span style="color:navy">-StorageKeytype</span><span style="color:windowtext"> </span>$storageKeyType<span style="color:windowtext">
+</span><span style="color:navy">-StorageKey</span><span style="color:windowtext">
+</span>$storageKey<span style="color:windowtext"> </span><span style="color:navy">-StorageUri</span><span style="color:windowtext"> </span>$storageUri<span style="color:windowtext"> </span><span style="color:navy">-AdministratorLogin</span><span style="color:windowtext"> </span>$ServerAdmin<span style="color:windowtext"> </span><span style="color:navy">-AdministratorLoginPassword</span><span style="color:windowtext">
+</span>$SecurePassword<span style="color:windowtext"> </span><span style="color:navy">-Edition</span><span style="color:windowtext"> </span>$databaseEdition<span style="color:windowtext"> </span><span style="color:navy">-ServiceObjectiveName</span><span style="color:windowtext"> </span>$databaseServiceLevel<span style="color:windowtext">
+</span><span style="color:navy">-DatabaseMaxSizeBytes</span><span style="color:windowtext"> </span><span style="color:purple">5000000</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Check the import
+status every 10 seconds until complete</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">Do</span><span style="color:windowtext"> {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp;&nbsp; </span>$importStatus<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">Get-AzureRmSqlDatabaseImportExportStatus</span><span style="color:windowtext"> </span><span style="color:navy">-OperationStatusLink</span><span style="color:windowtext"> </span>$importRequest<span style="color:darkgray">.</span><span style="color:windowtext">OperationStatusLink</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:blue">Write-host</span><span style="color:windowtext"> </span><span style="color:darkred">"Importing database..."</span><span style="color:windowtext"> </span>$importStatus<span style="color:darkgray">.</span><span style="color:windowtext">StatusMessage</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:blue">Start-Sleep</span><span style="color:windowtext"> </span><span style="color:navy">-Seconds</span><span style="color:windowtext"> </span><span style="color:purple">10</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp;&nbsp; </span>$importStatus<span style="color:darkgray">.</span><span style="color:windowtext">Status</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp; </span><span style="color:darkblue">until</span><span style="color:windowtext"> (</span>$importStatus<span style="color:darkgray">.</span><span style="color:windowtext">Status </span><span style="color:darkgray">-eq</span><span style="color:windowtext"> </span><span style="color:darkred">"Succeeded"</span><span style="color:windowtext">)</span></p>
+
+<p class="CodeBlockCxSpMiddle">$importStatus</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#Remove the firewall
+rule used for the import</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:blue">Remove-AzureRmSqlServerFirewallRule</span><span style="color:windowtext"> </span><span style="color:navy">-FirewallRuleName</span><span style="color:windowtext"> </span><span style="color:darkred">"ImportDatabase"</span><span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span><span style="color:darkred">"</span><span style="color:orangered">$ResourceGroupName</span><span style="color:darkred">"</span><span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span><span style="color:darkred">"</span><span style="color:orangered">$ServerName</span><span style="color:darkred">"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:windowtext">&nbsp;</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Replace the
+$StorageUri variable and the $StorageKey variables with the variables that you
+copied from your storage account earlier in the lab.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="679" height="51" id="Picture 201" src="./Managing Azure SQL Database with PowerShell_files/image026.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Execute the
+script by clicking the run button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="434" height="79" id="Picture 202" src="./Managing Azure SQL Database with PowerShell_files/image023.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>The output
+should look similar to this:</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="328" height="446" id="Picture 203" src="./Managing Azure SQL Database with PowerShell_files/image027.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Verify database
+connectivity by executing the following script against the AdventureWorksLT
+database.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$serverName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverAdmin<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"demouser"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$serverAdminPassword<span style="color:windowtext">
+</span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Demo@pass123"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$databaseName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"AdventureWorksLT"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connectionString<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Server=tcp:"</span><span style="color:windowtext">
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$serverName<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">".database.windows.net"</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">",1433;Initial
+Catalog="</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$databaseName<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";Persist
+Security Info=False;User ID="</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$Server<span style="color:darkgray">.</span><span style="color:windowtext">SqlAdministratorLogin
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";Password="</span><span style="color:windowtext">
+</span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$ServerAdminPassword<span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection
+Timeout=30;"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$query<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"select cust.LastName, cust.FirstName,
+adr.StateProvince from SalesLT.Customer as cust inner join
+SalesLT.CustomerAddress as cadr on cust.CustomerID = cadr.CustomerID inner join
+SalesLT.Address as adr on cadr.AddressID = adr.AddressID where
+adr.StateProvince = 'Texas'"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkgreen">#$query =
+"select * from SalesLT.Customer"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Data.SqlClient.SqlConnection</span></p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:darkgray">.</span><span style="color:windowtext">ConnectionString </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$connectionString</p>
+
+<p class="CodeBlockCxSpMiddle">$connection<span style="color:darkgray">.</span><span style="color:windowtext">Open()</span></p>
+
+<p class="CodeBlockCxSpMiddle">$command<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:blue">New-Object</span><span style="color:windowtext"> </span><span style="color:blueviolet">System.Data.SQLClient.SQLCommand</span><span style="color:windowtext">(</span>$query<span style="color:darkgray">,</span><span style="color:windowtext"> </span>$connection<span style="color:windowtext">)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$command<span style="color:darkgray">.</span><span style="color:windowtext">Connection </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$connection</p>
+
+<p class="CodeBlockCxSpMiddle">$reader<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span>$command<span style="color:darkgray">.</span><span style="color:windowtext">ExecuteReader()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$TXCustomers<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"`n"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:darkblue">while</span><span style="color:windowtext"> (</span>$reader<span style="color:darkgray">.</span><span style="color:windowtext">Read()) {</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;&nbsp;&nbsp; </span>$TXCustomers<span style="color:windowtext"> </span><span style="color:darkgray">+=</span><span style="color:windowtext"> </span>$reader<span style="color:darkgray">[</span><span style="color:darkred">"StateProvince"</span><span style="color:darkgray">]</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">", "</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$reader<span style="color:darkgray">[</span><span style="color:darkred">"LastName"</span><span style="color:darkgray">]</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">", "</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span>$reader<span style="color:darkgray">[</span><span style="color:darkred">"FirstName"</span><span style="color:darkgray">]</span><span style="color:windowtext"> </span><span style="color:darkgray">+</span><span style="color:windowtext"> </span><span style="color:darkred">"`n"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">}</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$TXCustomers</p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpLast">$connection<span style="color:darkgray">.</span><span style="color:windowtext">Close() </span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">Your output should look similar to this:</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="161" height="375" id="Picture 204" src="./Managing Azure SQL Database with PowerShell_files/image028.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc473880569">Exercise 4: Scale Azure SQL Database Performance
+with PowerShell</a></h2>
+
+<p class="MsoNormal">One of the most powerful features of Azure is its elasticity
+and the cost efficiencies it provides. The ability to scale an Azure service up
+during periods of high use and scale down during periods of low use is one of
+the hallmarks of the Azure cloud architecture. </p>
+
+<p class="MsoNormal">In this exercise you will scale your Azure SQL Database to a
+higher service/performance tier using PowerShell. </p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Review the following script. A single command is all that is needed to
+perform the actual scaling. Execute the query to </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$ResourceGroupName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$DatabaseName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"AdventureWorksLT"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$NewEdition<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Standard"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$NewPricingTier<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"S0"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:blue">Set-AzureRmSqlDatabase</span><span style="color:windowtext"> </span><span style="color:navy">-DatabaseName</span><span style="color:windowtext"> </span>$DatabaseName<span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext">
+</span><span style="color:navy">-Edition</span><span style="color:windowtext"> </span>$NewEdition<span style="color:windowtext"> </span><span style="color:navy">-RequestedServiceObjectiveName</span><span style="color:windowtext"> </span>$NewPricingTier </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the Azure
+Portal, navigate to your Azure SQL Database. In the Overview, you should see a
+message indicating that the database is resizing.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="507" height="196" id="Picture 205" src="./Managing Azure SQL Database with PowerShell_files/image029.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Let’s integrate
+this task into an automated task so that we can scale up and down on a
+schedule.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Within the Azure
+Portal, click <b>+New</b> then type <b>Automation</b> into the search box.
+Choose <b>Automation</b> from the search results.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="392" height="181" id="Picture 206" src="./Managing Azure SQL Database with PowerShell_files/image030.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>On the
+Automation information blade, click the <b>Create</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>On the Add
+Automation Account blade, use the following configurations then click the <b>Create</b>
+button:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: <b>opssqldbauto</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Subscription: <b><i>&lt;your subscription&gt;</i></b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource group: <b>Create new, Automation</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: <b><i>&lt;the same region used for this lab or the next
+closest region available&gt;</i></b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Create Azure Run As account: <b>Yes</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in"><img border="0" width="190" height="238" id="Picture 207" src="./Managing Azure SQL Database with PowerShell_files/image031.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>After the
+Automation Account deployment completes, navigate to the Automation resource
+group and open the automation account we just created.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="422" height="239" id="Picture 208" src="./Managing Azure SQL Database with PowerShell_files/image032.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click on the <b>Runbooks</b>
+tile.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="420" height="235" id="Picture 209" src="./Managing Azure SQL Database with PowerShell_files/image033.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>On the Runbooks
+blade, click the <b>+Add a runbook</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="202" height="111" id="Picture 210" src="./Managing Azure SQL Database with PowerShell_files/image034.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Choose the <b>Quick Create</b>
+tile.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="156" height="103" id="Picture 211" src="./Managing Azure SQL Database with PowerShell_files/image035.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the Runbook blade, type <b>opssqldbperf</b>
+into the Name textbox and choose <b>PowerShell</b> from the Runbook type
+dropdown. Click the <b>Create</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="155" height="99" id="Picture 212" src="./Managing Azure SQL Database with PowerShell_files/image036.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>In the Edit PowerShell Runbook
+blade, paste the following code into the script window. This code runs your
+script in the context of your Azure Automation RunAs account.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="background:#F9F9F9">$Conn =
+Get-AutomationConnection -Name AzureRunAsConnection</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="background:#F9F9F9">Add-AzureRMAccount
+-ServicePrincipal -Tenant $Conn.TenantID `</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="background:#F9F9F9">-ApplicationId $Conn.ApplicationID
+-CertificateThumbprint $Conn.CertificateThumbprint</span></p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>Test pane</b> button
+to launch the test pane.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="496" height="80" id="Picture 213" src="./Managing Azure SQL Database with PowerShell_files/image037.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the Test pane click the <b>Start</b>
+button. The job will be queued for while it waits for an Azure Automation
+worker to pick up the job. Once a worker has picked up the job, the status will
+change from Queued to Running.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="210" height="106" id="Picture 214" src="./Managing Azure SQL Database with PowerShell_files/image038.png">&nbsp;<span style="font-family:Wingdings">à</span> <img border="0" width="203" height="104" id="Picture 215" src="./Managing Azure SQL Database with PowerShell_files/image039.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>After the test run completes you
+should have output similar to this indicating that executing in the context of
+your RunAs account was successful.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="237" height="133" id="Picture 216" src="./Managing Azure SQL Database with PowerShell_files/image040.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Now we will add the code to scale SQL
+to a higher performance tier. In the Edit PowerShell Runbook blade, add the
+following code to the end of your script. </p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst">$ResourceGroupName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$ServerName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"opssqldb"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$DatabaseName<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"AdventureWorksLT"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle">$NewEdition<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"Standard"</span></p>
+
+<p class="CodeBlockCxSpMiddle">$NewPricingTier<span style="color:windowtext"> </span><span style="color:darkgray">=</span><span style="color:windowtext"> </span><span style="color:darkred">"S1"</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="color:windowtext">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="color:blue">Set-AzureRmSqlDatabase</span><span style="color:windowtext"> </span><span style="color:navy">-DatabaseName</span><span style="color:windowtext"> </span>$DatabaseName<span style="color:windowtext"> </span><span style="color:navy">-ServerName</span><span style="color:windowtext"> </span>$ServerName<span style="color:windowtext"> </span><span style="color:navy">-ResourceGroupName</span><span style="color:windowtext"> </span>$ResourceGroupName<span style="color:windowtext">
+</span><span style="color:navy">-Edition</span><span style="color:windowtext"> </span>$NewEdition<span style="color:windowtext"> </span><span style="color:navy">-RequestedServiceObjectiveName</span><span style="color:windowtext"> </span>$NewPricingTier</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Test your runbook to validate your
+script. You can verify that your script worked correctly by navigating to your
+Azure SQL Database in the portal and verifying that it has changed to the new
+pricing tier.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="391" height="133" id="Picture 218" src="./Managing Azure SQL Database with PowerShell_files/image041.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Navigate back to your opssqldbperf
+runbook and click the <b>Publish</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="307" height="157" id="Picture 219" src="./Managing Azure SQL Database with PowerShell_files/image042.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>From the opssqldbperf runbook
+blade, click on the <b>Schedules</b> tile.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="89" height="90" id="Picture 220" src="./Managing Azure SQL Database with PowerShell_files/image043.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">20.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the schedules blade, click the <b>Add
+a schedule</b> button.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="125" height="85" id="Picture 221" src="./Managing Azure SQL Database with PowerShell_files/image044.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">21.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click the <b>Schedule</b> tile to
+link a schedule to your runbook. Then choose <b>Create a new schedule</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="311" height="99" id="Picture 222" src="./Managing Azure SQL Database with PowerShell_files/image045.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">22.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>On the New Schedule blade, give
+your schedule a name, description a start time and set the Recurrence to
+Recurring. We want this job to fire every morning to raise the performance
+level of our SQL Database to S1 at the beginning of the day. Click the <b>Create</b>
+button to create the schedule.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="155" height="273" id="Picture 223" src="./Managing Azure SQL Database with PowerShell_files/image046.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">23.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Click OK to accept the schedule
+change. On the Schedules blade that is now displayed you should see the
+schedule that you just created.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="289" height="83" id="Picture 224" src="./Managing Azure SQL Database with PowerShell_files/image047.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">24.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>In a production environment, you
+will want to repeat steps 7-23 to create another automation job to scale the
+Azure SQL Database back down at the end of the day to minimize cost.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc473880570">Lab Summary</a></h2>
+
+<p class="MsoNormal">In this lab, you created a logical Azure SQL Server via PowerShell.
+You then managed the firewall which allowed you to restore a database from an
+existing BACPAC file. Finally, you used PowerShell to scale the database
+performance and pricing tier and setup an Azure Automation job to scale the
+database up at the beginning of the day and scaled it back down at the end of
+the day to optimize costs.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

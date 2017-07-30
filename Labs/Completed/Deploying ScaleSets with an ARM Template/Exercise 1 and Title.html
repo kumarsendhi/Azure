@@ -1,0 +1,617 @@
+
+<!-- saved from url=(0126)https://opsgilityweb.blob.core.windows.net/online-labs/deploying-azure-scale-sets-arm-template/Exercise%201%20and%20Title.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#4472C4;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2F5496;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#4472C4;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1>Hands-On Lab: Deploying VM Scale Sets with ARM Templates</h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="608" style="width:455.9pt;border-collapse:collapse">
+ <tbody><tr style="height:25.35pt">
+  <td width="608" valign="top" style="width:455.9pt;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#00ABEB;padding:.75pt 5.4pt 0in 5.4pt;
+  height:25.35pt">
+  <p class="MsoNormal">Conditions and Terms of Use</p>
+  </td>
+ </tr>
+ <tr style="height:256.95pt">
+  <td width="608" valign="top" style="width:455.9pt;border:solid white 1.0pt;
+  border-top:none;background:#CBE2F7;padding:.75pt 5.4pt 0in 5.4pt;height:256.95pt">
+  <p class="MsoNormal">This training package is proprietary and confidential.&nbsp;
+  Duplicating, reselling and/or distribution of course materials in their
+  entirety or in part is not permitted without the expressed prior written
+  consent of Opsgility, LLC.&nbsp; The contents of this package are for
+  informational and training purposes only and are provided "as is"
+  without warranty of any kind, whether express or implied, including but not limited
+  to the implied warranties of merchantability, fitness for a particular
+  purpose, and non-infringement.</p>
+  <p class="MsoNormal">&nbsp;</p>
+  <p class="MsoNormal">Training package content, including URLs and other
+  Internet Web site references, is subject to change without notice. Because
+  Opsgility must respond to changing market conditions, the content should not
+  be interpreted to be a commitment on the part of Opsgility, and Opsgility
+  does not guarantee the accuracy of any information presented after the date
+  of release, publication or delivery of training sessions.</p>
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc445119931">Lab Overview</a></h2>
+
+<p class="MsoNormal">In this lab, you will use Visual Studio Community 2017 to
+create a new Azure Resource Manager Template that deploys a virtual machine
+scale set (VMSS) that can dynamically scale up or down. Each instance of the
+scale set will automatically deploy a web application on provisioning by using
+a PowerShell Desire State Configuration (DSC) extension. </p>
+
+<h2>Objectives</h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Understand how to deploy a load balancer in an ARM template</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Understand how to deploy a virtual machine scale set in an ARM
+template</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Understand how to configure PowerShell DSC extensions in a scale
+set</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Understand how to deploy auto-scale rules</p>
+
+<h2><a name="_Toc445119933">Time Estimate</a></h2>
+
+<p class="MsoNormal">2 hours and 25 minutes</p>
+
+<p class="MsoListParagraph" style="margin-left:0in">&nbsp;</p>
+
+<h2>What you will build</h2>
+
+<p class="MsoNormal"><img width="742" height="369" src="./Exercise 1 and Title_files/image001.png"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h1>Exercise 1: Environment Setup</h1>
+
+<h2><a name="_Toc479277522"></a><a name="_Toc475274535"></a><a name="_Toc468902743"></a><a name="_Toc458511649"></a><a name="_Toc449067878"></a><a name="_Toc444268420">Overview</a></h2>
+
+<p class="MsoNormal">In this exercise, you create a Virtual Machine in Azure that
+will be used to complete the exercises in this lab guide.</p>
+
+<h2>Time Estimate</h2>
+
+<p class="MsoNormal">15 minutes</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>If you are using Opsgility Real Time
+Labs, skip to exercise 2.</b></p>
+
+</div>
+
+<h2><a name="_Toc430523502"></a><a name="_Toc437058409"></a><a name="_Toc444268423"></a><a name="_Toc449067881"></a><a name="_Toc458511652"></a><a name="_Toc468902746"></a><a name="_Toc475274538"></a><a name="_Toc479277525"></a><a name="_Toc476768675"></a>Task 1: Create a Virtual Machine using the Azure
+Portal</h2>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:106%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Launch a browser
+and navigate to <a href="https://portal.azure.com/">https://portal.azure.com</a>.
+Once prompted, login with your Microsoft Azure credentials. If prompted, choose
+whether your account is an organization account or just a Microsoft Account. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>Note:</b> You may need to launch an
+"in-private" session in your browser if you have multiple Microsoft
+Accounts. </p>
+
+</div>
+
+<ol style="margin-top:0in" start="2" type="1">
+ <li class="MsoNormal">Click on <b>+NEW</b>, and in the search box type in <b>Visual
+     Studio Community 2017 on Windows Server 2016 (x64) </b>and press enter.
+     Click the Visual Studio Community 2017 image running on Windows Server
+     2016 and with the latest update.</li>
+ <li class="MsoNormal">In the returned search results click the image name.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="533" height="269" id="Picture 25" src="./Exercise 1 and Title_files/image002.png"></p>
+
+<ol style="margin-top:0in" start="4" type="1">
+ <li class="MsoNormal">In the Marketplace solution blade, at the bottom of the
+     page keep the deployment model set to <b>Resource Manager</b> and click <b>Create</b>.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="273" height="105" id="Picture 55" src="./Exercise 1 and Title_files/image003.jpg"></p>
+
+<ol style="margin-top:0in" start="5" type="1">
+ <li class="MsoNormal">Set the following configuration on the Basics tab and
+     click <b>OK</b>.</li>
+</ol>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: <b>LABVM</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>VM disk type: <b>SSD</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>User name: <b>demouser</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Password: <b>Demo@pass123</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Subscription: <b>If you have multiple subscriptions choose the
+subscription to execute your labs in.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource Group: <b>LABVMRG</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in;text-indent:-.25in;
+line-height:106%"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: <b>Choose the closest Azure region to you.</b></p>
+
+<p class="MsoNormal" style="margin-left:.75in;text-indent:.25in"><img border="0" width="313" height="554" id="Picture 1" src="./Exercise 1 and Title_files/image004.jpg"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:106%">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Choose the <b>DS1_V2
+Standard</b> instance size on the Size blade. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2">Note: You may have to click the View All
+link to see the instance sizes.</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="561" height="509" id="Picture 27" src="./Exercise 1 and Title_files/image005.png"></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:22.7pt">
+
+<p class="Note" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:#F2F2F2"><b>Note:</b> We could use one of the
+recommended configurations, but if you are using a trial Azure subscription
+there is a restriction of 4 cores per region. Hence we are choosing a lower
+configuration. <b>Make sure to not chose a VM from a different family. Use the DS1_V2
+Standard as directed.</b></p>
+
+</div>
+
+<ol style="margin-top:0in" start="7" type="1">
+ <li class="MsoNormal">Click <b>Configure required settings</b> to specify a
+     storage account for your virtual machine if a storage account name is not
+     automatically selected for you. <img border="0" width="302" height="216" id="Picture 28" src="./Exercise 1 and Title_files/image006.jpg"></li>
+</ol>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:106%">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Click <b>Create
+New</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="184" height="59" id="Picture 24" src="./Exercise 1 and Title_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Specify a unique
+name for the storage account (all lower letters and alphanumeric characters)
+and ensure the green checkmark shows the name is valid.</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="295" height="76" id="Picture 30" src="./Exercise 1 and Title_files/image008.jpg"></p>
+
+<ol style="margin-top:0in" start="10" type="1">
+ <li class="MsoNormal">Click <b>OK</b> to continue.</li>
+ <li class="MsoNormal">Click <b>Configure required settings</b> for the
+     Diagnostics storage account if a storage account name is not automatically
+     selected for you. Repeat the previous steps to select a unique storage
+     account name. This storage account will hold diagnostic logs about your
+     virtual machine that you can use for troubleshooting purposes.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="272" height="63" id="Picture 33" src="./Exercise 1 and Title_files/image009.jpg"></p>
+
+<ol style="margin-top:0in" start="12" type="1">
+ <li class="MsoNormal">Accept the remaining default values on the Settings blade
+     and click <b>OK</b>. On the Summary page click <b>OK</b>. The deployment
+     should begin provisioning. It may take 15+ minutes for the virtual machine
+     to complete provisioning.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="166" height="165" id="Picture 38" src="./Exercise 1 and Title_files/image010.png"></p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in;line-height:106%">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Once the deployment is complete
+move on to the next exercise.</p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Segoe UI&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal"><a name="_Toc475274539"></a><a name="_Toc468902747"></a><a name="_Toc458511653"></a><a name="_Toc449067882"></a><a name="_Toc444268424"><b><span style="font-size:18.0pt;line-height:107%;font-family:&quot;Calibri Light&quot;,sans-serif;
+color:#2F5496">&nbsp;</span></b></a></p>
+
+<h2><a name="_Toc479277526">Task 2: Download and Unzip Student Files</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:106%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Move back to the
+Portal page on your local machine and wait for <b>LABVM</b> to show the Status
+of <b>Running</b>. Click <b>Connect</b> to establish a new Remote Desktop
+Session. </p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="535" height="265" id="Picture 22" src="./Exercise 1 and Title_files/image011.png"></p>
+
+<ol style="margin-top:0in" start="2" type="1">
+ <li class="MsoNormal">Depending on your remote desktop protocol client and
+     browser configuration you will either be prompted to open an RDP file or
+     you will need to download it and then open it separately to connect.&nbsp; You
+     may also be required to click, <b>Use a different account</b>.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="295" height="368" id="Picture 23" src="./Exercise 1 and Title_files/image012.jpg"></p>
+
+<ol style="margin-top:0in" start="3" type="1">
+ <li class="MsoNormal">Login with the credentials specified during creation:</li>
+</ol>
+
+<ol style="margin-top:0in" start="1" type="1">
+ <ol style="margin-top:0in" start="1" type="a">
+  <li class="MsoNormal">User: <b>demouser </b></li>
+  <li class="MsoNormal">Password: <b>demo@pass123</b></li>
+ </ol>
+</ol>
+
+<ol style="margin-top:0in" start="4" type="1">
+ <li class="MsoNormal">You will be presented with a Remote Desktop Connection
+     warning because of a certificate trust issue. Click <b>Yes</b> to continue
+     with the connection.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="339" height="333" id="Picture 402" src="./Exercise 1 and Title_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:106%">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>When logging on
+for the first time you will see a prompt on the right asking about network
+discovery. Click <b>No</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="240" height="296" id="Picture 29" src="./Exercise 1 and Title_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:107%">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Notice that
+Server Manager opens by default. On the left, click <b>Local Server</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="214" height="141" id="Picture 406" src="./Exercise 1 and Title_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>On the right
+side of the pane, click <b>On</b> by <b>IE Enhanced Security Configuration</b>.
+</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="549" height="323" id="Picture 407" src="./Exercise 1 and Title_files/image016.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Change to <b>Off</b>
+for Administrators and click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="313" height="330" id="Picture 44" src="./Exercise 1 and Title_files/image017.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>In the lower
+left corner, click on the <b>Windows</b> button to open the <b>Start Screen</b>.
+Then click Internet Explorer to open it. On first use you will be prompted
+about security settings. Accept the defaults by clicking <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="429" height="303" id="Picture 481" src="./Exercise 1 and Title_files/image018.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">10.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>If prompted, <b>click</b> Don’t
+show this again regarding protected mode.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">11.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span><b>Click</b> the student files
+link from the lab guide in <a href="http://www.opsgility.com/">www.opsgility.com</a>
+to download the needed lab files.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="191" height="61" id="Picture 48" src="./Exercise 1 and Title_files/image019.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">12.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>You will be prompted about what
+you want to do with the file. Select <b>Save</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="225" height="174" id="Picture 54" src="./Exercise 1 and Title_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:106%">13.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>Download progress is shown at the
+bottom of the browser window. When the download is complete, click <b>Open
+folder</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="690" height="35" id="Picture 56" src="./Exercise 1 and Title_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in;line-height:106%">14.<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>The <b>Downloads</b> folder opens.
+<b><i>Right-click</i> </b>the zip file and click <b>Extract All</b>.<b> </b>In
+the <b>Extract Compressed (Zipped) Folders</b> window enter <b>C:\OpsgilityTraining</b>
+in the <b>Files will be extracted to this folder</b> dialog. Click the <b>Extract</b>
+button.</p>
+
+<p class="MsoNormal" style="margin-left:.75in"><img border="0" width="589" height="349" id="Picture 57" src="./Exercise 1 and Title_files/image022.jpg"></p>
+
+<h2><a name="_Toc479277528"></a><a name="_Toc475274541"></a><a name="_Toc468902751">Summary</a></h2>
+
+<p class="MsoNormal">In this exercise, you created a Virtual Machine in Azure
+that will be used to complete the remaining exercises in this lab guide.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

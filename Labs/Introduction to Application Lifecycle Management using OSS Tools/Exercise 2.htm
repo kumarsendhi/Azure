@@ -1,0 +1,1173 @@
+
+<!-- saved from url=(0157)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20Application%20Lifecycle%20Management%20using%20OSS%20Tools/export/Exercise%202.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Lucida Console";
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc480036986">Exercise 2: Configuring Git, Chef and Jenkins for
+Continuous Integration, Delivery and Deployment</a></h1>
+
+<h2><a name="_Toc480036987"></a><a name="_Toc479883706">Overview</a></h2>
+
+<p class="MsoNormal">In this lab, you will use the in Azure deployed Jenkins
+server VM to leverage it along with Git and Chef to setup continuous
+integration, delivery, and deployment of your environment.&nbsp; You will be putting
+the Chef cookbooks into a GitHub repository and configuring Jenkins to build
+and test the code before it is pushed to production (you will also setup a
+scenario where the code is pushed straight to production).</p>
+
+<h2><a name="_Toc480036988">Task 1: Integrate GitHub with Jenkins</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Launch
+a Git Shell and cd into the directory where your cookbooks are stored.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img width="601" height="127" id="Picture 48" src="./Exercise 2_files/image001.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run
+the following command to initialize your directory</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git init</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Run the following command to add the files into your local repository</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git add .</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Run the following command to see the status of your local repository</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git status</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img width="634" height="310" id="Picture 49" src="./Exercise 2_files/image002.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+commit these changes to your local repository run the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git commit -m
+"First Commit"</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>To get the details of your commit, run the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git log -1</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img width="644" height="105" id="Picture 51" src="./Exercise 2_files/image003.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run
+the following command to add a reference to your publicly available repository
+(that you created on github.com previously)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git remote add
+origin <a href="https://github.com/%3cusername%3e/cookbooks.git">https://github.com/&lt;<b>username</b>&gt;/cookbooks.git</a></p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Run the following command to pull down any files that may exist in your
+public repository (like the README.md)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git pull origin
+master --allow-unrelated-histories</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="657" height="109" id="Picture 56" src="./Exercise 2_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+push your local copy up to your public repository, run the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">git push -u
+origin master</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>This will prompt you for
+your github.com credentials </p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="647" height="56" id="Picture 54" src="./Exercise 2_files/image005.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Confirm that your files have
+been uploaded by browsing to your repository on github.com</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="647" height="442" id="Picture 57" src="./Exercise 2_files/image006.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal"><a name="_Toc480036989"><b><span style="font-size:18.0pt;
+line-height:107%;font-family:&quot;Calibri Light&quot;,sans-serif;color:#2F5496">&nbsp;</span></b></a></p>
+
+<h2>Task 2: Integrate Jenkins with Chef</h2>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>For the Jenkins server to be able to connect to the Chef server, you
+need to either copy the files from your Chef workstation, or create them
+manually with the same contents that exist on your Chef workstation.&nbsp; The first
+file you will create is <b>knife.rb</b> in the <b>.chef</b> directory by
+running the following commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">mkdir -p
+/chef-repo/.chef</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">touch /chef-repo/.chef/knife.rb</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>To edit the knife.rb file, run the following commad</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">vi /chef-repo/.chef/knife.rb</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">i</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+the Chef repository on your workstation, open the knife.rb file and copy its
+contents and paste them into your knife.rb file on the Jenkins server</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="675" height="334" id="Picture 1184" src="./Exercise 2_files/image007.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>There
+is one update we need to make to the knife.rb file on Jenkins – that is to the
+cookbook_path.&nbsp; Update the value of ["#{current_dir}/../cookbooks"]
+to the following</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">["/home/tomcat/.jenkins/workspace/Chef_Cookbooks_Prod","/home/tomcat/.jenkins/workspace/Chef_Cookbooks_Test"]</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Hit <b>Esc</b> and type the following to save your changes</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">:wq</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>To verify your changes, you can run the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">cat /chef-repo/.chef/knife.rb</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="691" height="402" id="Picture 702" src="./Exercise 2_files/image008.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+will now follow the same steps to create the remaining two files (<b>azurechef-validator.pem</b>
+and <b>demouser.pem in our example. Note these file names can be different in
+your setup, based on the name of the Chef Organization you created</b>).&nbsp; To
+create azurechef-validator.pem and open it for editing, run the following
+commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">touch /chef-repo/.chef/azurechef-validator.pem</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">vi /chef-repo/.chef/azurechef-validator.pem</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">i</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+the Chef repository on your workstation, open your azurechef-validator.pem file
+and copy its contents and paste them into your azurechef-validator.pem file on
+the Jenkins server</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Hit <b>Esc</b>
+and type the following to save your changes</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">:wq</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>To create demouser.pem and open it for editing, run the following
+commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">touch /chef-repo/.chef/demouser.pem</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">vi /chef-repo/.chef/demouser.pem</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">i</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>From the Chef repository on
+your workstation, open your demouser.pem file and copy its contents and paste
+them into your demouser.pem file on the Jenkins server</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Hit <b>Esc</b> and type the
+following to save your changes</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">:wq</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Change directory to your chef-repo folder so that you can run the
+command to fetch your Chef Server SSL keys by running the following commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">cd
+/chef-repo</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">sudo knife
+ssl fetch</p>
+
+</div>
+
+<p class="MsoListParagraph"><img border="0" width="659" height="233" id="Picture 703" src="./Exercise 2_files/image009.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2><a name="_Toc480036990"></a><a name="_Toc479883711">Task 3: Configure
+Jenkins Production Job</a></h2>
+
+<p class="MsoNormal">You are now ready to configure your Jenkins portal and
+define your production job.&nbsp; You will first configure your production job to
+demonstrate Continuous Deployment – meaning, once a change is made to the
+source of the cookbook and checked in to GitHub, it will be pushed to
+production.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Browse
+to your Jenkins portal, using the FQDN you defined in Exercise 2, connecting to
+port <b>8080</b>.&nbsp; <img border="0" width="673" height="414" id="Picture 1195" src="./Exercise 2_files/image010.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+get the necessary value, run the following command in your SSH session and
+paste the value into your browser and click <b>Continue</b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">cat
+/home/tomcat/.jenkins/secrets/initialAdminPassword</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+<b>Install suggested plugins</b> after getting past the <b>Unlock</b> page</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="666" height="433" id="Picture 1196" src="./Exercise 2_files/image011.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>On
+the Getting Started page, specify the following</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Username: <b>jenkinsadmin</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Password: <b>Demo@pass123</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Full name: <b>Jenkins Admin</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>E-mail address: <a href="mailto:jenkins@admin.com"><b>jenkins@admin.com</b></a></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in"><img border="0" width="605" height="411" id="Picture 1197" src="./Exercise 2_files/image012.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>On
+the Welcome page, click the <b>create new jobs</b> link</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="652" height="302" id="Picture 1198" src="./Exercise 2_files/image013.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Choose
+Freestyle project and name the project <b>Chef_Cookbooks_Prod</b> – <i>if you
+recall, this is in the path of one of the values you updated in the knife.rb
+file.&nbsp; </i>Click <b>OK</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="670" height="441" id="Picture 1200" src="./Exercise 2_files/image014.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+the <b>Source Code Management</b> section, choose Git and specify your GitHub
+repository URL and click Add to configure your credentials</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="678" height="290" id="Picture 1201" src="./Exercise 2_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="506" height="286" id="Picture 690" src="./Exercise 2_files/image016.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="585" height="239" id="Picture 689" src="./Exercise 2_files/image017.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+Build Triggers, check <b>Build when a change is pushed to GitHub</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="672" height="224" id="Picture 1204" src="./Exercise 2_files/image018.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+the Build section, from the Add build step dropdown list, choose Execute shell</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="382" height="247" id="Picture 1205" src="./Exercise 2_files/image019.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Specify the following
+command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">cd
+/chef-repo</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload learn_chef_apache2</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="518" height="163" id="Picture 1206" src="./Exercise 2_files/image020.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Post-build Actions
+section, from the Add post-build action dropdown list, choose Delete workspace
+when build is done</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="346" height="346" id="Picture 1207" src="./Exercise 2_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click Advanced and make sure
+only <b>Success</b> is checked and click save to commit your changes</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="646" height="366" id="Picture 697" src="./Exercise 2_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>To force the job to run (vs
+waiting for a trigger event) click <b>Build Now</b> on project page</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="669" height="243" id="Picture 1210" src="./Exercise 2_files/image023.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>You will see an entry in
+Build History with your build number.&nbsp; Hover over the number to get a dropdown
+list of options. Choose Console Output</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="343" height="328" id="Picture 310" src="./Exercise 2_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Review the Console Output
+for any errors etc.&nbsp; You can see in the Console Output where the call to your
+GitHub repo is made and where it is synced on your Jenkins server. You can also
+see the commands specified and their output.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="652" height="451" id="Picture 311" src="./Exercise 2_files/image025.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc480036991"></a><a name="_Toc479883712">Task 4: Configure your
+GitHub Repo to Notify Jenkins of Changes</a></h2>
+
+<p class="MsoNormal">You will now configure your GitHub repository to notify your
+Jenkins server when a change has occurred so that the Jenkins Job is kicked off
+automatically.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Log
+into your GitHub repo (<a href="https://github.com/%3cuser%3e/chefcookbooks">https://github.com/&lt;user&gt;/chefcookbooks</a>)
+and click on <b>Settings</b> and then <b>Integration &amp; Services</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="675" height="207" id="Picture 3" src="./Exercise 2_files/image026.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Click
+<b>Add service</b> and choose <b>Jenkins (GitHub plugin)</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="685" height="319" id="Picture 37" src="./Exercise 2_files/image027.png"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>For
+the Jenkins hook url, enter the following (after updating the string with your
+servers FQDN).&nbsp; <b>Note the trailing slash (/) – make sure it is included in
+your URL.</b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2"><span class="MsoHyperlink">http://&lt;your Jenkins VM
+URL&gt;.cloudapp.azure.com/jenkins/github-webhook</span>/</p>
+
+</div>
+
+<p class="MsoListParagraph"><img border="0" width="671" height="266" id="Picture 34" src="./Exercise 2_files/image028.png"></p>
+
+<h2><a name="_Toc480036992"></a><a name="_Toc479883713">Task 5: Check in a
+Change to Trigger Jenkins Job</a></h2>
+
+<p class="MsoNormal">You will now check in a change to your cookbook that will
+trigger your Jenkins job by editing the file that updates the home page of the
+web servers (that were configured with the Chef client that points to the learn_chef_apache2
+cookbook). </p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>On your Chef Workstation, Open <b>chef-repo\cookbooks\learn_chef_apache2\templates\default\index.html.erb
+</b>in Visual Studio code so that you can make a change to the text between the
+h1 tags and save your change.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">Production
+Cookbook running on : &lt;%= node['hostname'] %&gt; updated by Jenkins Job</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="680" height="154" id="Picture 316" src="./Exercise 2_files/image029.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>From
+a command prompt, you will commit the change to git hub.&nbsp; Run the git status to
+check the status of your local repository (confirm that your index.html.erb has
+a change that has not been committed)</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="671" height="239" id="Picture 36" src="./Exercise 2_files/image030.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run
+the following commands to commit and push your change</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">git add
+.</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">git
+commit -m "Change to kick off job"</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">git push</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="677" height="227" id="Picture 38" src="./Exercise 2_files/image031.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+validate the job was kicked off, log into your Jenkins portal and click Build
+History</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="647" height="396" id="Picture 39" src="./Exercise 2_files/image032.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+validate that the change was pushed to Chef, log into your Chef portal and
+check the Content of the index.htm.erb file</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="666" height="545" id="Picture 319" src="./Exercise 2_files/image033.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<h2><a name="_Toc480036993"></a><a name="_Toc479883714">Task 6: Configure
+Jenkins Test Job</a></h2>
+
+<p class="MsoNormal">In the previous exercises, you setup a <b>continuous
+deployment</b> where you had a code check in automatically trigger a job that
+pushed the change to production.&nbsp; In the following exercises, you will make
+changes to configure <b>continuous integration</b> where your code check in
+will not be pushed all the way to production, but instead be tested in an
+environment (that is built on the fly) and be ready for any final
+test/validation before manually be pushed to production.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+first thing you want to do, is update the Production Job (<b>Chef_Cookbooks_Prod</b>)
+so that it will not be triggered when code is checked into to GitHub.&nbsp; Log into
+your Jenkins portal, click on your Production Job and then click <b>Configure</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="659" height="321" id="Picture 1228" src="./Exercise 2_files/image034.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+the Build Triggers section, uncheck the box for “<b>Build when a change is
+pushed to GitHub</b>” and click <b>Save.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="337" height="295" id="Picture 1230" src="./Exercise 2_files/image035.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Before
+creating your Test Job in Jenkins (which will consist of running some Azure
+command to provision a virtual machine), you must first create a Service
+Principal name that will be used with the Jenkins automation.&nbsp; From an Azure
+Command line, run the following command to show your available accounts</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">azure account
+list</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="666" height="138" id="Picture 1233" src="./Exercise 2_files/image036.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+obtain you Tenant Id, run the following command (<i>specifying the subscription
+id from the previous step</i>)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">azure account
+show --subscriptionNameOrId &lt;<b>subscription_id</b>&gt;</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="674" height="279" id="Picture 1236" src="./Exercise 2_files/image037.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Save
+the subscription id as well as the tenant id to a file for later reference.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Create
+a service principal named jenkins by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">azure ad app
+create --name jenkins --home-page http://www.jenkins.org --identifier-uris
+https://www.jenkins.org/example --password Demo@pass123</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Note
+the application id as well as the object id and save for later reference</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="680" height="190" id="Picture 1237" src="./Exercise 2_files/image038.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+will assign the Owner role to your service principal name (since it will be
+making changes in your subscription) by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">azure role
+assignment create --objectId &lt;<b>spn_object_id</b>&gt; -o Owner -c
+/subscriptions/&lt;<b>subscription_id</b>&gt;/</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+are now ready to configure your Test Job in Jenkins. From the root of your
+Jenkins portal click <b>New Item</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="662" height="320" id="Picture 1218" src="./Exercise 2_files/image039.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Name the project <b>Chef_Cookbooks_Test</b>
+and choose <b>Freestyle project </b>and click <b>OK</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="631" height="572" id="Picture 1219" src="./Exercise 2_files/image040.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the <b>Source Code
+Management</b> section, choose Git and specify your GitHub repository URL and
+click choose the credentials your previously configured</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="669" height="273" id="Picture 41" src="./Exercise 2_files/image041.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In Build Triggers, check <b>Build
+when a change is pushed to GitHub</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="673" height="225" id="Picture 1223" src="./Exercise 2_files/image042.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Build section, from
+the Add build step dropdown list, choose Execute shell</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="383" height="248" id="Picture 1224" src="./Exercise 2_files/image043.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">14.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Specify the following
+command and click <b>Add build step</b>.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">cd
+/chef-repo</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload learn_chef_apache2_Test</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="561" height="377" id="Picture 1238" src="./Exercise 2_files/image044.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">15.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>The next command will
+include your Azure actions to create a resource group, virtual machine, and
+chef extension configuration.&nbsp; The commands are long and you must replace
+various values with values specific to your Azure subscription. Each of the
+following commands will be included in the one Execute shell text box, but they
+are broken out so you can easily identify what need to be replaced.&nbsp; </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">azure
+login --username &lt;<b>spn_application_id_NOT_object_id</b>&gt;
+--service-principal --tenant &lt;<b>tenant_id</b>&gt; --password Demo@pass123</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">azure
+account set &lt;<b>subscription_id</b>&gt;</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">azure config
+mode arm</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">azure
+group create –name CBest_RG_$BUILD_NUMBER --location centralus</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">azure
+vm quick-create --resource-group CBest_RG_$BUILD_NUMBER --name cookbooktest
+--location centralus --os-type Linux --image-urn UbuntuLTS --admin-username
+demouser --admin-password Demo@pass123</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">&nbsp;</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">azure vm
+extension set-chef --resource-group CBest_RG_$BUILD_NUMBER --vm-name
+cookbooktest --version 1210.12 --run-list
+"recipe[learn_chef_apache2_Test],recipe[chef-client]"
+--validation-pem /chef-repo/.chef/azurechef-validator.pem --client-config
+/chef-repo/.chef/knife.rb --bootstrap-options
+"{\"chef_node_name\":
+\"testcookbook_$BUILD_NUMBER\",\"chef_server_url\":
+\"https://&lt;<b>chef_server_url</b>&gt;/organizations/azurechef\",
+\"validation_client_name\":
+\"azurechef-validator\",\"node_ssl_verify_mode\":
+\"none\"}"</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="671" height="291" id="Picture 1239" src="./Exercise 2_files/image045.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">16.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>In the Post-build Actions
+section, from the Add post-build action dropdown list, choose Delete workspace
+when build is done</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="347" height="347" id="Picture 1226" src="./Exercise 2_files/image046.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">17.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click Advanced and make sure
+only <b>Success</b> is checked and click save to commit your changes</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="654" height="482" id="Picture 1227" src="./Exercise 2_files/image047.jpg"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">18.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>You will now need to create
+a duplicate cookbook (<i>one that your production web clients are not pointing
+to</i>) that can be updated and tested, before pushing to production.&nbsp; In your <b>chef-repo/cookbooks</b>
+directory, make a copy of <b>learn_chef_apache2</b> and name it <b>learn_chef_apache2_Test</b></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">cp -r
+.\learn_chef_apache2\ learn_chef_apache2_Test</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">19.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open <b>chef-repo\cookbooks\learn_chef_apache2_Test\metadata.rb</b>
+(in Visual Studio Code) and update it with a new name and version and save the
+change.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="683" height="224" id="Picture 42" src="./Exercise 2_files/image048.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">20.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Open <b>chef-repo\cookbooks\learn_chef_apache2_Test\templates\default\index.html.erb</b>
+(in Visual Studio Code) and update the text between the &lt;h1&gt; tags and
+save the change.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="526" height="196" id="Picture 43" src="./Exercise 2_files/image049.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">21.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>To check in the <b>learn_chef_apache2_Test</b>
+cookbook, run the following git commands.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">git add
+.</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">git
+commit -m "Adding Cookbook to be tested first"</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">git push</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="683" height="348" id="Picture 1246" src="./Exercise 2_files/image050.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">22.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Log into your Jenkins portal
+to see the status of your build (as the check in should have triggered it to
+start)</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="670" height="552" id="Picture 1247" src="./Exercise 2_files/image051.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">23.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Log into the Azure portal
+and confirm that your Resource group and resources are being created</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="677" height="342" id="Picture 1376" src="./Exercise 2_files/image052.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">24.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>After your resources have
+been provisioned in Azure, browse to the fqdn of the virtual machine that was
+created.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="676" height="117" id="Picture 1377" src="./Exercise 2_files/image053.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">25.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Now that you know the
+cookbook works as expected and you have run any other manual tests, you are
+ready to push to production.&nbsp; You will now configure some automation for the
+last step by editing the <b>Chef_Cookbooks_Prod</b> job.&nbsp; Click on <b>Configure</b>
+to update the job.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="669" height="325" id="Picture 1378" src="./Exercise 2_files/image054.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">26.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Update your shell command by
+adding the following to the top of the list of commands that gets run</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">rsync -av
+--exclude metadata.rb /home/tomcat/.jenkins/jobs/Chef_Cookbooks_Prod/workspace/learn_chef_apache2_Test/
+/home/tomcat/.jenkins/jobs/Chef_Cookbooks_Prod/workspace/learn_chef_apache2</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="663" height="290" id="Picture 1379" src="./Exercise 2_files/image055.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">27.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Click Build Now to run the
+last step of pushing the changes to production.</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="667" height="223" id="Picture 1380" src="./Exercise 2_files/image056.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">28.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Finally, you can verify that
+the clients have received the update, by browsing to the web page that is
+behind the load balancer configured in LAB 16 Deploy Virtual Machines with Chef
+Extension.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="672" height="107" id="Picture 1381" src="./Exercise 2_files/image057.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">29.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Once you are done with
+testing and configuration, you should clean up any unwanted resources form your
+Azure subscription to avoid incurring unexpected costs.</p>
+
+<h2><a name="_Toc480036994"></a><a name="_Toc479883715">Summary</a></h2>
+
+<p class="MsoNormal">In this lab, you leveraged three popular open sourced tools
+to setup continuous integration, delivery, and deployment for your web site
+(Jenkins, Chef, GitHub).&nbsp; You built a scenario where your code changes were
+automatically pushed out to production as well as a scenario where your code is
+tested first in a separate environment, before deploying to production.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

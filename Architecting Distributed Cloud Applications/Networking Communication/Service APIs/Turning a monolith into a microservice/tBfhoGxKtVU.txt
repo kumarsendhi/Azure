@@ -1,0 +1,269 @@
+All right, so now that we've been talking a lot about
+networking, let's now focus on what's really necessary in order
+to turn a monolithic service into a microservice.
+So, instead of having all the code residing in one place,
+we're now splitting it up into different services and
+we're gonna introduce network communication in order to
+talk between them.
+What I show on this slide is what you would typically
+have today.
+In your monolithic service,
+somewhere in the code, you're gonna call some method.
+And then you're gonna pass in some arguments.
+And this method's gonna return some result back out.
+Pretend this is whatever programming language you
+want it to be.
+Well, what we're going to do now is we're going to turn this
+method call into a network call.
+And a lot of times people think, well,
+that's all we gotta do, turn the method call into a network call.
+There's a lot behind that, and
+it turns out to not be as simple as a lot of people think.
+So let's go and really look at this in depth.
+Well, in order to do that, you're going to have to turn
+this method really into a web service mail.
+And remember you want your web services to be
+in different programming languages potentially.
+We want to maybe use node on the client and .NET or
+Java on the server.
+So, now you're gonna talk over a network protocol.
+So, now you need to define an explicit,
+language-agnostic, that is programming language, agnostic,
+multi-version API contract.
+Now and I think you should be very explicit about it.
+This is a formal contract that you are writing and
+it's going to last you years and years and years into the future
+because different services version overtime.
+So you really wanna spend a lot of time on this and
+really think it through and come up with a good contract.
+And I'll say more about these contracts
+as we continue this talk.
+When you go and make a contract like this,
+it's gonna be over the network, you're gonna lose certain
+language features depending on which language you're using.
+And so, you tend to lose things like IntelliSense support,
+you tend to lose things like refactoring, right.
+If I rename this method and
+I want to rename all calls to this method.
+You can't do that easily anymore, right?
+And our big thing that you lose is compile-time type-safety.
+I'm a huge fan of compile-time type-safety.
+I like it when the compiler tells me something's wrong,
+rather than me finding out that something's wrong at runtime,
+especially if runtime in production.
+So you're gonna lose a lot of compile time safety.
+Now, you can get some of this back by creating client
+libraries, but that's additional work that has to be done and
+you have to keep the client libraries that are four specific
+programming language in sync with your network API contract.
+All right, but
+lets look at this in a little bit more detail still.
+So not only do you have to have this formal contract now, but
+these arguments that you used to pass into this method,
+these arguments now have to be serialized and
+then send over the wire to be sent to some server.
+And that serialization requires a few things.
+First, it means that the data types that you're using here,
+they have to be serializable data types.
+So now, what data type you can pass here
+is a severe sub-set of what was possible before.
+And you have to serialize these into some standard format that's
+actually part of your contract, and there's many serialization
+technologies out there, like Avro, Thrift, Protocol Buffers,
+Bond, and JSON, XML or other examples of this.
+So, serialization requires the allocation of memory and
+it requires walking over the objects to serialize them.
+Sometimes the objects data types himself have to be defined as
+being serializable.
+This is all can be very expensive in terms of memory
+and time.
+Furthermore, the results also has to be serializable too.
+So the arguments you'll serialize on the client,
+you'll send them to the server where you'll deserialize them.
+And remember, possibly in different programming languages,
+so I might serialize into JSON and then on the server side,
+deserialize the JSON text coming into a .NET or Java object.
+And then, on the server side, I'm going to send a result back,
+that will have to be serialized into JSON or XML, or something,
+and then the client is going to have to deserialize that into
+some result, which also has to be a serializable data type, so
+it's a restricted subset of types.
+And again, all this serialization and
+deserialization allocates a lot of memory,
+requires a lot of CPU utilization.
+In fact, we have seen certain customers where,
+when they profile their service, the profiler is indicating
+that 90-some% of the time, the service is spending in
+the serialization and deserialization code.
+So the serialization and
+deserialization can be a very expensive operation and
+can really hurt performance of your service quite dramatically.
+Especially, if you use serialization technologies that
+use things like reflection.
+Reflection is done at run-time, which can hurt performance.
+Reflection is offered by things like .NET and Java.
+If you hand do your serialization instead,
+and you write specific code for
+it, then the performance can be greatly improved by doing that.
+But let's look at some other differences here.
+Let's compare and contrast an in-process method call
+to an outer process network request.
+Well, I've already been talking a good bit about the performance
+difference there.
+The network request is going to have much worse performance than
+the in-process method call.
+And you're gonna be increasing network congestion,
+which now introduces a lot of unpredictability into
+the time it's gonna take to make the call.
+So, you have to be worried about unpredictable timing.
+A lot of times when people call a method and
+is in the same process, they know that method is gonna return
+within microseconds, but when you make a network request
+that could be orders of magnitude longer easily.
+And in fact, the server, may never reply at all, maybe it
+has a bug in it, in which case, you will just be hung.
+Network requests are unreliable.
+They're going to require retry operations now, right?
+You would almost never put a retry loop around
+this call to method here if it was in the same process, right?
+Or put that method call in a retry loop if it's in the same
+process, but if you make that a network request now,
+you will almost definitely, I mean definitely,
+wanna put this inside some kind of retry loop.
+Also, you might wanna have some timeouts on it.
+There might be a place where if the server doesn't reply,
+in let's say one second, you might just wanna give up and
+move on.
+So now you wanna introduce time out into this infrastructure
+that you didn't have or
+think about before when it was a method call.
+There's also this thing called a circuit breaker,
+which is a very useful pattern to take advantage of.
+It views typically to prevent denial of service tax from your
+own clients.
+So imagine that your service is having a problem and
+you have a lot of clients that are hitting that service.
+Well, those clients, they will retry to hit the server over,
+and over, and over again, but the server is really in trouble,
+and it's not going to all of a sudden start working.
+This circuit breaker pattern allows clients to
+try hitting a server so many times.
+And if within, let's say, one second,
+there had been five failures, the clients just stop.
+And they say, look, I'm assuming failure on the server.
+I won't even try to hit the server anymore.
+This stops the server from being bombarded with a lot of
+network requests, and
+having to deal with that, so effectively you are not causing
+a denial of service attack on your own service.
+And then circuit breakers, if they wait,
+let's say, a minute without making a request to the server
+because they've been assuming failure.
+They will then try again to make a request to the server and
+hopes that a minute has gone by and the server has fixed itself.
+But if the server fails again,
+they will immediately shut that down and
+then wait another minute before making other request.
+But if the server comes back online then the circuit breaker
+closes and allows traffic to go through.
+So I would kindly encourage you to read more about circuit
+breakers, there's a lot on the internet about them.
+It's a very useful pattern,
+you should definitely be aware of it, and you should definitely
+be incorporating it into the client side of your services.
+Now because the services, the client side, is going to retry
+this requires that the server code has to be item potent.
+Because the server might get the same request multiple times, but
+you really want to perform the operation once.
+So there has to be some
+additional logic on the server side in order to say, hey,
+I've already done this once, I don't need to do it again.
+This is, item potency,
+I'll talk more about it a little bit later on.
+But the way that you implement it is, unfortunately,
+domain specific.
+So I can't give you a solid guideline,
+here's how to always do it.
+In some cases, it turns out to be very easy to do,
+in some cases it turns out to be quite difficult to do, but,
+as I said, I will talk about that more a little bit later on
+in this course.
+Well, because your turning the method call into a network call,
+you're now going to have some security ramifications
+potentially.
+So the server could now be receiving requests from anybody,
+whereas before this method could only be called by code in
+the same process.
+So now, you have a service sitting in your cluster,
+anybody could call it, so
+now you might want to introduce authentication to make sure it's
+being called only by entities that are allowed to call it.
+You might wanna do some authorization there.
+You might want to encrypt traffic that goes over the wire,
+whereas you would probably never even think about encrypting
+these arguments or return values if it was just being
+passed around within the same process.
+This security is more typically required in a virtual
+network for compliance reasons.
+So sometimes just to meet compliance reasons,
+you need to turn encryption on or authentication on.
+And sometimes if you're running third party code that you may
+not trust within the same cluster,
+you may need to turn this on.
+And then the last thing I have here is related to diagnostics.
+You're gonna have networking issues now that you didn't
+have before.
+So what if something goes wrong with the network.
+You're gonna have performance counters, event entries, logging
+that happens now, causality information, call stack, where
+the call stacks now crosses over in network wire, the client
+makes a network call and then the server continues execution.
+How do you track all of that?
+How do you know when something fails?
+What caused that whole flow to go from service to service?
+And if you are writing event logs full of this diagnostic
+information, which is a really great thing to do,
+you should definitely be doing it.
+And then you should look at these logs later when
+failures occur.
+Be aware that on different servers,
+the clocks are not completely synchronized.
+First of all,
+within a cluster, all the clocks should be on UTC time.
+You wanna use Universal Coordinated Time Zone for
+all the machines.
+But even when you do that, some machines are gonna speed up.
+Some might slow down.
+The clocks are not completely in sync.
+And so, on one machine,
+the client, it might be 1:00 AM in the morning.
+You send a request, and you log something there that you're
+sending a request to a server.
+The server might think it's 12:58 earlier,
+two minutes earlier.
+And then it's gonna log that the incoming request came in.
+Well, if you try to look at those holistically,
+the server will effectively be reporting that the request came
+in two minutes before the client sent the request.
+So, you have to be aware that this is
+a real thing that could happen,
+and you'll have to account for this, what we call, clock skew
+on these different servers when analyzing these log requests.
+So the point I'm trying to make with all of this is that
+it's not as simple as turning a method call into a network call.
+There's a lot of good reasons to do this, but
+it does introduce a lot of complexity.
+And what are the reasons to do this?
+Those reasons are the ones I spoke about earlier in
+this course.
+There were really four reasons to split a model into
+microservices.
+That's scale independently, that different technology stocks,
+the two or more clients, and the conflicting dependencies.
+So you want to be really wanting to have one or
+more of these features in order to consider breaking things up,
+so that a method call becomes a network call.
+Right, that's the trade-offs.
+Okay, and hopefully that gives you a good sense of
+the networking and when to take advantage of it and
+the pain points that you'll have with it.

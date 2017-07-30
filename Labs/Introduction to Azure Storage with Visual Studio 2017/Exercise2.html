@@ -1,0 +1,1213 @@
+
+<!-- saved from url=(0105)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20Azure%20Storage/Exercise2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.5pt;
+	font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11CxS";
+	mso-style-link:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Segoe UI",sans-serif;
+	color:#5B9BD5;
+	font-weight:bold;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Segoe UI",sans-serif;
+	color:#2E74B5;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	color:#4472C4;
+	letter-spacing:-.5pt;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;
+	background:#F2F2F2;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Procedure Step Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char";
+	mso-style-link:"List Paragraph\,Procedure Step\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11";
+	font-family:"Segoe UI",sans-serif;
+	color:black;}
+p.ppBulletList, li.ppBulletList, div.ppBulletList
+	{mso-style-name:"pp Bullet List";
+	mso-style-link:"pp Bullet List Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppBulletListIndent, li.ppBulletListIndent, div.ppBulletListIndent
+	{mso-style-name:"pp Bullet List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ppBulletListChar
+	{mso-style-name:"pp Bullet List Char";
+	mso-style-link:"pp Bullet List";
+	font-family:"Times New Roman",serif;}
+p.ppBulletListIndent2, li.ppBulletListIndent2, div.ppBulletListIndent2
+	{mso-style-name:"pp Bullet List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.ppNumberList, li.ppNumberList, div.ppNumberList
+	{mso-style-name:"pp Number List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:37.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppListEnd, li.ppListEnd, div.ppListEnd
+	{mso-style-name:"pp List End";
+	margin-top:0in;
+	margin-right:3.0in;
+	margin-bottom:6.0pt;
+	margin-left:8.65pt;
+	text-align:right;
+	text-indent:0in;
+	line-height:4.0pt;
+	border:none;
+	padding:0in;
+	font-size:6.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent, li.ppNumberListIndent, div.ppNumberListIndent
+	{mso-style-name:"pp Number List Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:71.7pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppNumberListIndent2, li.ppNumberListIndent2, div.ppNumberListIndent2
+	{mso-style-name:"pp Number List Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:105.75pt;
+	text-indent:-17.85pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.ppCode, li.ppCode, div.ppCode
+	{mso-style-name:"pp Code";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpFirst, li.ppCodeCxSpFirst, div.ppCodeCxSpFirst
+	{mso-style-name:"pp CodeCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpMiddle, li.ppCodeCxSpMiddle, div.ppCodeCxSpMiddle
+	{mso-style-name:"pp CodeCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeCxSpLast, li.ppCodeCxSpLast, div.ppCodeCxSpLast
+	{mso-style-name:"pp CodeCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent, li.ppCodeIndent, div.ppCodeIndent
+	{mso-style-name:"pp Code Indent";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpFirst, li.ppCodeIndentCxSpFirst, div.ppCodeIndentCxSpFirst
+	{mso-style-name:"pp Code IndentCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpMiddle, li.ppCodeIndentCxSpMiddle, div.ppCodeIndentCxSpMiddle
+	{mso-style-name:"pp Code IndentCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndentCxSpLast, li.ppCodeIndentCxSpLast, div.ppCodeIndentCxSpLast
+	{mso-style-name:"pp Code IndentCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2, li.ppCodeIndent2, div.ppCodeIndent2
+	{mso-style-name:"pp Code Indent 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpFirst, li.ppCodeIndent2CxSpFirst, div.ppCodeIndent2CxSpFirst
+	{mso-style-name:"pp Code Indent 2CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpMiddle, li.ppCodeIndent2CxSpMiddle, div.ppCodeIndent2CxSpMiddle
+	{mso-style-name:"pp Code Indent 2CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent2CxSpLast, li.ppCodeIndent2CxSpLast, div.ppCodeIndent2CxSpLast
+	{mso-style-name:"pp Code Indent 2CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3, li.ppCodeIndent3, div.ppCodeIndent3
+	{mso-style-name:"pp Code Indent 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpFirst, li.ppCodeIndent3CxSpFirst, div.ppCodeIndent3CxSpFirst
+	{mso-style-name:"pp Code Indent 3CxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpMiddle, li.ppCodeIndent3CxSpMiddle, div.ppCodeIndent3CxSpMiddle
+	{mso-style-name:"pp Code Indent 3CxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+p.ppCodeIndent3CxSpLast, li.ppCodeIndent3CxSpLast, div.ppCodeIndent3CxSpLast
+	{mso-style-name:"pp Code Indent 3CxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-indent:0in;
+	line-height:13.0pt;
+	background:#F7F7FF;
+	text-autospace:none;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc438823439">Exercise 2: Set up a Visual Studio Solution and
+Storage objects</a> </h1>
+
+<p class="MsoNormal">In this exercise, you will create an Azure Storage account
+and setup a project in Visual Studio for the lab. </p>
+
+<h2>Time Estimate</h2>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>20 minutes</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 1: Create an Azure Storage Account</h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Login to
+the Azure Management portal with your Azure credentials: <a href="http://portal.azure.com/">http://portal.azure.com</a> </p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>+New</b>
+&gt; <b>Storage &gt; Storage account<br>
+</b><img border="0" width="662" height="233" id="Picture 3" src="./Exercise2_files/image001.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Specify
+the following configuration for the Storage account and click <b>Create</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Name: <b><i>(unique name)</i> blobstorage111</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Deployment model: <b>Resource manager</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Account kind: <b>General purpose</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Performance: <b>Standard</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Replication: <b>Read-access geo-redundant storage</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Resource group:<b> BlobStorageAppRG</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Location: <b>Location nearest you<br>
+</b><img border="0" width="312" height="768" src="./Exercise2_files/image002.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Once the
+deployment has completed, you will note the Access keys that will be used in a
+later exercise. Click on <b>Resource groups</b>, then<b> BlobStorageAppRG</b>,
+and the Storage Account.<b> <br>
+</b><img border="0" width="660" height="250" id="Picture 5" src="./Exercise2_files/image003.jpg"><b><br>
+<br>
+</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>On the
+Storage Account blade, click on <b>Access Keys </b>under Settings<br>
+<img border="0" width="208" height="88" id="Picture 7" src="./Exercise2_files/image004.jpg"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The Access
+keys blade contains the information that you will need<br>
+<img border="0" width="664" height="322" id="Picture 8" src="./Exercise2_files/image005.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h2>Task 2: Create a Console App in Visual Studio</h2>
+
+<ol style="margin-top:0in" start="1" type="1">
+ <li class="MsoNormalCxSpFirst"><span style="line-height:107%">Open a new Visual
+     Studio solution (<b>File &gt; New &gt; Project</b>). Select <b>Visual C#</b>
+     &gt; <b>Windows Classic Desktop &gt; Console App</b>. Specify a name <b>OpsgilityBlob01</b>
+     for the Name.<br>
+     </span><img border="0" width="660" height="377" id="Picture 9" src="./Exercise2_files/image006.jpg"></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle"><span style="font-size:10.0pt;line-height:107%;
+font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="line-height:107%">Click
+<b>OK</b> when you’re ready for the next step.</span></p>
+
+<ol style="margin-top:0in" start="2" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Next, you need to
+     add the NuGet Package for <b>Microsoft.WindowsAzure.Storage</b> to your
+     solution. Select <b>Tools &gt; NuGet Package Manager &gt; Manage NuGet
+     Packages for Solution</b>. Select Browse and search for “Azure Storage”.
+     Click on Install to install the Windows Azure Storage package in your
+     solution. <br>
+     </span><img border="0" width="662" height="332" id="Picture 10" src="./Exercise2_files/image007.jpg"></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="font-size:
+10.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">Close the NuGet Package Manager when you’re finished. </span></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="3" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Right-click on the
+     project and select <b>Add &gt; Class</b>. This is the class where we will
+     put the blob storage code. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><img border="0" width="664" height="260" id="Picture 11" src="./Exercise2_files/image008.jpg"><span style="line-height:107%"><br>
+<br>
+</span></p>
+
+<ol style="margin-top:0in" start="4" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Name the class <b>BlobOperations.cs</b>
+     and click <b>Add</b>. Change the class to <b>Public</b>. <br>
+     </span><img border="0" width="360" height="276" id="Picture 12" src="./Exercise2_files/image009.jpg"></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="5" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Next, let’s set
+     up some hardcoded variables at the top of the class. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpLast" style="margin-left:.5in"><span style="line-height:
+107%">The first two are the storage account name and key. Please fill these in
+with your values <b><i>obtained in the previous exercise</i></b>.</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt"> storageAccountName = </span><span style="font-size:
+9.0pt;color:#A31515">"YOURSTORAGEACCOUNTNAME"</span><span style="font-size:9.0pt">;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt"> storageAccountKey = </span><span style="font-size:
+9.0pt;color:#A31515">"YOURSTORAGEACCOUNTKEY"</span><span style="font-size:9.0pt">;</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="color:black;background:white">This is going to be the beginning of the
+name of the container that we create. All of our blobs will use this container.
+We’ll concatenate this with part of a GUID so it’s unique. </span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;color:black">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt"> containerName = </span><span style="font-size:9.0pt;
+color:#A31515">"blob-ops"</span><span style="font-size:9.0pt">;</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="color:black;background:white">This is the local folder that holds my
+test files. localDownloadPath will be assigned in code; it will be the folder
+where we download files to, and will be a subfolder in localPicsToUploadPath.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;color:black">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> localPicsToUploadPath = </span><span style="font-size:9.0pt">@"C:\OpsgilityTraining\Images"</span><span style="font-size:9.0pt;color:black">;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> localDownloadPath;</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="color:black;background:white">I’m going to use this for a folder name in
+blob storage that is actually part of the blob name.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:0in 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="background:#F2F2F2;border:none;padding:0in"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt">
+pseudoFolder = </span><span style="font-size:9.0pt;color:#A31515">"images/"</span><span style="font-size:9.0pt">;</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="color:black;background:white">These are my image names. These reside in
+the localPicsToUploadPath folder. textFileName is just a variable that I’m
+going to use for uploading some text into a blob.</span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;color:black;background:white">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> image1Name = </span><span style="font-size:9.0pt">"sb_1.jpg"</span><span style="font-size:9.0pt;
+color:black">;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> image2Name = </span><span style="font-size:9.0pt">"sb_2.jpg"</span><span style="font-size:9.0pt;
+color:black">;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> image3Name = </span><span style="font-size:9.0pt">"sb_3.jpg"</span><span style="font-size:9.0pt;
+color:black">;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> image4Name = </span><span style="font-size:9.0pt">"sb_4.jpg"</span><span style="font-size:9.0pt;
+color:black">;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt;color:black"> textFileName = </span><span style="font-size:9.0pt">"testtextfile.txt"</span><span style="font-size:9.0pt;color:black">;</span></p>
+
+</div>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;line-height:107%;font-family:
+&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="6" type="1">
+ <li class="MsoNormalCxSpLast"><span style="line-height:107%">Add the following
+     using clauses at the top of the file.</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">using</span><span style="font-size:9.0pt"> Microsoft.WindowsAzure.Storage;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:blue">using</span><span style="font-size:9.0pt"> Microsoft.WindowsAzure.Storage.Blob;</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:blue">using</span><span style="font-size:9.0pt"> System.IO;</span></p>
+
+</div>
+
+<ol style="margin-top:0in" start="7" type="1">
+ <li class="MsoNormal"><span style="line-height:107%">Next, let’s set up some
+     properties for our cloud objects. This is what I call the hierarchy of
+     objects. When you want to get a reference to a blob, you have to set these
+     fields first, in this order. You’ll see what these are when we populate
+     them.</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt"> ConnectionString { </span><span style="font-size:9.0pt;
+color:blue">get</span><span style="font-size:9.0pt">; </span><span style="font-size:9.0pt;color:blue">set</span><span style="font-size:9.0pt">; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:#2B91AF">CloudStorageAccount</span><span style="font-size:9.0pt"> cloudStorageAccount { </span><span style="font-size:
+9.0pt;color:blue">get</span><span style="font-size:9.0pt">; </span><span style="font-size:9.0pt;color:blue">set</span><span style="font-size:9.0pt">; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:#2B91AF">CloudBlobClient</span><span style="font-size:9.0pt"> cloudBlobClient { </span><span style="font-size:9.0pt;
+color:blue">get</span><span style="font-size:9.0pt">; </span><span style="font-size:9.0pt;color:blue">set</span><span style="font-size:9.0pt">; }</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:#2B91AF">CloudBlobContainer</span><span style="font-size:9.0pt"> cloudBlobContainer { </span><span style="font-size:
+9.0pt;color:blue">get</span><span style="font-size:9.0pt">; </span><span style="font-size:9.0pt;color:blue">set</span><span style="font-size:9.0pt">; }</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:#2B91AF">CloudBlockBlob</span><span style="font-size:9.0pt"> cloudBlockBlob { </span><span style="font-size:9.0pt;
+color:blue">get</span><span style="font-size:9.0pt">; </span><span style="font-size:9.0pt;color:blue">set</span><span style="font-size:9.0pt">; }</span></p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="line-height:
+107%">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="line-height:107%">At this point, your class should look like this.<br>
+</span><img border="0" width="603" height="598" id="Picture 1" src="./Exercise2_files/image010.jpg"><span style="line-height:107%"><br>
+<br>
+</span></p>
+
+<ol style="margin-top:0in" start="9" type="1">
+ <li class="MsoNormalCxSpFirst"><span style="line-height:107%">Let’s set up a
+     method that will set up our blob objects and create our container. We have
+     to do this before we can access any of the blobs. The comments in the
+     method explain what’s going on. </span></li>
+</ol>
+
+<p class="MsoNormalCxSpMiddle" style="margin-left:.5in"><span style="line-height:
+107%">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpLast" style="margin-left:.5in"><span style="line-height:
+107%">One note about the container name. If you create a container and delete
+it and then try to create it again, you might hit the latency of removing a
+storage container – it won’t let you create it again for a certain amount of
+time, like a few minutes. Rather than deal with this, we’re going to create a
+unique container name by taking our base name and concatenating it with the
+first 12 characters of a GUID. When you run this repeatedly before we add the
+cleanup code at the bottom, you’ll want to use a storage explorer application
+to remove all of the containers created. &nbsp;Copy the code below under </span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:#2B91AF;
+background:white">CloudBlockBlob</span><span style="font-size:9.5pt;line-height:
+107%;font-family:Consolas;color:black;background:white"> cloudBlockBlob { </span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:blue;
+background:white">get</span><span style="font-size:9.5pt;line-height:107%;
+font-family:Consolas;color:black;background:white">; </span><span style="font-size:9.5pt;line-height:107%;font-family:Consolas;color:blue;
+background:white">set</span><span style="font-size:9.5pt;line-height:107%;
+font-family:Consolas;color:black;background:white">; }</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">public</span><span style="font-size:9.0pt"> </span><span style="font-size:9.0pt;color:blue">void</span><span style="font-size:9.0pt"> SetUpObjects()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:green">&nbsp; //make
+the container name unique so if you run this over and over, you won't </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//&nbsp; have any problems with the latency of
+deleting a container </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; containerName =
+containerName + </span><span style="font-size:9.0pt;color:#A31515">"-"</span><span style="font-size:9.0pt"> + System.</span><span style="font-size:9.0pt;
+color:#2B91AF">Guid</span><span style="font-size:9.0pt">.NewGuid().ToString().Substring(0,
+12);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//set the connection string </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; ConnectionString =
+</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; &nbsp;&nbsp;</span><span style="font-size:9.0pt;color:blue">string</span><span style="font-size:9.0pt">.Format(</span><span style="font-size:9.0pt;color:#A31515">@"DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}"</span><span style="font-size:9.0pt">,</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; storageAccountName,
+storageAccountKey);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//get reference to storage account </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;
+cloudStorageAccount = </span><span style="font-size:9.0pt;color:#2B91AF">CloudStorageAccount</span><span style="font-size:9.0pt">.Parse(ConnectionString);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//get reference to the cloud blob client </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//this is used to access the storage
+account blobs and containers</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; cloudBlobClient =
+cloudStorageAccount.CreateCloudBlobClient();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//get reference to the container</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; cloudBlobContainer
+= cloudBlobClient.GetContainerReference(containerName);</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//create the container if it doesn't exist</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;
+cloudBlobContainer.CreateIfNotExists();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:green">//set the permissions so the blobs are
+public </span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; </span><span style="font-size:9.0pt;color:#2B91AF">BlobContainerPermissions</span><span style="font-size:9.0pt"> permissions = </span><span style="font-size:9.0pt;
+color:blue">new</span><span style="font-size:9.0pt"> </span><span style="font-size:9.0pt;color:#2B91AF">BlobContainerPermissions</span><span style="font-size:9.0pt">();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;
+permissions.PublicAccess = </span><span style="font-size:9.0pt;color:#2B91AF">BlobContainerPublicAccessType</span><span style="font-size:9.0pt">.Blob;</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp; cloudBlobContainer.SetPermissions(permissions);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt">}</span></p>
+
+</div>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><span style="font-size:9.5pt;font-family:Consolas;
+color:black;background:white">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="10" type="1">
+ <li class="MsoNormalCxSpLast"><span style="line-height:107%">Now add a method
+     called <b>BasicBlobOps</b> and have it call <b>SetUpObjects</b>. It should
+     look like this:</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt;color:blue">public</span><span style="font-size:9.0pt"> </span><span style="font-size:9.0pt;color:blue">void</span><span style="font-size:9.0pt"> BasicBlobOps()</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;color:green">//set up the objects</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt">&nbsp;&nbsp;&nbsp; SetUpObjects();</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt">}</span></p>
+
+</div>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;line-height:107%;font-family:
+&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="11" type="1">
+ <li class="MsoNormalCxSpLast"><span style="line-height:107%">Now open <b>Program.cs</b>
+     and add two lines of code to Main to instantiate the BlobOperations class
+     and call the BasicBlobOps method.</span></li>
+</ol>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst"><span style="font-size:9.0pt">static</span><span style="font-size:9.0pt;color:black"> </span><span style="font-size:9.0pt">void</span><span style="font-size:9.0pt;color:black"> Main(</span><span style="font-size:9.0pt">string</span><span style="font-size:9.0pt;color:black">[] args)</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:black">{</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:#2B91AF">&nbsp; BlobOperations</span><span style="font-size:9.0pt;color:black"> blobOps = </span><span style="font-size:
+9.0pt">new</span><span style="font-size:9.0pt;color:black"> </span><span style="font-size:9.0pt;color:#2B91AF">BlobOperations</span><span style="font-size:9.0pt;color:black">();</span></p>
+
+<p class="CodeBlockCxSpMiddle"><span style="font-size:9.0pt;color:black">&nbsp;
+blobOps.BasicBlobOps();</span></p>
+
+<p class="CodeBlockCxSpLast"><span style="font-size:9.0pt;color:black">}</span></p>
+
+</div>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;line-height:107%;font-family:
+&quot;Gadugi&quot;,sans-serif">&nbsp;</span></p>
+
+<ol style="margin-top:0in" start="12" type="1">
+ <li class="MsoNormalCxSpMiddle"><span style="line-height:107%">Now you’re ready
+     to continue and write the actual code to impact the actual blobs. You can
+     actually run this at this point. It won’t do anything, but it should bring
+     up the console window and close it back down.&nbsp; You can do this by hitting
+     F5.</span></li>
+</ol>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

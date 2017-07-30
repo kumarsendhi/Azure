@@ -1,0 +1,874 @@
+
+<!-- saved from url=(0157)https://opsgilityweb.blob.core.windows.net/online-labs/Introduction%20to%20Application%20Lifecycle%20Management%20using%20OSS%20Tools/export/Exercise%201.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Gadugi;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Lucida Console";
+	panose-1:2 11 6 9 4 5 4 2 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:107%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-name:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1CxSp";
+	mso-style-link:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:106%;
+	font-size:12.0pt;
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Gadugi",sans-serif;
+	color:#4472C4;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpFirst, li.NoteCxSpFirst, div.NoteCxSpFirst
+	{mso-style-name:NoteCxSpFirst;
+	mso-style-link:"Note Char";
+	margin-top:6.0pt;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpMiddle, li.NoteCxSpMiddle, div.NoteCxSpMiddle
+	{mso-style-name:NoteCxSpMiddle;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+p.NoteCxSpLast, li.NoteCxSpLast, div.NoteCxSpLast
+	{mso-style-name:NoteCxSpLast;
+	mso-style-link:"Note Char";
+	margin-top:0in;
+	margin-right:22.7pt;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Lucida Console";
+	color:#262626;}
+span.NoteChar
+	{mso-style-name:"Note Char";
+	mso-style-link:Note;
+	font-family:"Lucida Console";
+	color:#262626;
+	background:#F2F2F2;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char\,Bullet List Char\,FooterText Char\,numbered Char\,List Paragraph1 Char\,Paragraphe de liste1 Char\,Bulletr List Paragraph Char\,\5217\51FA\6BB5\843D Char\,\5217\51FA\6BB5\843D1 Char\,List Paragraph2 Char\,List Paragraph21 Char\,Listeafsnit1 Char\,Parágrafo da Lista1 Char";
+	mso-style-link:"List Paragraph\,Bullet List\,FooterText\,numbered\,List Paragraph1\,Paragraphe de liste1\,Bulletr List Paragraph\,\5217\51FA\6BB5\843D\,\5217\51FA\6BB5\843D1\,List Paragraph2\,List Paragraph21\,Listeafsnit1\,Parágrafo da Lista1\,Párrafo de lista1\,\30EA\30B9\30C8\6BB5\843D1\,Bullet list\,List Paragraph11\,Listenabsatz1";
+	font-family:"Gadugi",sans-serif;
+	color:#262626;}
+p.CodeBlock, li.CodeBlock, div.CodeBlock
+	{mso-style-name:"Code Block";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpFirst, li.CodeBlockCxSpFirst, div.CodeBlockCxSpFirst
+	{mso-style-name:"Code BlockCxSpFirst";
+	mso-style-link:"Code Block Char";
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpMiddle, li.CodeBlockCxSpMiddle, div.CodeBlockCxSpMiddle
+	{mso-style-name:"Code BlockCxSpMiddle";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+p.CodeBlockCxSpLast, li.CodeBlockCxSpLast, div.CodeBlockCxSpLast
+	{mso-style-name:"Code BlockCxSpLast";
+	mso-style-link:"Code Block Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	background:#F2F2F2;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Consolas;
+	color:#262626;}
+span.CodeBlockChar
+	{mso-style-name:"Code Block Char";
+	mso-style-link:"Code Block";
+	font-family:Consolas;
+	color:#262626;
+	background:#F2F2F2;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="#0563C1" vlink="#954F72">
+
+<div class="WordSection1">
+
+<h1><a name="_Toc480036979"></a><a name="_Toc479883696">Exercise 1: </a>Configuration
+Management using Chef </h1>
+
+<p class="MsoNormal">In this exercise, you will download the Chef Starter Kit to
+your <b>Chef Workstation</b> and run some commands against your Chef Server
+organization. After modifying and uploading a Chef Cookbook, you will use this
+to reconfigure an existing Azure VM Linux server to get Apache Web engine
+installed.</p>
+
+<h2><a name="_Toc480036980">Task 1: Configuring your Chef Server environment</a></h2>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in;line-height:107%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>After
+logging into your Chef Server portal in the previous exercise (<a href="https://manage.chef.io/">https://manage.chef.io</a>), select your <b>organization</b>,
+and then select <b>Starter Kit</b> from the menu on the left hand side. Click
+the <b>Download Starter Kit link</b> and acknowledge that your organization
+keys will be reset.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:107%"><img border="0" width="638" height="334" id="Picture 679" src="./Exercise 1_files/image001.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:107%"><br>
+<img border="0" width="455" height="131" id="Picture 683" src="./Exercise 1_files/image002.png"><br>
+<br>
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in;line-height:107%">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Extract
+the contents of the downloaded <b>chef-starter.zip</b> file.&nbsp; It contains a
+folder named chef-repo.&nbsp; You can choose to move this folder to a more
+appropriate location on your hard drive, for the purposes of this lab, we extract
+it in the <b>c:\chef-starter</b> folder.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:107%"><img border="0" width="609" height="167" id="Picture 680" src="./Exercise 1_files/image003.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="line-height:107%">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="line-height:106%">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="line-height:106%">Download the Chef Development Kit
+from the following URL: <br>
+</span><a href="https://downloads.chef.io/chef-dk"><span style="line-height:
+106%;color:#262626;text-decoration:none">https://downloads.chef.io/chef-dk</span></a><span style="line-height:106%"> <br>
+<b>Note: for this exercise, we selected the Windows platform, which might be
+different from yours.</b></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="610" height="164" id="Picture 681" src="./Exercise 1_files/image004.jpg"></p>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Once
+downloaded, run the <b>installation wizard</b>, accepting all default
+installation values.</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="437" height="340" id="Picture 684" src="./Exercise 1_files/image005.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.25in">In order to be able to work with
+Azure resources from within Chef, you need to prepare the Chef environment for
+that. This is done by using a <b>knife command</b>. (Knife is a command line
+tool which comes with Chef Development kit from where we run our commands. You
+can use windows command prompt, notepad, notepad++,…. </p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+a command prompt with administrative rights, and browse (cd) to the following
+Chef directory <b>c:\opscode\chefdk\embedded\bin\</b> (default directory where
+the Chef DK was installed; alter this path if you installed it in another
+location)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">Gem install knife
+azure</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="645" height="367" id="Picture 685" src="./Exercise 1_files/image006.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Once the installation is complete, you can verify the installations and
+versions using the following command:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">Gem list | grep
+azure</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="651" height="186" id="Picture 686" src="./Exercise 1_files/image007.jpg"></p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin-top:0in;margin-right:.1in;margin-bottom:
+6.0pt;margin-left:.5in;text-indent:-.25in;line-height:115%">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>start
+the Chef Development Kit from the Start menu on your local machine (Looks like
+a PowerShell window) </p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.1in;margin-bottom:6.0pt;
+margin-left:.5in;line-height:115%"><img border="0" width="647" height="153" id="Picture 687" src="./Exercise 1_files/image008.png"></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.1in;margin-bottom:6.0pt;
+margin-left:.5in;line-height:115%">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change to the Chef-repo folder (Note this folder might be different in
+your setup, if you extracted the Chef Starter kit to another location) by
+running the <b>cd </b>command:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">Cd
+C:\chef-starter\chef-repo\</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Next step involves the Chef SSL certificates to bind a secure connection
+to the Chef Server infrastructure. This is done using the following command:</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">Knife ssl fetch</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:.5in"><img border="0" width="679" height="135" id="Picture 691" src="./Exercise 1_files/image009.png"></p>
+
+<h2><a name="_Toc480036981">Summary</a></h2>
+
+<p class="MsoNormal">This completes the installation and configuration of the
+Chef Development Kit components on your local Chef workstation, as well as
+downloading the Chef SSL certificates.</p>
+
+<h2><a name="_Toc480036982"></a><a name="_Toc479883697">Task 2: Configure
+Cookbooks in Chef</a></h2>
+
+<p class="MsoNormal">In this exercise, you will download Chef cookbooks to your <b>Chef
+Workstation</b> and upload it to your <b>Chef Server</b> instance.&nbsp; Chef
+cookbooks can be manually downloaded from the <a href="https://supermarket.chef.io/">Chef Supermarket</a>.&nbsp; <br>
+The Chef Supermarket is a repository of cookbooks that are created and
+maintained by Chef’s Community.&nbsp; You can search for and download cookbooks
+through your browser as well as from the command line or terminal session.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+will be leveraging two main cookbooks in the labs that follow (<b>learn_chef_apache2</b>
+and <b>chef-client</b>).&nbsp; The <b>chef-client</b> cookbook does have a dependency
+on 5 other cookbooks, that will also be downloaded.</p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2"><b>NOTE:</b>&nbsp; It
+is possible that the versions of the cookbooks can be different than listed
+above.&nbsp; If you receive an error running the command, look at the version that
+was downloaded and adjust the upload command.<br>
+<br>
+</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Download
+the <b>learn_chef_apache2</b> cookbook by running the following knife command
+(be sure that your command prompt or terminal session is in the directory of
+the<b> chef-starter\chef-repo</b> directory)</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">knife cookbook
+site download learn_chef_apache2</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="683" height="136" id="Picture 692" src="./Exercise 1_files/image010.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Extract
+the contents of the downloaded <b>learn_chef_apache2-0.3.0.tar.gz</b> file</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">tar -zxvf
+learn_chef_apache2-0.3.0.tar.gz -C cookbooks</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="675" height="134" id="Picture 693" src="./Exercise 1_files/image011.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Now
+you will upload this cookbook to your <b>Chef Server</b> instance with the
+following command. </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">knife cookbook
+upload learn_chef_apache2</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="679" height="46" id="Picture 27" src="./Exercise 1_files/image012.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+validate the upload of this cookbook worked, check back in the <b>Chef Server</b>
+configuration from your browser (<a href="https://manage.chef.io/">https://manage.chef.io</a>
+if it was closed already), by selecting the <b>Policy</b> section from the
+menu. <b>Notice the cookbook learn_chef_apache2 is located there.</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><b>&nbsp;</b></p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="654" height="189" id="Picture 694" src="./Exercise 1_files/image013.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Three
+similar commands will be run for each of the remaining cookbooks (download,
+extract, and then upload).&nbsp; For the <b>cron</b> cookbook, run the following
+commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download cron</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf cron-4.1.1.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload cron</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>For
+the <b>compat_resource</b> cookbook, run the following commands </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download compat_resource</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf compat_resource-12.16.3.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload compat_resource</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>For the <b>logrotate</b> cookbook, run the following commands </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download logrotate</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf logrotate-2.1.0.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload logrotate</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>For the <b>chef_handler</b> cookbook, run the following commands </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download chef_handler</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf chef_handler-2.1.1.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload chef_handler</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>For the <b>ohai</b> cookbook, run the following commands.</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download ohai</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf ohai-5.0.3.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload ohai</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>For the <b>windows</b> cookbook, run the following commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download windows</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf windows-3.0.5.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload windows</p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>For the <b>chef-client</b> cookbook, run the following commands</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlockCxSpFirst" style="margin-left:0in;background:#F2F2F2">knife
+cookbook site download chef-client</p>
+
+<p class="CodeBlockCxSpMiddle" style="margin-left:0in;background:#F2F2F2">tar
+-zxvf chef-client-8.0.1.tar.gz -C cookbooks</p>
+
+<p class="CodeBlockCxSpLast" style="margin-left:0in;background:#F2F2F2">knife
+cookbook upload chef-client</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">13.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>You can confirm the upload
+of all mentioned cookbooks by logging into your Chef Server portal and clicking
+on the <b>Policy </b>tab.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="664" height="323" id="Picture 695" src="./Exercise 1_files/image014.jpg"></p>
+
+<h2>&nbsp;</h2>
+
+<h2><a name="_Toc480036983">Task 3: Deploy an Azure VM with Chef Extension
+integration</a></h2>
+
+<p class="MsoNormal">Now that you have a Chef Server instance hosted in Azure
+(with a cookbook uploaded) you will deploy Chef nodes (by way of an ARM
+template) that will check in with your Chef Server and get their configuration.</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+the <b>StudentFiles</b> folder there are two files that will be leveraged for
+this lab (<b>ChefNodeDeployment.json</b> and <b>ChefNodeDeployment.parameters.json</b>).&nbsp;
+Open these files in Visual Studio Code. <br>
+<img border="0" width="473" height="388" id="Picture 13" src="./Exercise 1_files/image015.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Examine
+the various sections of <b>ChefNodeDeployment.json</b>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Variables</b> that have been defined</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Parameters</b> that you will need to specify</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Resources</b> section – this is the first time you are
+configuring an Availability Set</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Update
+<b>ChefNodeDeployment.parameters.json</b> that will be leveraged during the
+deployment.&nbsp; Most of the parameters that are defined can be left alone, but you
+will need to update <b>WebPublicIPDnsName</b>, <b>chef_server_url</b>, <b>validation_key:</b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>WebPublicIPDNSName</b>: unique name for the Web Server that
+will be deployed using the ARM template later on (eg. ChefWebsrv123)</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Chef server URL</b>: <a href="https://manage.chef.io/organizations/%3cyourcheforgnamehere">https://manage.chef.io/organizations/&lt;yourcheforgnamehere</a>&gt;
+</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:1.0in;text-indent:-.25in"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Validation Key</b>: see next step</p>
+
+<p class="MsoListParagraphCxSpMiddle"><br>
+<img border="0" width="447" height="349" id="Picture 29" src="./Exercise 1_files/image016.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+value needed for the <b>validation_key</b> parameter is a JSON escaped string
+of the contents of your <b>azurechef-validator.pem</b> file.&nbsp; To get it in the
+right format, you can run the following command </p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">chef exec ruby -e
+'p ARGF.read' c:\chef-starter\chef-repo\.chef\&lt;name of your Chef
+Organization&gt;.pem</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="682" height="219" id="Picture 696" src="./Exercise 1_files/image017.png"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Save
+the changes to <b>ChefNodeDeployment.parameters.json</b></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+have the Chef Node check at a shorter interval than the default (30 minutes),
+you will update the chef-client cookbook recipe.&nbsp; Open <b>chef-repo\cookbooks\chef-client\attributes\default.rb</b>
+in Visual Studio Code. Update the interval and splay values to (60, and 30)</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="463" height="244" id="Picture 28" src="./Exercise 1_files/image018.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Save
+your changes to the default.rb file.</p>
+
+<h2><a name="_Toc479883703">&nbsp;</a></h2>
+
+<h2><a name="_Toc480036984">Task 4: Deploy an Azure VM from an ARM Template</a></h2>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2"><b>Note:</b> Screenshots
+in this exercise are based on running the steps from Azure CLI 2.0 on a Windows
+10 system. While steps will be identical on Mac OS or Linux, the screenshots
+will differ. </p>
+
+</div>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Using the CLI Create a new Resource Group</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">az group create
+--name ChefARMLabRG --location southcentralus</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="681" height="225" id="Picture 24" src="./Exercise 1_files/image019.png"></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Deploy
+the template by running the following command</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2">azure group
+deployment create --resource-group ChefARMLabRG --template-file C:\OpsgilityTraining\StudentFiles\ChefNodeDeployment.json
+--parameters @C:\OpsgilityTraining\StudentFiles\ChefNodeDeployment.parameters.json</p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst"><img border="0" width="672" height="222" id="Picture 25" src="./Exercise 1_files/image020.png"></p>
+
+<p class="MsoListParagraphCxSpLast">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#F2F2F2;margin-left:.5in;margin-right:0in">
+
+<p class="CodeBlock" style="margin-left:0in;background:#F2F2F2"><b>Note:</b>
+While there is no progress visible in the CLI client, it might give the
+impression the deployment task “hangs”. This is most probably NOT the case. To
+get an idea on the deployment process, log on to the Azure Portal and verify
+resources are being added to the ChefARMLabRG Resource Group. </p>
+
+</div>
+
+<p class="MsoListParagraphCxSpFirst">When the deployment is finished, the ARM
+template structure will be displayed, as well as the status message “<b>ProvisioningState:
+succeeded</b>” at the end of the deployment.</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="662" height="351" id="Picture 674" src="./Exercise 1_files/image021.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="652" height="239" id="Picture 675" src="./Exercise 1_files/image022.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Validate
+the creation of the resource defined in your linked templates in the Azure
+Portal (<a href="https://portal.azure.com/">https://portal.azure.com</a>)</p>
+
+<p class="MsoListParagraphCxSpMiddle"><img border="0" width="411" height="333" id="Picture 30" src="./Exercise 1_files/image023.jpg">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+verify that the Chef extension was properly installed and configured you can
+browse to the FQDN of the load balancer to confirm that the Chef Cookbook was
+called and executed. <br>
+<img border="0" width="493" height="154" id="Picture 31" src="./Exercise 1_files/image024.jpg"></p>
+
+<p class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>You
+can also validate the Chef Extension is installed by browsing to one of the VMs
+in the Resource Group / Settings / Extensions / </p>
+
+<p class="MsoListParagraphCxSpLast"><img border="0" width="666" height="262" id="Picture 676" src="./Exercise 1_files/image025.jpg"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="text-indent:-.25in">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>You can also verify that all the nodes (depending on your <b>InstanceCount</b>
+parameter) have checked into your Chef Server.<br>
+<img border="0" width="669" height="297" id="Picture 32" src="./Exercise 1_files/image026.jpg"></p>
+
+<h2><a name="_Toc480036985"></a><a name="_Toc479883704">Summary</a></h2>
+
+<p class="MsoNormal">In this exercise, you configured your Chef Server
+environment with a Cookbook, allowing the configuration of Apache Web engine
+during the deployment of an Azure VM from an ARM Template, by using Chef
+extension in Azure VMs. &nbsp;</p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Gadugi&quot;,sans-serif;
+color:#262626"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

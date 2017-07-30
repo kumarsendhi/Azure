@@ -1,0 +1,81 @@
+I have said a number of times that the orchestrator is
+responsible for reconfiguring the load balancer whenever
+a service instance comes or goes.
+On this slide, we're gonna take a closer look at that and
+see how that actually works.
+What I show on this slide are Internet requests coming in and
+then they're hitting a load balancer,
+which is a type of reverse proxy.
+And the load balancer has, inside of it,
+a table of the IP addresses and ports of the various services
+that are running on the different virtual machines,
+elsewhere, inside the cluster.
+And then on the right-hand side, I have a VM that's running
+the first instance of the inventory service.
+And it's listening on an HTTP Port, let's say.
+And I have another instance running on a different VM, and
+I have a third instance running on yet a third VM.
+Now, when you create a load balancer you typically can
+configure it with a bunch of what's called load balancer
+service probes.
+And here I show an example of what two probes look like, but
+you can actually have many probes that are associated with
+a single load balancer.
+With each probe, you specify some amount of time,
+like 15 seconds.
+And you're saying to the load balancer,
+every 15 seconds I want you to go and probe
+each of these service instances to see if it is healthy or not.
+And then you can say probe it on Port 80, and
+then I have another one that we're gonna probe on Port 8080.
+And then I can say, and what is the path?
+So this would be something like causing the load balancer to
+make an HEP request to IP address for Inventory #1, colon,
+port 80, slash, HealthProbe.aspx or whatever you want over here.
+And the load balancer will send this probe out to these three
+different virtual machines, all the ones that it knows about,
+and it will do it every 15 seconds.
+Now I have two rules here.
+So the load balancer is actually only to probe both ports, 80 and
+8080, every 15 seconds across all of these, cuz you can
+have multiple services listing on each of these but, of course,
+each one would have to be at a different port.
+Okay, so now let's say the load balancer goes and
+sends a probe out to all those machines and
+they all returned back an HTTP 200 initially.
+So that says to the load balancer that all of these
+machines are saying it's okay.
+Right?
+HTTP 200 means okay.
+And so the load balancer says they're all doing fine.
+So any request that comes in from the Internet, I can send it
+to machine one or machine two or machine number three.
+Now let's say that machine number one,
+something has gone wrong.
+So the next time the load balancer probes all these
+machines, machine number one returns a 503 back.
+Because it's not returning back 200, really anything other
+than 200 indicates failure, the load balancer says,
+okay, machine number one has not returned a 200.
+So there's something wrong with it.
+So any future network request that come in,
+I will not send it to machine number one.
+I will send it either to machine number two or
+machine number three.
+Now let's say that machine one heals itself, and so
+the next time a load balancer sends a probe, 15 seconds later,
+it now returns a 200.
+Then the load balancer sets this back to green,
+indicating that any new requests that come in from the Internet
+can now once again be sent to any of the three machines that
+are on the right-hand side.
+One of these machines might go down completely.
+Maybe the service stops running or maybe the network controller
+goes bad or maybe the kernel crashes.
+On Windows you get a blue screen, in that case.
+So if the load balancer sends out another probe and
+this machine number two give no reply back at all,
+then the load balancer sets this to red to
+indicate that there's something wrong with machine number two.
+So now, any client requests that come up from the Internet will
+either be sent to machine one or be sent to machine three.

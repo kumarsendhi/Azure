@@ -1,0 +1,220 @@
+﻿    $(function () {
+        var $form = $('#formPurchaseOnlineCredits');
+
+        Stripe.setPublishableKey($('#publishableKey').val());
+
+        $("body").on("change", "#ExpMonth", function()
+        {
+            $form.validate().element("#ExpMonth");
+            $form.validate().element("#ExpYear");
+        })
+        $("body").on("change", "#ExpYear", function()
+        {
+            $form.validate().element("#ExpMonth");
+            $form.validate().element("#ExpYear");
+        })
+
+        $.validator.addMethod("validateCardNumber", function () {
+            var ccNo = $.trim($form.find('[name="CcNumber"]').val());
+            if (ccNo != null && ccNo != "" && ccNo != undefined) {
+                var isCCValid = Stripe.card.validateCardNumber(ccNo);
+                return isCCValid;
+            }
+            return false;
+        }, "Invalid card number.");
+
+        $.validator.addMethod("validateExpMonthYear", function () {
+            return Stripe.card.validateExpiry($form.find('[name="ExpMonth"]').val(), $form.find('[name="ExpYear"]').val());
+        }, "Invalid card expiration.");
+
+        $form.validate({
+            ignore: '.ignore :hidden,.notValidate',
+            rules: {
+                NameOnCard: {
+                    required: true
+                },
+                CcNumber: {
+                    required: true,
+                    number: true,
+                    validateCardNumber: true
+                },
+                Cvv2: {
+                    required: true,
+                },
+                ExpMonth: {
+                    required: true,
+                },
+                ExpYear: {
+                    required: true,
+                    validateExpMonthYear: true
+                },
+                Amount: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                NameOnCard: {
+                    required: 'Please enter Name on Card.'
+                },
+                CcNumber: {
+                    required: 'Please enter Credit Card Number',
+                    number: 'Please enter valid Credit Card Number',
+                    validateCardNumber: 'Please enter valid Credit Card Number.'
+                },
+                Cvv2: {
+                    required: 'Please enter CVV2'
+                },
+                ExpMonth: {
+                    required: 'Please enter Card Expiration Month',
+                },
+                ExpYear: {
+                    required: 'Please enter Card Expiration Year',
+                    validateExpMonthYear: 'The Expiration Date could not be validated.'
+                },
+                Amount: {
+                    required: 'Please enter the purchase amount',
+                    number: 'Please enter a valid purchase amount number'
+                }
+            },
+            errorContainer: $('#formPurchaseOnlineCredits .paymentErrors'),
+            errorLabelContainer: $('#formPurchaseOnlineCredits .paymentErrors ul'),
+            wrapper: 'li'
+        });
+
+        $form.submit(function (event) {
+            var $form = $(this),
+                isNewCard = $('#oldCcNumber').val() !== $form.find('[name="CcNumber"]').val(),
+                purchaseAmount = 0 + $form.find('[name="Amount"]').val();
+
+            $form.find('button[type="submit"]').attr('disabled','disabled');
+
+            event.preventDefault();
+
+            if (!$form.validate().valid()) {
+                $form.find('button[type="submit"]').removeAttr('disabled');
+                return false;
+            }
+
+            // Referenced "Scripts/ViewModel/MOCCourse.js" as source for building this
+
+            if (isNewCard && !isNaN(purchaseAmount) && purchaseAmount > 0) {
+                var stripeData = {};
+                $form.find('[data-stripe]').each(function (i, e) {
+                    var elem = $(e);
+                    stripeData[elem.attr('data-stripe')] = elem.val();
+                });
+
+                Stripe.card.createToken(stripeData, function (status, response) {
+                    if (response.error) {
+                        $form.find('.paymentErrors').show().find('ul').show().html($('<li/>').append($('<label class="error"/>').text(response.error.message)));
+                        $form.find('button[type="submit"]').removeAttr('disabled');
+                    } else {
+                        ajaxRequest.makeAPIRequest('/OnlineLab/PurchaseCredits', 'GET', {
+                            fee: $form.find('[name="Amount"]').val(),
+                            cardId: $('#cardId').val(),
+                            token: response.id,
+                            isNewCard: isNewCard,
+                            discountCode: ''
+                        }, function (data) {
+                            if (data != null && data.IsSuccess && !data.IsError) {
+                                $('#modalPurchaseCredits').modal('hide');
+                                displayCreditPurchaseComplete($form.find('[name="Amount"]').val(), data.ErrorMessage);
+                            } else {
+                                $form.find('.paymentErrors').show().find('ul').show().html($('<li/>').append($('<label class="error"/>').text(data.ErrorMessage)));
+                            }
+
+                            $form.find('button[type="submit"]').removeAttr('disabled');
+                        });
+                    }
+                });
+            } else { // isNewCard === false
+                ajaxRequest.makeAPIRequest('/OnlineLab/PurchaseCredits', 'GET', {
+                    fee: $form.find('[name="Amount"]').val(),
+                    cardId: $("#cardId").val(),
+                    token: null,
+                    isNewCard: isNewCard
+                }, function (data) {
+                    if (data != null && data.IsSuccess && !data.IsError) {
+                        $('#modalPurchaseCredits').modal('hide');
+                        displayCreditPurchaseComplete($form.find('[name="Amount"]').val(), data.ErrorMessage);
+                    } else {
+                        $form.find('.paymentErrors').show().find('ul').show().html($('<li/>').append($('<label class="error"/>').text(data.ErrorMessage)));
+                    }
+
+                    $form.find('button[type="submit"]').removeAttr('disabled');
+                });
+            }
+
+            return false;
+        });
+
+        function displayCreditPurchaseComplete(amountPurchased, newBalance) {
+            var modal = $('#modalCreditPurchaseComplete');
+            modal.find('.purchasedCredits').text(amountPurchased);
+            modal.find('.newBalance').text(newBalance);
+            modal.modal('show');
+
+            $('#OnlineLabTab_CurrentUserCreditBalance').text(newBalance);
+            $("body").trigger("creditbalanceupdated");
+        }
+
+        initializePurchaseLabCreditsButtonClickEvent();
+    });
+
+    function initializePurchaseLabCreditsButtonClickEvent() {
+        $('body').on("click", '.linkOnlineLabTabPurchaseCredits', function () {
+            var $form = $('#formPurchaseOnlineCredits');
+            $form.find('[name="NameOnCard"]').val('');
+            $form.find('[name="AddressLine1"]').val('');
+            $form.find('[name="AddressLine2"]').val('');
+            $form.find('[name="AddressCity"]').val('');
+            $form.find('[name="AddressState"]').val('');
+            $form.find('[name="AddressZip"]').val('');
+            $form.find('[name="ExpYear"]').val('');
+            $form.find('[name="ExpMonth"]').val('');
+            $form.find('[name="CcNumber"]').removeClass('notValidate').val('');
+
+            $('#oldCcNumber').val($form.find('[name="CcNumber"]').val());
+            $('#cardId').val('');
+
+            $form.find('button[type="submit"]').removeAttr('disabled');
+
+            //Load Existing Payment information for user
+            //ajaxRequest.makeAPIRequest('/Subscription/GetCurrentSubscriptionId', 'GET', null, function (result) {
+            //        ajaxRequest.makeAPIRequest('/Subscription/GetCardData', 'GET', {
+            //            subscriptionId: result || null
+            //        }, function (cardData) {
+            //            var $form = $('#formPurchaseOnlineCredits');
+            //            if (cardData) {
+            //                $form.find('[name="NameOnCard"]').val(cardData.Name);
+            //                $form.find('[name="AddressLine1"]').val(cardData.AddressLine1);
+            //                $form.find('[name="AddressLine2"]').val(cardData.AddressLine2);
+            //                $form.find('[name="AddressCity"]').val(cardData.AddressCity);
+            //                $form.find('[name="AddressState"]').val(cardData.AddressState);
+            //                $form.find('[name="AddressZip"]').val(cardData.AddressZip);
+            //                $form.find('[name="ExpYear"]').val(cardData.ExpirationYear);
+            //                $form.find('[name="ExpMonth"]').val(cardData.ExpirationMonth);
+            //                $form.find('[name="CcNumber"]').addClass('notValidate').val('#### #### #### ' + cardData.Last4);
+            //
+            //                $('#oldCcNumber').val($form.find('[name="CcNumber"]').val());
+            //                $('#cardId').val(cardData.CardId);
+            //            } else {
+            //                $form.find('[name="NameOnCard"]').val('');
+            //                $form.find('[name="AddressLine1"]').val('');
+            //                $form.find('[name="AddressLine2"]').val('');
+            //                $form.find('[name="AddressCity"]').val('');
+            //                $form.find('[name="AddressState"]').val('');
+            //                $form.find('[name="AddressZip"]').val('');
+            //                $form.find('[name="ExpYear"]').val('');
+            //                $form.find('[name="ExpMonth"]').val('');
+            //                $form.find('[name="CcNumber"]').removeClass('notValidate').val('');
+            //
+            //                $('#oldCcNumber').val($form.find('[name="CcNumber"]').val());
+            //                $('#cardId').val('');
+            //            }
+            //        });
+            //    });
+            $('#modalPurchaseCredits').modal('show');
+        });
+    }
